@@ -8,7 +8,7 @@
 
     <div class="sidebar">
 
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="user-panel mt-1 pb-1 mb-1 d-flex">
             <div class="image">
                 <img src="https://adminlte.io/themes/v3/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <div class="form-inline">
+        {{-- <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
                 <input class="form-control form-control-sidebar" type="search" placeholder="Search"
                     aria-label="Search">
@@ -27,43 +27,120 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-compact nav-flat nav-legacy nav-collapse-hide-child layout-fixed text-sm nav-sidebar"
+                data-widget="treeview" role="menu" data-accordion="false">
 
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                <li class="nav-header">MENU UTAMA</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-solid fa-house-chimney"></i>
                         <p>
-                            Starter Pages
+                            Home
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-solid fa-circle-info"></i>
+                        <p>
+                            {{ trans('Info Desa') }}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="../../index.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Active Page</p>
+                                <p>Identitas Desa</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="../../index2.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Inactive Page</p>
+                                <p>Wilayah Administratif</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pemerintahan Desa</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Status Desa</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Lembaga Desa</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Layanan Pelanggan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pendaftaran Kerjasama</p>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-solid fa-people-group"></i>
                         <p>
-                            Simple Link
-                            <span class="right badge badge-danger">New</span>
+                            Kependudukan
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="../../index.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Penduduk</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index2.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Keluarga</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Rumah Tangga</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Kelompok</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data Suplemen</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Calon Pemilih</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
