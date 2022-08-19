@@ -14,7 +14,7 @@ class CreateMFamilys extends Migration
     public function up()
     {
         Schema::create('m_familys', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigin('id');
             $table->string('no_kk', 16);
             $table->string('nik_kepala', 200);
             $table->dateTime('tgl_daftar', $precision = 0);
