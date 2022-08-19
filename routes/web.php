@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
+Route::get('/identitas', function () {
+    return view('backend.info_desa.identitas_desa.index');
+});
