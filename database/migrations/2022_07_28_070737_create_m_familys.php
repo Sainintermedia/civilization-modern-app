@@ -14,7 +14,7 @@ class CreateMFamilys extends Migration
     public function up()
     {
         Schema::create('m_familys', function (Blueprint $table) {
-<<<<<<< HEAD
+
             // $table->bigInteger('id');
             // $table->string('no_kk', 16);
             // $table->string('nik_kepala', 200);
@@ -23,17 +23,7 @@ class CreateMFamilys extends Migration
             // $table->datetime('tgl_cetak_kk', $precision = 0);
             // $table->string('alamat', 200);
             // $table->integer('id_cluster',11);
-=======
-            $table->bigin('id');
-            $table->string('no_kk', 16);
-            $table->string('nik_kepala', 200);
-            $table->dateTime('tgl_daftar', $precision = 0);
-            $table->smallInteger('kelas_sosial');
-            $table->dateTime('tgl_cetak_kk', $precision = 0);
-            $table->string('alamat', 200);
-            $table->smallInteger('id_cluster');
->>>>>>> ef8f1f0cfa3bd456d7886d0bef33334a9fa46be0
-            $table->timestamps();
+
         });
     }
 
