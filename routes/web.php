@@ -23,3 +23,6 @@ Route::get('/dashboard', function () {
 Route::get('/identitas', function () {
     return view('backend.info_desa.identitas_desa.index');
 });
+Route::get('/wilayahadministratif', function () {
+    return view('backend.info_desa.wilayah_administratif.index');
+});
