@@ -11,7 +11,7 @@
                         <p class="card-text">
                             <div class="card">
                                 <div class="card-header">
-                                    
+                                        <input class="form-control form-control-sm col-sm-2" type="text" placeholder=".form-control-sm">
                                 <h3 class="card-title">DataTable with default features</h3>
                                 </div>
                                 
