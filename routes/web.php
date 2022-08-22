@@ -26,3 +26,6 @@ Route::get('/identitas', function () {
 Route::get('/wilayahadministratif', function () {
     return view('backend.info_desa.wilayah_administratif.index');
 });
+Route::get('/statusdesa', function () {
+    return view('backend.info_desa.status_desa.index');
+});
