@@ -26,10 +26,6 @@ class CreateBloodsTable extends Migration
      */
     public function down()
     {
-<<<<<<< HEAD:database/migrations/2022_07_28_065118_create_tabel_bloods.php
         Schema::dropIfExists('m_bloods');
-=======
-        Schema::dropIfExists('bloods');
->>>>>>> 7940a2af0a6ac8ea4c64945c4452703e670b3286:database/migrations/2022_07_29_154849_create_bloods_table.php
     }
 }
