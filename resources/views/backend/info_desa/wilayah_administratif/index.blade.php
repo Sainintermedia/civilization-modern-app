@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('title', 'Wilayah Administratif Kejaroan')
 @section('breadcrumb', 'Wilayah Administratif Kejaroan')
+@section('wilayahadministratif', 'active')
+@section('info', 'show')
 @section('content')
 
     <div class="wrapper">
