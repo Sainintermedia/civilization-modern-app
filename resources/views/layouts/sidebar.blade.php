@@ -81,7 +81,7 @@
                                 <p>Lembaga Desa</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="../../index3.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Layanan Pelanggan</p>
@@ -92,7 +92,7 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Pendaftaran Kerjasama</p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
                 <li class="nav-item">

@@ -29,3 +29,6 @@ Route::get('/wilayahadministratif', function () {
 Route::get('/statusdesa', function () {
     return view('backend.info_desa.status_desa.index');
 });
+Route::get('/lembagadesa', function () {
+    return view('backend.info_desa.lembaga_desa.index');
+});
