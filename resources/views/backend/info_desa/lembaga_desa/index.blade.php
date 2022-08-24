@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('title', 'Lembaga Desa')
 @section('breadcrumb', 'Lembaga Desa')
+@section('lembagadesa', 'active')
+@section('info', 'show')
 @section('content')
 
     <div class="wrapper">
