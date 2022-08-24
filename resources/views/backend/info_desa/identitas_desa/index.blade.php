@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('title', 'Identitas Desa')
 @section('breadcrumb', 'Identitas Desa')
+@section('identitas', 'active')
+@section('info', 'show')
 @section('content')
 
     <div class="container-fluid p-0">

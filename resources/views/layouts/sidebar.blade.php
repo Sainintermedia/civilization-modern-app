@@ -35,14 +35,14 @@
 
                 <li class="nav-header">MENU UTAMA</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="dashboard" class="nav-link">
                         <i class="nav-icon fas fa-solid fa-house-chimney"></i>
                         <p>
                             Home
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item @yield('info')">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-solid fa-circle-info"></i>
                         <p>
@@ -52,13 +52,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../../index.html" class="nav-link">
+                            <a href="identitas" class="nav-link @yield('identitas')">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Identitas Desa</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="../../index2.html" class="nav-link">
+                        <li class="nav-item @yield('wilayahadministratif')">
+                            <a href="wilayahadministratif" class="nav-link @yield('wilayahadministratif')">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Wilayah Administratif</p>
                             </a>
