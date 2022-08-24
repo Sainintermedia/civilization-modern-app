@@ -70,13 +70,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../index3.html" class="nav-link">
+                            <a href="statusdesa" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Status Desa</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../index3.html" class="nav-link">
+                            <a href="lembagadesa" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Lembaga Desa</p>
                             </a>
