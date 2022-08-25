@@ -53,25 +53,25 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="identitas" class="nav-link @yield('identitas')">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-id-badge" aria-hidden="true"></i>
                                 <p>Identitas Desa</p>
                             </a>
                         </li>
                         <li class="nav-item @yield('wilayahadministratif')">
                             <a href="wilayahadministratif" class="nav-link @yield('wilayahadministratif')">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-address-card"></i>
                                 <p>Wilayah Administratif</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="../../index3.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-ravelry"></i>
                                 <p>Pemerintahan Desa</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="statusdesa" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-linode"></i>
                                 <p>Status Desa</p>
                             </a>
                         </li>

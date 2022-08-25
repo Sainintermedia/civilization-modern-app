@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css">
 
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css?v=3.2.0">
+    
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css">
+
     <script nonce="3ab3c245-e4f2-43b5-b8e2-0ec1e3772bb0">
         (function(w, d) {
             ! function(a, e, t, r) {
