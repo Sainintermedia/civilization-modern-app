@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PopulationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,10 @@ Route::get('/statusdesa', function () {
 Route::get('/lembagadesa', function () {
     return view('backend.info_desa.lembaga_desa.index');
 });
+
+
+// Route::group(['middleware' => ['auth'], 'prefix' => 'wjk', 'as' => 'wjk.'], function () {
+
+// });
+
+Route::resource('/populations', PopulationController::class);
