@@ -179,6 +179,47 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-solid fa-people-group"></i>
+                        <p>
+                            Layanan Surat
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="../../index.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pengaturan Surat</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index2.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cetak Surat</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Arsip Layanan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Panduan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Daftar Persyaratan</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
 
