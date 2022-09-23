@@ -1,28 +1,16 @@
 <aside class="main-sidebar sidebar-dark-danger elevation-4">
 
-<<<<<<< HEAD
     <a href="/dashboard" class="brand-link">
         <img src="assets/admin/dist/img/icon.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">SiODe</span>
-=======
-    <a href="index3.html" class="brand-link">
-        <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-            class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
->>>>>>> e56f72ae3c335f8bd6eddb18223371f03ab7e171
     </a>
 
     <div class="sidebar">
 
         <div class="user-panel mt-1 pb-1 mb-1 d-flex">
             <div class="image">
-<<<<<<< HEAD
                 <img src="assets/admin/dist/img/logo.png" class="img-circle elevation-2" alt="User Image">
-=======
-                <img src="https://adminlte.io/themes/v3/dist/img/user2-160x160.jpg" class="img-circle elevation-2"
-                    alt="User Image">
->>>>>>> e56f72ae3c335f8bd6eddb18223371f03ab7e171
             </div>
             <div class="info">
                 <a href="#" class="d-block">Desa Cisoka</a>
@@ -66,7 +54,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="identitas" class="nav-link @yield('identitas')">
+                            <a href="identitas" class="nav-link {{request()->is('identitas') ||request()->is('identitas/*')? 'active':'text-yellow'}}">
                                 <i class="far fa-circle nav-icon text-red"></i>
                                 <p>Identitas Desa</p>
                             </a>
