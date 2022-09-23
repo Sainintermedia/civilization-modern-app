@@ -42,7 +42,8 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item @yield('info')">
+                {{-- <li class="nav-item @yield('info')"> --}}
+                <li class="nav-item {{request()->is(['wilayahadministratif','identitas']) || request()->is(['wilayahadministratif/*','identitas/*'])? 'menu-open' : ''}}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-solid fa-circle-info"></i>
                         <p>
@@ -57,8 +58,9 @@
                                 <p>Identitas Desa</p>
                             </a>
                         </li>
-                        <li class="nav-item @yield('wilayahadministratif')">
-                            <a href="wilayahadministratif" class="nav-link @yield('wilayahadministratif')">
+                        {{-- <li class="nav-item {{request()->is('wilayahadministratif') ||request()->is('wilayahadministratif/*')? 'menu=open':''}}"> --}}
+                        <li class="nav-item">
+                            <a href="wilayahadministratif" class="nav-link {{request()->is('wilayahadministratif') ||request()->is('wilayahadministratif/*')? 'active':''}}">
                                 <i class="far fa-address-card"></i>
                                 <p>Wilayah Administratif</p>
                             </a>
@@ -173,6 +175,47 @@
                             <a href="../../index3.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Arsip Desa</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-solid fa-people-group"></i>
+                        <p>
+                            Layanan Surat
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="../../index.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pengaturan Surat</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index2.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cetak Surat</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Arsip Layanan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Panduan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Daftar Persyaratan</p>
                             </a>
                         </li>
                     </ul>
