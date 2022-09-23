@@ -26,7 +26,7 @@
                                 </div>
 
                                 <div class="col-lg-3 col-6">
-                                    <div class="small-box bg-warning">
+                                    <div class="small-box bg-purple">
                                         <div class="inner">
                                         <h3>44</h3>
                                         <p>Kependudukan</p>
@@ -39,7 +39,7 @@
                                 </div>
                      
                                 <div class="col-lg-3 col-6">
-                                    <div class="small-box bg-warning">
+                                    <div class="small-box bg-primary">
                                         <div class="inner">
                                         <h3>44</h3>
                                         <p>Keluarga</p>
@@ -52,7 +52,7 @@
                                 </div>
 
                                 <div class="col-lg-3 col-6">
-                                    <div class="small-box bg-warning">
+                                    <div class="small-box bg-info">
                                         <div class="inner">
                                         <h3>44</h3>
                                         <p>Surat Tercetak</p>
