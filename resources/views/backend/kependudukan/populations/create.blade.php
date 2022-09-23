@@ -7,6 +7,7 @@
     <div class="container-fluid p-0">
         <div class="wrapper">
             <form method="POST" action="{{ route('populations.store') }}" enctype="multipart/form-data" autocomplete="off">
+                @csrf
                 <div class="row">
                     <div class='col-sm-12'>
                         <div class="form-group bg-primary" style="padding:10px">
@@ -56,36 +57,39 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <label for="">Dusun / Kampung</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0" name="alamat"
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="kp"
                                             id="">
                                     </div>
                                     <div class="col-4">
                                         <div class="row">
                                             <div class="col">
                                                 <label for="">Rt</label>
-                                                <select class="form-select form-control form-control-sm rounded-0"
+                                                <select name="rt"
+                                                    class="form-select form-control form-control-sm rounded-0"
                                                     aria-label="Default select example">
                                                     <option selected>Open</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
+                                                    <option value="001">001</option>
+                                                    <option value="002">002</option>
+                                                    <option value="003">003</option>
+                                                    <option value="004">004</option>
+                                                    <option value="005">005</option>
                                                 </select>
                                             </div>
                                             <div class="col">
                                                 <label for="">Rw</label>
-                                                <select class="form-select form-control form-control-sm rounded-0"
+                                                <select name="rw"
+                                                    class="form-select form-control form-control-sm rounded-0"
                                                     aria-label="Default select example">
                                                     <option selected>Open</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
+                                                    <option value="001">001</option>
+                                                    <option value="002">002</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <label for="">Kode Pos</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0" name="alamat"
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="kodepos"
                                             id="">
                                     </div>
                                 </div>
@@ -93,26 +97,26 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Desa</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0" name="alamat"
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="desa"
                                             id="">
                                     </div>
                                     <div class="col">
                                         <label for="">Kecamatan</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0" name="alamat"
-                                            id="">
+                                        <input type="text" class="form-control form-control-sm rounded-0"
+                                            name="kecamatan" id="">
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Kabupaten / Kota</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0" name="alamat"
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="kabkot"
                                             id="">
                                     </div>
                                     <div class="col">
                                         <label for="">Provinsi</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="alamat" id="">
+                                            name="provinsi" id="">
                                     </div>
                                 </div>
                                 <br>
@@ -132,7 +136,7 @@
                                     <div class="col">
                                         <label for="">Nama Lengkap</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="nama_kk" id="">
                                     </div>
                                 </div>
                                 <br>
@@ -140,12 +144,12 @@
                                     <div class="col">
                                         <label for="">Tempat Lahir</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="no_nik" id="">
+                                            name="tmpt_lahir" id="">
                                     </div>
                                     <div class="col">
                                         <label for="">Tanggal Lahir</label>
                                         <input type="date" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="tgl_lahir" id="">
                                     </div>
                                 </div>
                                 <br>
@@ -153,12 +157,12 @@
                                     <div class="col">
                                         <label for="">Agama</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="no_nik" id="">
+                                            name="agama" id="">
                                     </div>
                                     <div class="col">
                                         <label for="">Pendidikan</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="pendidikan" id="">
                                     </div>
                                 </div>
                                 <br>
@@ -166,12 +170,12 @@
                                     <div class="col">
                                         <label for="">Jenis Pekerjaan</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="jns_pekerjaan" id="">
                                     </div>
                                     <div class="col">
                                         <label for="">Golongan Darah</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="gol_darah" id="">
                                     </div>
                                 </div>
                                 <br>
@@ -187,17 +191,17 @@
                                     <div class="col">
                                         <label for="">Status Perkawinan</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="sts_perkawinan" id="">
                                     </div>
                                     <div class="col">
                                         <label for="">Tanggal Perkawinan</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="tgl_perkawinan" id="">
                                     </div>
                                     <div class="col">
                                         <label for="">Hubungan Dalam Keluarga</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="sts_hub_kel" id="">
                                     </div>
                                 </div>
                                 <br>
@@ -212,17 +216,17 @@
                                     <div class="col">
                                         <label for="">Kewarganegaraan</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="kwn" id="">
                                     </div>
                                     <div class="col">
                                         <label for="">No Paspor</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="np_paspor" id="">
                                     </div>
                                     <div class="col">
                                         <label for="">No Kitap</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="no_kitap" id="">
                                     </div>
                                 </div>
                                 <br>
@@ -237,12 +241,23 @@
                                     <div class="col">
                                         <label for="">Nama Ayah</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="nm_ayah" id="">
                                     </div>
                                     <div class="col">
                                         <label for="">Nama ibu</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama" id="">
+                                            name="nm_ibu" id="">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <a style="margin-top:0px;" class="btn bg-gradient-secondary btn-sm rounded-0"
+                                            href="#">
+                                            {{ trans('Cancel') }}
+                                        </a>
+                                        <input type="submit" value="Submit"
+                                            class="btn bg-gradient-primary rounded-0 btn-sm">
                                     </div>
                                 </div>
                             </div>
