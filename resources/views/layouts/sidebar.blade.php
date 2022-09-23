@@ -1,16 +1,28 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-danger elevation-4">
 
+<<<<<<< HEAD
     <a href="/dashboard" class="brand-link">
         <img src="assets/admin/dist/img/icon.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">SiODe</span>
+=======
+    <a href="index3.html" class="brand-link">
+        <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+            class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">AdminLTE 3</span>
+>>>>>>> e56f72ae3c335f8bd6eddb18223371f03ab7e171
     </a>
 
     <div class="sidebar">
 
         <div class="user-panel mt-1 pb-1 mb-1 d-flex">
             <div class="image">
+<<<<<<< HEAD
                 <img src="assets/admin/dist/img/logo.png" class="img-circle elevation-2" alt="User Image">
+=======
+                <img src="https://adminlte.io/themes/v3/dist/img/user2-160x160.jpg" class="img-circle elevation-2"
+                    alt="User Image">
+>>>>>>> e56f72ae3c335f8bd6eddb18223371f03ab7e171
             </div>
             <div class="info">
                 <a href="#" class="d-block">Desa Cisoka</a>
@@ -43,9 +55,10 @@
                     </a>
                 </li>
                 {{-- <li class="nav-item @yield('info')"> --}}
-                <li class="nav-item {{request()->is(['wilayahadministratif','identitas']) || request()->is(['wilayahadministratif/*','identitas/*'])? 'menu-open' : ''}}">
+                <li
+                    class="nav-item {{ request()->is(['wilayahadministratif', 'identitas']) || request()->is(['wilayahadministratif/*', 'identitas/*']) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-solid fa-circle-info"></i>
+                        <i class="nav-icon fas fa-solid fa-circle-info text-danger"></i>
                         <p>
                             {{ trans('Info Desa') }}
                             <i class="right fas fa-angle-left"></i>
@@ -60,8 +73,14 @@
                         </li>
                         {{-- <li class="nav-item {{request()->is('wilayahadministratif') ||request()->is('wilayahadministratif/*')? 'menu=open':''}}"> --}}
                         <li class="nav-item">
+<<<<<<< HEAD
                             <a href="wilayahadministratif" class="nav-link {{request()->is('wilayahadministratif') ||request()->is('wilayahadministratif/*')? 'active':'text-yellow'}}">
                                 <i class="far fa-circle nav-icon"></i>
+=======
+                            <a href="wilayahadministratif"
+                                class="nav-link {{ request()->is('wilayahadministratif') || request()->is('wilayahadministratif/*') ? 'active' : '' }}">
+                                <i class="far fa-address-card"></i>
+>>>>>>> e56f72ae3c335f8bd6eddb18223371f03ab7e171
                                 <p>Wilayah Administratif</p>
                             </a>
                         </li>
