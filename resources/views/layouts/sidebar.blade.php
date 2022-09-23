@@ -73,14 +73,8 @@
                         </li>
                         {{-- <li class="nav-item {{request()->is('wilayahadministratif') ||request()->is('wilayahadministratif/*')? 'menu=open':''}}"> --}}
                         <li class="nav-item">
-<<<<<<< HEAD
                             <a href="wilayahadministratif" class="nav-link {{request()->is('wilayahadministratif') ||request()->is('wilayahadministratif/*')? 'active':'text-yellow'}}">
                                 <i class="far fa-circle nav-icon"></i>
-=======
-                            <a href="wilayahadministratif"
-                                class="nav-link {{ request()->is('wilayahadministratif') || request()->is('wilayahadministratif/*') ? 'active' : '' }}">
-                                <i class="far fa-address-card"></i>
->>>>>>> e56f72ae3c335f8bd6eddb18223371f03ab7e171
                                 <p>Wilayah Administratif</p>
                             </a>
                         </li>
