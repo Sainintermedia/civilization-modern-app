@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PopulationController;
+use App\Http\Controllers\Bukuadminsitrasidesa;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,9 @@ Route::get('/statusdesa', function () {
 Route::get('/lembagadesa', function () {
     return view('backend.info_desa.lembaga_desa.index');
 });
-
+Route::get('/bukuadministrasidesaumum', function () {
+    return view('backend.buku_administrasi_desa.umum.index');
+});
 
 // Route::group(['middleware' => ['auth'], 'prefix' => 'wjk', 'as' => 'wjk.'], function () {
 
