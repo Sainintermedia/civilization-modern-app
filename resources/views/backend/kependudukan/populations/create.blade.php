@@ -6,7 +6,7 @@
 @section('content')
     <div class="container-fluid p-0">
         <div class="wrapper">
-            <form method="POST" action="{{ route('populations.store') }}" enctype="multipart/form-data" autocomplete="off">
+            <form method="POST" action="{!! route('populations.store') !!}" enctype="multipart/form-data" autocomplete="off">
                 @csrf
                 <div class="row">
                     <div class='col-sm-12'>
@@ -42,8 +42,8 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <label for="">No Kartu Keluarga</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0" name="no_kk"
-                                            id="">
+                                        <input type="number" class="form-control form-control-sm rounded-0" name="no_kk"
+                                            id="no_kk">
                                     </div>
                                 </div>
                                 <br>
@@ -89,7 +89,7 @@
                                     </div>
                                     <div class="col">
                                         <label for="">Kode Pos</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0" name="kodepos"
+                                        <input type="number" class="form-control form-control-sm rounded-0" name="kodepos"
                                             id="">
                                     </div>
                                 </div>
@@ -130,8 +130,8 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <label for="">No Induk Keluarga (NIK)</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="no_nik" id="">
+                                        <input type="number" class="form-control form-control-sm rounded-0"
+                                            name="no_nik" id="no_nik">
                                     </div>
                                     <div class="col">
                                         <label for="">Nama Lengkap</label>
@@ -195,8 +195,8 @@
                                     </div>
                                     <div class="col">
                                         <label for="">Tanggal Perkawinan</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="tgl_perkawinan" id="">
+                                        <input type="date" class="form-control form-control-sm rounded-0"
+                                            name="tgl_perkawinan" id="tgl_perkawinan">
                                     </div>
                                     <div class="col">
                                         <label for="">Hubungan Dalam Keluarga</label>
@@ -220,13 +220,13 @@
                                     </div>
                                     <div class="col">
                                         <label for="">No Paspor</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="np_paspor" id="">
+                                        <input type="number" class="form-control form-control-sm rounded-0"
+                                            name="np_paspor" id="np_paspor">
                                     </div>
                                     <div class="col">
                                         <label for="">No Kitap</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="no_kitap" id="">
+                                        <input type="number" class="form-control form-control-sm rounded-0"
+                                            name="no_kitap" id="no_kitap">
                                     </div>
                                 </div>
                                 <br>
@@ -271,11 +271,11 @@
 
 @endsection
 @section('styles')
-    <script>
+    {{-- <script>
         input[type = "text"] {
             width: 200 px;
         }
-    </script>
+    </script> --}}
 @endsection
 
 @section('javas')
