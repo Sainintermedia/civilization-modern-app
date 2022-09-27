@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FamillyController;
 use App\Http\Controllers\Bukuadminsitrasidesa;
 use App\Http\Controllers\PopulationController;
 use App\Http\Controllers\DependantDropdownController;
@@ -45,7 +46,4 @@ Route::get('/bukuadministrasidesaumum', function () {
 // });
 
 Route::resource('/populations', PopulationController::class);
-Route::get('/provinces', [DependantDropdownController::class, 'provinces'])->name('provinces');
-Route::get('/cities', [DependantDropdownController::class, 'cities'])->name('cities');
-Route::get('/districts', [DependantDropdownController::class, 'districts'])->name('districts');
-Route::get('/villages', [DependantDropdownController::class, 'villages'])->name('villages');
+Route::resource('/famillies', FamillyController::class);
