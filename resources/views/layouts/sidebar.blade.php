@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-danger elevation-4">
+<aside class="main-sidebar sidebar-dark-danger elevation-4 text-sm">
 
     <a href="/dashboard" class="brand-link">
         <img src="assets/admin/dist/img/icon.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -54,14 +54,16 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="identitas" class="nav-link {{request()->is('identitas') ||request()->is('identitas/*')? 'active':'text-yellow'}}">
+                            <a href="identitas"
+                                class="nav-link {{ request()->is('identitas') || request()->is('identitas/*') ? 'active' : 'text-yellow' }}">
                                 <i class="far fa-circle nav-icon text-red"></i>
                                 <p>Identitas Desa</p>
                             </a>
                         </li>
                         {{-- <li class="nav-item {{request()->is('wilayahadministratif') ||request()->is('wilayahadministratif/*')? 'menu=open':''}}"> --}}
                         <li class="nav-item">
-                            <a href="wilayahadministratif" class="nav-link {{request()->is('wilayahadministratif') ||request()->is('wilayahadministratif/*')? 'active':'text-yellow'}}">
+                            <a href="wilayahadministratif"
+                                class="nav-link {{ request()->is('wilayahadministratif') || request()->is('wilayahadministratif/*') ? 'active' : 'text-yellow' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Wilayah Administratif</p>
                             </a>
@@ -145,7 +147,8 @@
                         </li>
                     </ul>
                 </li>
-                <li  class="nav-item {{ request()->is(['bukuadministrasidesaumum']) || request()->is(['bukuadministrasidesaumum']) ? 'menu-open' : '' }}">
+                <li
+                    class="nav-item {{ request()->is(['bukuadministrasidesaumum']) || request()->is(['bukuadministrasidesaumum']) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book text-success"></i>
                         <p>
@@ -155,7 +158,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="bukuadministrasidesaumum" class="nav-link {{request()->is('bukuadministrasidesaumum') ||request()->is('bukuadministrasidesaumum/*')? 'active':''}}">
+                            <a href="bukuadministrasidesaumum"
+                                class="nav-link {{ request()->is('bukuadministrasidesaumum') || request()->is('bukuadministrasidesaumum/*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Administrasi Umum</p>
                             </a>
@@ -249,7 +253,7 @@
                             </a>
                         </li>
                     </ul>
-                    
+
                 </li>
                 <li class="nav-header">Admin</li>
                 <li class="nav-item">
@@ -268,7 +272,7 @@
                             </a>
                         </li>
                     </ul>
-                    
+
                 </li>
             </ul>
         </nav>

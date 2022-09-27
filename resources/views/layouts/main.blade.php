@@ -3,13 +3,12 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Desa | @yield('title')</title>
+
     @include('layouts.style')
     @yield('styles')
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed text-sm">
+<body class="sidebar-closed sidebar-mini-xs">
     <div class="wrapper">
 
         @include('layouts.navbar')
@@ -59,8 +58,8 @@
 
 
 
-@include('layouts.javascript')
-@yield('javas')
+    @include('layouts.javascript')
+    @yield('javas')
 </body>
 
 </html>
