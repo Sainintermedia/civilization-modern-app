@@ -8,17 +8,6 @@ use App\Http\Controllers\PopulationController;
 use App\Http\Controllers\PemerintahandesaController;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -43,13 +32,6 @@ Route::get('/bukuadministrasidesaumum', function () {
 });
 
 Route::get('/pemerintahandesa', [PemerintahandesaController::class, 'index'])->name('pemerintahandesa.index');
-//Route::get('/provinces', [DependantDropdownController::class, 'provinces'])->name('provinces');
-// Route::group(['middleware' => ['auth'], 'prefix' => 'wjk', 'as' => 'wjk.'], function () {
-
-// });
 
 Route::resource('/populations', PopulationController::class);
-// Route::get('/provinces', [DependantDropdownController::class, 'provinces'])->name('provinces');
-// Route::get('/cities', [DependantDropdownController::class, 'cities'])->name('cities');
-// Route::get('/districts', [DependantDropdownController::class, 'districts'])->name('districts');
-// Route::get('/villages', [DependantDropdownController::class, 'villages'])->name('villages');
+Route::resource('/famillies', FamillyController::class);
