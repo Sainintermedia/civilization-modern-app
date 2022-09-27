@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Bukuadminsitrasidesa;
 use App\Http\Controllers\PopulationController;
-use App\Http\Controllers\DependantDropdownController;
+// use App\Http\Controllers\DependantDropdownController;
+use App\Http\Controllers\PemerintahandesaController;
 
 
 /*
@@ -40,12 +41,14 @@ Route::get('/bukuadministrasidesaumum', function () {
     return view('backend.buku_administrasi_desa.umum.index');
 });
 
+Route::get('/pemerintahandesa', [PemerintahandesaController::class, 'index'])->name('pemerintahandesa.index');
+//Route::get('/provinces', [DependantDropdownController::class, 'provinces'])->name('provinces');
 // Route::group(['middleware' => ['auth'], 'prefix' => 'wjk', 'as' => 'wjk.'], function () {
 
 // });
 
 Route::resource('/populations', PopulationController::class);
-Route::get('/provinces', [DependantDropdownController::class, 'provinces'])->name('provinces');
-Route::get('/cities', [DependantDropdownController::class, 'cities'])->name('cities');
-Route::get('/districts', [DependantDropdownController::class, 'districts'])->name('districts');
-Route::get('/villages', [DependantDropdownController::class, 'villages'])->name('villages');
+// Route::get('/provinces', [DependantDropdownController::class, 'provinces'])->name('provinces');
+// Route::get('/cities', [DependantDropdownController::class, 'cities'])->name('cities');
+// Route::get('/districts', [DependantDropdownController::class, 'districts'])->name('districts');
+// Route::get('/villages', [DependantDropdownController::class, 'villages'])->name('villages');
