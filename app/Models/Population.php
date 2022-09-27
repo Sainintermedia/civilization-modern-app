@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\PopulationSub;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Population extends Model
 {
@@ -22,5 +23,11 @@ class Population extends Model
         'kabkot',
         'provinsi',
     ];
+
+
+    public function populationsubs()
+    {
+        return $this->hasMany(PopulationSub::class, 'no_kk_id');
+    }
 
 }

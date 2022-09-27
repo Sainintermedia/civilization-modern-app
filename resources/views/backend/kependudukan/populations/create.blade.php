@@ -1,8 +1,6 @@
 @extends('layouts.main')
-@section('title', 'Identitas Desa')
-@section('breadcrumb', 'Identitas Desa')
-@section('identitas', 'active')
-@section('info', 'show')
+@section('title', 'Kartu keluarga')
+@section('breadcrumb', 'Kartu keluarga')
 @section('content')
     <div class="container-fluid p-0">
         <div class="wrapper">
@@ -21,8 +19,8 @@
                             <div class="card-body text-sm">
                                 {{-- <img class="penduduk" id="foto"
                                 src="https://berputar.opendesa.id/assets/images/pengguna/kuser.png" alt="Foto Penduduk"> --}}
-                                <br />
-                                <div class="input-group input-group-sm text-center">
+                                <br>
+                                {{--  <div class="input-group input-group-sm text-center">
                                     <input type="file" class="hidden" id="file" name="foto">
                                     <input type="text" class="hidden" id="file_path" name="foto">
                                     <input type="hidden" name="old_foto" id="old_foto" value="">
@@ -32,7 +30,8 @@
                                         <button type="button" class="btn btn-danger btn-block btn-flat btn-mb-5"
                                             onclick="kamera();"><i class="fa fa-camera"></i> Kamera</button>
                                     </span>
-                                </div>
+                                </div>  --}}
+                                <h3>Input Kartu keluarga</h3>
                             </div>
                         </div>
                     </div>
@@ -43,7 +42,7 @@
                                     <div class="col-6">
                                         <label for="">No Kartu Keluarga</label>
                                         <input type="number" class="form-control form-control-sm rounded-0" name="no_kk"
-                                            id="no_kk">
+                                            id="no_kk" required>
                                     </div>
                                 </div>
                                 <br>
@@ -55,10 +54,36 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="col">
+                                        <label for="">Provinsi</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="provinsi"
+                                            id="" required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Kabupaten / Kota</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="kabkot"
+                                            id="" required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="">Kecamatan</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0"
+                                            name="kecamatan" id="" required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Desa</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="desa"
+                                            id="" required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
                                     <div class="col-4">
                                         <label for="">Dusun / Kampung</label>
                                         <input type="text" class="form-control form-control-sm rounded-0" name="kp"
-                                            id="">
+                                            id="" required>
                                     </div>
                                     <div class="col-4">
                                         <div class="row">
@@ -66,7 +91,7 @@
                                                 <label for="">Rt</label>
                                                 <select name="rt"
                                                     class="form-select form-control form-control-sm rounded-0"
-                                                    aria-label="Default select example">
+                                                    name="rt" required>
                                                     <option selected>Open</option>
                                                     <option value="001">001</option>
                                                     <option value="002">002</option>
@@ -79,7 +104,7 @@
                                                 <label for="">Rw</label>
                                                 <select name="rw"
                                                     class="form-select form-control form-control-sm rounded-0"
-                                                    aria-label="Default select example">
+                                                    name="rw" required>
                                                     <option selected>Open</option>
                                                     <option value="001">001</option>
                                                     <option value="002">002</option>
@@ -90,33 +115,7 @@
                                     <div class="col">
                                         <label for="">Kode Pos</label>
                                         <input type="number" class="form-control form-control-sm rounded-0" name="kodepos"
-                                            id="">
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col">
-                                        <label for="">Desa</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0" name="desa"
-                                            id="">
-                                    </div>
-                                    <div class="col">
-                                        <label for="">Kecamatan</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="kecamatan" id="">
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col">
-                                        <label for="">Kabupaten / Kota</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0" name="kabkot"
-                                            id="">
-                                    </div>
-                                    <div class="col">
-                                        <label for="">Provinsi</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="provinsi" id="">
+                                            id="" required>
                                     </div>
                                 </div>
                                 <br>
@@ -130,52 +129,83 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <label for="">No Induk Keluarga (NIK)</label>
-                                        <input type="number" class="form-control form-control-sm rounded-0"
-                                            name="no_nik" id="no_nik">
+                                        <input type="number" class="form-control form-control-sm rounded-0" name="no_nik"
+                                            id="no_nik" required>
                                     </div>
                                     <div class="col">
                                         <label for="">Nama Lengkap</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nama_kk" id="">
+                                            name="nama_kk" id="" required>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col">
+                                        <label for="">Jenis Kelamin</label>
+                                        <select class="form-control select2 rounded-0" style="width: 100%;"
+                                            name="jenkel" id="" required>
+                                            <option value="" hidden>Pilih Jenis Kelamin</option>
+                                            @foreach ($sexes as $sex)
+                                                <option value="{!! $sex->id !!}">{!! $sex->nama !!}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col">
                                         <label for="">Tempat Lahir</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="tmpt_lahir" id="">
+                                            name="tmpt_lahir" id="" required>
                                     </div>
                                     <div class="col">
                                         <label for="">Tanggal Lahir</label>
                                         <input type="date" class="form-control form-control-sm rounded-0"
-                                            name="tgl_lahir" id="">
+                                            name="tgl_lahir" id="" required>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Agama</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="agama" id="">
+                                        <select class="form-control select2 rounded-0" style="width: 100%;"
+                                            name="agama" id="" required>
+                                            <option value="" hidden>Pilih Agama</option>
+                                            @foreach ($religions as $religion)
+                                                <option value="{!! $religion->id !!}">{!! $religion->nama !!}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="col">
                                         <label for="">Pendidikan</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="pendidikan" id="">
+                                        <select class="form-control select2 rounded-0" style="width: 100%;"
+                                            name="pendidikan" id=""required>
+                                            <option value="" hidden>Pilih Pendidikan</option>
+                                            @foreach ($educations as $education)
+                                                <option value="{!! $education->id !!}">{!! $education->nama !!}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Jenis Pekerjaan</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="jns_pekerjaan" id="">
+                                        <select class="form-control select2 rounded-0" style="width: 100%;"
+                                            name="jns_pekerjaan" id="" required>
+                                            <option value="" hidden>Pilih Pekerjaan</option>
+                                            @foreach ($works as $work)
+                                                <option value="{!! $work->id !!}">{!! $work->nama !!}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="col">
                                         <label for="">Golongan Darah</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="gol_darah" id="">
+                                        <select class="form-control select2 rounded-0" style="width: 100%;"
+                                            name="gol_darah" id="" required>
+                                            <option value="" hidden>Pilih Gol. Darah</option>
+                                            @foreach ($bloods as $blood)
+                                                <option value="{!! $blood->id !!}">{!! $blood->nama !!}
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <br>
@@ -190,18 +220,30 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Status Perkawinan</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="sts_perkawinan" id="">
+                                        <select class="form-control select2 rounded-0" style="width: 100%;"
+                                            name="sts_perkawinan" id="" required>
+                                            <option value="" hidden>Pilih Status Perkawinan</option>
+                                            @foreach ($marries as $marry)
+                                                <option value="{!! $marry->id !!}">{!! $marry->nama !!}
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="col">
                                         <label for="">Tanggal Perkawinan</label>
                                         <input type="date" class="form-control form-control-sm rounded-0"
-                                            name="tgl_perkawinan" id="tgl_perkawinan">
+                                            name="tgl_perkawinan" id="tgl_perkawinan" required>
                                     </div>
                                     <div class="col">
                                         <label for="">Hubungan Dalam Keluarga</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="sts_hub_kel" id="">
+                                        <select class="form-control select2 rounded-0" style="width: 100%;"
+                                            name="sts_hub_kel" id="" required>
+                                            <option value="" hidden>Pilih Hubungan</option>
+                                            @foreach ($relations as $ralation)
+                                                <option value="{!! $ralation->id !!}">{!! $ralation->nama !!}
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <br>
@@ -215,8 +257,14 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Kewarganegaraan</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="kwn" id="">
+                                        <select class="form-control select2 rounded-0" style="width: 100%;"
+                                            name="kwn" id="" required>
+                                            <option value="" hidden>Pilih Kewarganegaraan</option>
+                                            @foreach ($citizens as $citizen)
+                                                <option value="{!! $citizen->id !!}">{!! $citizen->nama !!}
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="col">
                                         <label for="">No Paspor</label>
@@ -241,12 +289,12 @@
                                     <div class="col">
                                         <label for="">Nama Ayah</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nm_ayah" id="">
+                                            name="nm_ayah" id="" required>
                                     </div>
                                     <div class="col">
                                         <label for="">Nama ibu</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nm_ibu" id="">
+                                            name="nm_ibu" id="" required>
                                     </div>
                                 </div>
                                 <br>
@@ -271,13 +319,21 @@
 
 @endsection
 @section('styles')
-    {{-- <script>
-        input[type = "text"] {
-            width: 200 px;
-        }
-    </script> --}}
+
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet"
+        href="https://adminlte.io/themes/v3/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+
 @endsection
 
 @section('javas')
+
+    <script src="https://adminlte.io/themes/v3/plugins/select2/js/select2.full.min.js"></script>
+    <script>
+        $(function() {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+        });
+    </script>
 
 @endsection
