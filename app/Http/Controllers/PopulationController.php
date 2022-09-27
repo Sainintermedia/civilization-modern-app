@@ -19,14 +19,16 @@ class PopulationController extends Controller
 {
     public function index()
     {
-        $populations = Population::select('id','no_kk')
-        ->with('populationsubs:id,no_kk_id,no_nik,nama,jenkel,tmpt_lahir,tgl_lahir')
+        $famillies = PopulationSub::select('id','no_nik','nama','jenkel','tmpt_lahir','tgl_lahir')
+        ->orderBy('nama','ASC')
         ->get();
-        return view('backend.kependudukan.populations.index', compact('populations'));
+        // return $famillies;
+        return view('backend.kependudukan.populations.index', compact('famillies'));
     }
 
     public function create()
     {
+        $famillies = Population::all();
         $works = Work::select('id', 'nama')
             ->orderBy('nama', 'ASC')
             ->get();
@@ -51,30 +53,16 @@ class PopulationController extends Controller
         $sexes = Sex::select('id', 'nama')
             ->orderBy('id', 'ASC')
             ->get();
-        return view('backend.kependudukan.populations.create', compact('works', 'marries', 'relations', 'bloods', 'educations', 'religions', 'citizens', 'sexes'));
+        return view('backend.kependudukan.populations.create', compact('works', 'marries', 'relations', 'bloods', 'educations', 'religions', 'citizens', 'sexes','famillies'));
     }
 
     public function store(Request $request)
     {
         $data = $request->all();
-        // return $data;
-        $population = new Population();
-        $population->no_kk = $data['no_kk'];
-        $population->nama_kk = $data['nama_kk'];
-        $population->kp = $data['kp'];
-        $population->rt = $data['rt'];
-        $population->rw = $data['rw'];
-        $population->kodepos = $data['kodepos'];
-        $population->desa = $data['desa'];
-        $population->kecamatan = $data['kecamatan'];
-        $population->kabkot = $data['kabkot'];
-        $population->provinsi = $data['provinsi'];
-        $population->save();
-        $insertidpopulation = $population->id;
 
         $populationsub = new PopulationSub();
         $populationsub->no_nik = $data['no_nik'];
-        $populationsub->no_kk_id = $insertidpopulation;
+        $populationsub->no_kk_id = $data['no_kk_id'];
         $populationsub->nama = $data['nama_kk'];
         $populationsub->tmpt_lahir = $data['tmpt_lahir'];
         $populationsub->tgl_lahir = $data['tgl_lahir'];
@@ -92,7 +80,6 @@ class PopulationController extends Controller
         $populationsub->nm_ibu = $data['nm_ibu'];
         $populationsub->jenkel = $data['jenkel'];
         $populationsub->save();
-        $insertidpopulationsub = $populationsub->id;
 
         return redirect()
             ->route('populations.index')

@@ -2,16 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sex;
+use App\Models\Work;
+use App\Models\Blood;
+use App\Models\Marry;
+use App\Models\Citizen;
+use App\Models\Relation;
+use App\Models\Religion;
+use App\Models\Education;
+use App\Models\Population;
 use Illuminate\Http\Request;
+use App\Models\PopulationSub;
+use App\Http\Controllers\Controller;
 
 class FamillyController extends Controller
 {
     public function index()
     {
         $populations = Population::select('id','no_kk')
-        ->with('populationsubs:id,no_kk_id,no_nik,nama,jenkel,tmpt_lahir,tgl_lahir')
         ->get();
-        return view('backend.kependudukan.populations.index', compact('populations'));
+        return view('backend.kependudukan.keluarga.index', compact('populations'));
     }
 
     public function create()
@@ -40,7 +50,7 @@ class FamillyController extends Controller
         $sexes = Sex::select('id', 'nama')
             ->orderBy('id', 'ASC')
             ->get();
-        return view('backend.kependudukan.populations.create', compact('works', 'marries', 'relations', 'bloods', 'educations', 'religions', 'citizens', 'sexes'));
+        return view('backend.kependudukan.keluarga.create', compact('works', 'marries', 'relations', 'bloods', 'educations', 'religions', 'citizens', 'sexes'));
     }
 
     public function store(Request $request)
@@ -84,7 +94,7 @@ class FamillyController extends Controller
         $insertidpopulationsub = $populationsub->id;
 
         return redirect()
-            ->route('populations.index')
+            ->route('keluarga.index')
             ->with('store', 'Data saved successfully');
     }
 

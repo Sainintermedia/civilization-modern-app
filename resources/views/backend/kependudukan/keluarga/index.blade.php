@@ -15,6 +15,7 @@
                 <thead>
                     <tr class="text-center">
                         <th style="width: 10px">No</th>
+                        <th>No KK</th>
                         <th>No Nik</th>
                         <th>Nama</th>
                         <th>Jenis Kelamin</th>
@@ -24,14 +25,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($famillies as $value => $familly)
+                    @forelse ($populations as $value => $population)
                         <tr class="text-center">
                             <td>{!! $loop->iteration !!}</td>
-                            <td>{!! $familly->no_nik !!}</td>
-                            <td>{!! $familly->nama !!}</td>
-                            <td>{!! $familly->jenkel == 1 ? 'LAKI-LAKI' : 'PEREMPUAN' !!}</td>
-                            <td>{!! $familly->tmpt_lahir !!}</td>
-                            <td>{!! $familly->tgl_lahir !!}</td>
+                            <td>{!! $population->no_kk !!}</td>
+                            @foreach ($population->populationsubs as $value)
+                                <td>{!! $value->no_nik !!}</td>
+                                <td>{!! $value->nama !!}</td>
+                                <td>{!! $value->jenkel == 1 ? 'LAKI-LAKI' : 'PEREMPUAN' !!}</td>
+                                <td>{!! $value->tmpt_lahir !!}</td>
+                                <td>{!! $value->tgl_lahir !!}</td>
+                            @endforeach
                             <td>S</td>
                         </tr>
                     @empty
@@ -41,6 +45,7 @@
                 <tfoot>
                     <tr class="text-center">
                         <th>No</th>
+                        <th>No KK</th>
                         <th>No Nik</th>
                         <th>Nama</th>
                         <th>Jenis Kelamin</th>

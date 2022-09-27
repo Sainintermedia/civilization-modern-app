@@ -92,9 +92,9 @@
                     </ul>
                 </li>
                 <li
-                    class="nav-item {{ request()->is(['populations']) || request()->is(['populations/*']) ? 'menu-open' : '' }}">
+                    class="nav-item {{ request()->is(['populations', 'famillies']) || request()->is(['populations/*', 'famillies/*']) ? 'menu-open' : '' }}">
                     <a href="#"
-                        class="nav-link {{ request()->is(['populations']) || request()->is(['populations/*']) ? 'active' : '' }}">
+                        class="nav-link {{ request()->is(['populations', 'famillies']) || request()->is(['populations/*', 'famillies/*']) ? 'active' : '' }}">
                         <i class="nav-icon fas fa-solid fa-people-group text-info"></i>
                         <p>
                             Kependudukan
@@ -110,7 +110,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../index2.html" class="nav-link">
+                            <a href="{!! route('famillies.index') !!}"
+                                class="nav-link {{ request()->is(['famillies']) || request()->is(['famillies/*']) ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon text-green"></i>
                                 <p>Keluarga</p>
                             </a>

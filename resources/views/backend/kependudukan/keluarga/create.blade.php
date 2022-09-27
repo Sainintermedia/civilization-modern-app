@@ -39,36 +39,93 @@
                         <div class="card card-dark card-outline rounded-0">
                             <div class="card-body text-sm">
                                 <div class="row">
+                                    <div class="col-6">
+                                        <label for="">No Kartu Keluarga</label>
+                                        <input type="number" class="form-control form-control-sm rounded-0" name="no_kk"
+                                            id="no_kk" required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
                                     <div class='col-sm-12'>
                                         <div class="form-group bg-primary" style="padding:10px">
-                                            <strong>Identitas Penduduk :</strong>
+                                            <strong>Alamat Kartu Keluarga :</strong>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <div class="form-group">
-                                            <label for="inputName">No Kartu Keluarga</label>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" name="no_kk" id="no_kk"
-                                                    class="form-control form-control-sm rounded-0"
-                                                    aria-describedby="button-addon2" required="required" value=""
-                                                    readonly required>
-                                                <button class="btn btn-outline-secondary btn-sm rounded-0" type="button"
-                                                    id="button-addon2" data-toggle="modal" data-target="#modalFamillies"><i
-                                                        class="fas fa-search"></i></button>
+                                        <label for="">Provinsi</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="provinsi"
+                                            id="" required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Kabupaten / Kota</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="kabkot"
+                                            id="" required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="">Kecamatan</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0"
+                                            name="kecamatan" id="" required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Desa</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="desa"
+                                            id="" required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="">Dusun / Kampung</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="kp"
+                                            id="" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="">Rt</label>
+                                                <select name="rt"
+                                                    class="form-select form-control form-control-sm rounded-0"
+                                                    name="rt" required>
+                                                    <option selected>Open</option>
+                                                    <option value="001">001</option>
+                                                    <option value="002">002</option>
+                                                    <option value="003">003</option>
+                                                    <option value="004">004</option>
+                                                    <option value="005">005</option>
+                                                </select>
+                                            </div>
+                                            <div class="col">
+                                                <label for="">Rw</label>
+                                                <select name="rw"
+                                                    class="form-select form-control form-control-sm rounded-0"
+                                                    name="rw" required>
+                                                    <option selected>Open</option>
+                                                    <option value="001">001</option>
+                                                    <option value="002">002</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col">
-                                        <label for="">Nama kepala Keluarga</label>
-                                        <input id="nama_kk" type="text" class="form-control form-control-sm rounded-0"
-                                            required readonly>
+                                        <label for="">Kode Pos</label>
+                                        <input type="number" class="form-control form-control-sm rounded-0" name="kodepos"
+                                            id="" required>
                                     </div>
-                                    <input id="id_kk" type="hidden" class="form-control form-control-sm rounded-0"
-                                        name="no_kk_id" readonly required>
                                 </div>
                                 <br>
+                                <div class="row">
+                                    <div class='col-sm-12'>
+                                        <div class="form-group bg-primary" style="padding:10px">
+                                            <strong>Identitas Kepala keluarga :</strong>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-4">
                                         <label for="">No Induk Keluarga (NIK)</label>
@@ -77,16 +134,16 @@
                                     </div>
                                     <div class="col">
                                         <label for="">Nama Lengkap</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0" name="nama_kk"
-                                            id="" required>
+                                        <input type="text" class="form-control form-control-sm rounded-0"
+                                            name="nama_kk" id="" required>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Jenis Kelamin</label>
-                                        <select class="form-control select2 rounded-0" style="width: 100%;" name="jenkel"
-                                            id="" required>
+                                        <select class="form-control select2 rounded-0" style="width: 100%;"
+                                            name="jenkel" id="" required>
                                             <option value="" hidden>Pilih Jenis Kelamin</option>
                                             @foreach ($sexes as $sex)
                                                 <option value="{!! $sex->id !!}">{!! $sex->nama !!}</option>
@@ -108,8 +165,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Agama</label>
-                                        <select class="form-control select2 rounded-0" style="width: 100%;" name="agama"
-                                            id="" required>
+                                        <select class="form-control select2 rounded-0" style="width: 100%;"
+                                            name="agama" id="" required>
                                             <option value="" hidden>Pilih Agama</option>
                                             @foreach ($religions as $religion)
                                                 <option value="{!! $religion->id !!}">{!! $religion->nama !!}</option>
@@ -212,7 +269,7 @@
                                     <div class="col">
                                         <label for="">No Paspor</label>
                                         <input type="number" class="form-control form-control-sm rounded-0"
-                                            name="no_paspor" id="no_paspor">
+                                            name="np_paspor" id="np_paspor">
                                     </div>
                                     <div class="col">
                                         <label for="">No Kitap</label>
@@ -258,52 +315,10 @@
             </form>
         </div>
     </div>
-    <div class="modal fade" id="modalFamillies" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0 text-sm">
-                <div class="modal-header">
-                    <h5 class="modal-title">Data Kepala Keluarga</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table id="exampleFamillies" class="table table-bordered table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="" width="15">No</th>
-                                <th scope="col">No Kartu keluarga</th>
-                                <th scope="col">Nama Kepala Keluarga</th>
-                                <th scope="col" class="text-center">#</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($famillies as $familly)
-                                <tr class="">
-                                    <td class="text-center">{!! $loop->iteration !!}</td>
-                                    <td>{!! $familly->no_kk !!}</td>
-                                    <td>{!! $familly->nama_kk !!}</td>
-                                    <td scope="row" class="text-center" width="15"><button
-                                            class="btnreg btn btn-primary btn-xs text-xs" id="selectFamillies"
-                                            data-no_kk="{!! $familly->no_kk !!}" data-id_kk="{!! $familly->id !!}"
-                                            data-nama_kk="{!! $familly->nama_kk !!}" data-dismiss="modal" </button>Select
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 
 @endsection
 @section('styles')
-    <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') !!}">
-    <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') !!}">
-
 
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/select2/css/select2.min.css">
     <link rel="stylesheet"
@@ -312,10 +327,6 @@
 @endsection
 
 @section('javas')
-    <script src="{!! URL::asset('assets/admin/plugins/datatables/jquery.dataTables.min.js') !!}"></script>
-    <script src="{!! URL::asset('assets/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') !!}"></script>
-    <script src="{!! URL::asset('assets/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js') !!}"></script>
-    <script src="{!! URL::asset('assets/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') !!}"></script>
 
     <script src="https://adminlte.io/themes/v3/plugins/select2/js/select2.full.min.js"></script>
     <script>
@@ -323,27 +334,6 @@
             //Initialize Select2 Elements
             $('.select2').select2()
         });
-    </script>
-    <script>
-        $(function() {
-            $("#exampleFamillies").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $(document).on('click', '#selectFamillies', function() {
-                var id_kk = $(this).data('id_kk');
-                var nama_kk = $(this).data('nama_kk');
-                var no_kk = $(this).data('no_kk');
-                $('#id_kk').val(id_kk);
-                $('#nama_kk').val(nama_kk);
-                $('#no_kk').val(no_kk);
-            })
-        })
     </script>
 
 @endsection
