@@ -20,7 +20,7 @@ class PopulationController extends Controller
     public function index()
     {
         $populations = Population::with('populationsubs')->get();
-        return $populations;
+        return view('backend.kependudukan.populations.index', compact('populations'));
     }
 
     public function create()
@@ -55,7 +55,7 @@ class PopulationController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        return $data;
+        // return $data;
         $population = new Population();
         $population->no_kk = $data['no_kk'];
         $population->nama_kk = $data['nama_kk'];
