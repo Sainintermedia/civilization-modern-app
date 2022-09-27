@@ -2,20 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sex;
-use App\Models\Work;
-use App\Models\Blood;
-use App\Models\Marry;
-use App\Models\Citizen;
-use App\Models\Relation;
-use App\Models\Religion;
-use App\Models\Education;
-use App\Models\Population;
 use Illuminate\Http\Request;
-use App\Models\PopulationSub;
-use App\Http\Controllers\Controller;
 
-class PopulationController extends Controller
+class FamillyController extends Controller
 {
     public function index()
     {
