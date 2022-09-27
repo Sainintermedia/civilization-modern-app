@@ -42,6 +42,7 @@ Route::get('/bukuadministrasidesaumum', function () {
 });
 
 Route::get('/pemerintahandesa', [PemerintahandesaController::class, 'index'])->name('pemerintahandesa.index');
+Route::get('/buku_keputusan_desa', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
 //Route::get('/provinces', [DependantDropdownController::class, 'provinces'])->name('provinces');
 // Route::group(['middleware' => ['auth'], 'prefix' => 'wjk', 'as' => 'wjk.'], function () {
 

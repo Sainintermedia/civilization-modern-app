@@ -34,7 +34,7 @@
                 </li>
                 {{-- <li class="nav-item @yield('info')"> --}}
                 <li
-                    class="nav-item {{ request()->is(['wilayahadministratif', 'identitas' , 'pemerintahdesa']) || request()->is(['wilayahadministratif/*', 'identitas/*', 'pemerintahdesa/*']) ? 'menu-open' : '' }}">
+                    class="nav-item {{ request()->is(['wilayahadministratif', 'identitas' , 'pemerintahandesa','buku_keputusan_desa']) || request()->is(['wilayahadministratif/*', 'identitas/*', 'pemerintahandesa/*','buku_keputusan_desa/*']) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-solid fa-circle-info text-danger"></i>
                         <p>
@@ -60,7 +60,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{!! route('pemerintahandesa.index') !!}"
-                                class="nav-link {{ request()->is(['pemerintahandesa']) || request()->is(['pemerintahandesa/*']) ? 'active' : '' }}">
+                                class="nav-link {{ request()->is(['pemerintahandesa','buku_keputusan_desa']) || request()->is(['pemerintahandesa/*','buku_keputusan_desa/*']) ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon text-yellow"></i>
                                 <p>Pemerintahan Desa</p>
                             </a>

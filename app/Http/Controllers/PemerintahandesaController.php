@@ -17,7 +17,10 @@ class PemerintahandesaController extends Controller
         return view('backend.info_desa.pemerintahandesa.index');
         //('backend.info_desa.pemerintahan_desa.index');
     }
-
+    public function buku_keputusan_desa()
+    {
+        return view('backend.info_desa.pemerintahandesa.buku_keputusan_desa');
+    }
     /**
      * Show the form for creating a new resource.
      *

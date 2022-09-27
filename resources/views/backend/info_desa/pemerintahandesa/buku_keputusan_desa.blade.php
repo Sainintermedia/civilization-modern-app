@@ -13,8 +13,8 @@
 
  
                           <div class="list-group" id="list-tab" role="tablist">
-                            <a class="list-group-item list-group-item-action active" href="/pemerintahandesa">Buku Peraturan Desa</a>
-                            <a class="list-group-item list-group-item-action" href="/buku_keputusan_desa" >Buku Keputusan Desa</a>
+                            <a class="list-group-item list-group-item-action" href="/pemerintahandesa">Buku Peraturan Desa</a>
+                            <a class="list-group-item list-group-item-action active"  href="/buku_keputusan_desa" role="tab" >Buku Keputusan Desa</a>
                             {{-- <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Messages</a>
                             <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Settings</a> --}}
                           </div>
