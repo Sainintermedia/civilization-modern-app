@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-danger elevation-4 text-sm">
+<aside class="main-sidebar sidebar-dark-warning elevation-4 text-sm">
 
     <a href="/dashboard" class="brand-link">
         <img src="{!! URL::asset('assets/admin/dist/img/icon.png') !!}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -92,7 +92,8 @@
                 </li>
                 <li
                     class="nav-item {{ request()->is(['populations']) || request()->is(['populations/*']) ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link">
+                    <a href="#"
+                        class="nav-link {{ request()->is(['populations']) || request()->is(['populations/*']) ? 'active' : '' }}">
                         <i class="nav-icon fas fa-solid fa-people-group text-info"></i>
                         <p>
                             Kependudukan
