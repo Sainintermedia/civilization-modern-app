@@ -11,24 +11,27 @@
                 <div class="col-3">
 
 
- 
-                          <div class="list-group" id="list-tab" role="tablist">
-                            <a class="list-group-item list-group-item-action active" href="/pemerintahandesa">Buku Peraturan Desa</a>
-                            <a class="list-group-item list-group-item-action" href="/buku_keputusan_desa" >Buku Keputusan Desa</a>
-                            {{-- <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Messages</a>
+
+                    <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action active" href="/pemerintahandesa">Buku Peraturan
+                            Desa</a>
+                        <a class="list-group-item list-group-item-action" href="/buku_keputusan_desa">Buku Keputusan Desa</a>
+                        {{-- <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Messages</a>
                             <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Settings</a> --}}
-                          </div>
+                    </div>
                 </div>
                 <div class="col-9">
                     <div class="card card-warning card-outline rounded-0 py-0">
                         <div class="card-header py-1">
-                
-                            <a href={!! route('populations.create') !!} type="button" class="card-title btn-sm text-sm rounded-0 bg-gradient-primary"><i
+
+                            <a href={!! route('populations.create') !!} type="button"
+                                class="card-title btn-sm text-sm rounded-0 bg-gradient-primary"><i
                                     class="fa-solid fa-square-plus"></i> Data Penduduk</a>
                         </div>
-                
+
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-hover table-striped rounded-0 text-sm table-sm py-0">
+                            <table id="example1"
+                                class="table table-bordered table-hover table-striped rounded-0 text-sm table-sm py-0">
                                 <thead>
                                     <tr class="text-center">
                                         <th style="width: 10px">No</th>
@@ -42,8 +45,8 @@
                                 </thead>
                                 <tbody>
                                     {{-- @forelse ($populations as $value => $population) --}}
-                                        <tr class="text-center">
-                                            {{-- <td>{!! $loop->iteration !!}</td>
+                                    <tr class="text-center">
+                                        {{-- <td>{!! $loop->iteration !!}</td>
                                             <td>{!! $population->no_kk !!}</td>
                                             @foreach ($population->populationsubs as $value)
                                                 <td>{!! $value->no_nik !!}</td>
@@ -53,17 +56,17 @@
                                                 <td>{!! $value->tgl_lahir !!}</td>
                                             @endforeach
                                             <td>S</td> --}}
-                                            <td>1</td>
-                                            <td>buku desa</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                    
-                                        </tr>
+                                        <td>1</td>
+                                        <td>buku desa</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+
+                                    </tr>
                                     {{-- @empty --}}
-                                        {{-- <h4>tidak  ada data</h4> --}}
+                                    {{-- <h4>tidak  ada data</h4> --}}
                                     {{-- @endforelse --}}
                                 </tbody>
                                 <tfoot>
