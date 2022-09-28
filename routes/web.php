@@ -26,15 +26,9 @@ use App\Http\Controllers\Auth\ChangePasswordController;
 */
 
 Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
 Route::redirect('/', 'admin/home');
-
 Auth::routes(['register' => false]);
 
-// Change Password Routes...
 Route::get('change_password', [ChangePasswordController::class, 'showChangePasswordForm'])->name('auth.change_password');
 Route::patch('change_password', [ChangePasswordController::class, 'changePassword'])->name('auth.change_password');
 
@@ -70,10 +64,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     
     Route::get('/pemerintahandesa', [PemerintahandesaController::class, 'index'])->name('pemerintahandesa.index');
     Route::get('/buku_keputusan_desa', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
-    //Route::get('/provinces', [DependantDropdownController::class, 'provinces'])->name('provinces');
-    // Route::group(['middleware' => ['auth'], 'prefix' => 'wjk', 'as' => 'wjk.'], function () {
-    
-    // });
     
     Route::resource('/populations', PopulationController::class);
     Route::resource('/famillies', FamillyController::class);
