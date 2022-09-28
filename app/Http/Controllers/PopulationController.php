@@ -82,7 +82,7 @@ class PopulationController extends Controller
         $populationsub->save();
 
         return redirect()
-            ->route('populations.index')
+            ->route('siode.kependudukan.penduduk.index ')
             ->with('store', 'Data saved successfully');
     }
 

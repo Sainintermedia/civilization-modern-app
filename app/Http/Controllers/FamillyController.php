@@ -94,7 +94,7 @@ class FamillyController extends Controller
         $insertidpopulationsub = $populationsub->id;
 
         return redirect()
-            ->route('keluarga.index')
+            ->route('siode.kependudukan.keluarga.index ')
             ->with('store', 'Data saved successfully');
     }
 
