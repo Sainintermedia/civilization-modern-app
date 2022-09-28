@@ -34,6 +34,7 @@
     </div>
 @endsection
 @section('styles')
+@endsection
 
 @section('javas')
 @endsection
