@@ -43,35 +43,24 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('users', UsersController::class);
     Route::delete('users_mass_destroy', [UsersController::class, 'massDestroy'])->name('users.mass_destroy');
 });
+
+
 Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], function () {
 
-    Route::get('/dashboard', function () {
-        return view('dashboard.index');
-    });
-    Route::get('/identitas', function () {
-        return view('backend.info_desa.identitas_desa.index');
-    });
-    Route::get('/wilayahadministratif', function () {
-        return view('backend.info_desa.wilayah_administratif.index');
-    });
-    Route::get('/statusdesa', function () {
-        return view('backend.info_desa.status_desa.index');
-    });
-    Route::get('/lembagadesa', function () {
-        return view('backend.info_desa.lembaga_desa.index');
-    });
-    // Route::get('/bukuadministrasidesaumum', function () {
-    //     return view('backend.buku_administrasi_desa.umum.index')->name('buku.administrasi');
-    // });
+    Route::view('/dashboard', 'backend.info_desa.status_desa.index')->name('dashboard');
+    Route::view('/identitas-desa', 'backend.info_desa.status_desa.index')->name('identitas');
+    Route::view('/wilayah-administratif-desa', 'backend.info_desa.status_desa.index')->name('wilayahadministratif');
+    Route::view('/status-desa', 'backend.info_desa.status_desa.index')->name('statusdesa');
+    Route::view('/lembaga-desa', 'backend.info_desa.lembaga_desa.index')->name('lembagadesa');
     Route::view('/buku-administrasi-desa-umum', 'backend.buku_administrasi_desa.umum.index')->name('bukuadministrasidesaumum');
     
     Route::get('/pemerintahandesa', [PemerintahandesaController::class, 'index'])->name('pemerintahandesa.index');
-    Route::get('/buku_keputusan_desa', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
+    Route::get('/buku-keputusan-desa', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
         // Route::get('/surat_keterangan_usaha', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
-    Route::get('/surat_keterangan_usaha', function () {
+    Route::get('/surat-keterangan-usaha', function () {
         return view('backend.dokumen_surat.surat_keterangan_usaha');
     });
-    Route::get('/surat_keterangan_tidak_mampu', function () {
+    Route::get('/surat-keterangan-tidak-mampu', function () {
         return view('backend.dokumen_surat.surat_keterangan_tidak_mampu');
     });
 
