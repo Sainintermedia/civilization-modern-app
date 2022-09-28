@@ -65,7 +65,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     Route::get('/pemerintahandesa', [PemerintahandesaController::class, 'index'])->name('pemerintahandesa.index');
     Route::get('/buku_keputusan_desa', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
     
-    Route::resource('/populations', PopulationController::class);
-    Route::resource('/famillies', FamillyController::class);
+    
+    Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
+        Route::resource('/penduduk', PopulationController::class);
+        Route::resource('/keluarga', FamillyController::class);
 
+    });
 });

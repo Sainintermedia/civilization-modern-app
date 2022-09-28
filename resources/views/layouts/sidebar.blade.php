@@ -92,9 +92,9 @@
                     </ul>
                 </li>
                 <li
-                    class="nav-item {{ request()->is(['populations', 'famillies']) || request()->is(['populations/*', 'famillies/*']) ? 'menu-open' : '' }}">
+                    class="nav-item {{ request()->is(['siode/kependudukan/penduduk', 'siode/kependudukan/keluarga']) || request()->is(['siode/kependudukan/penduduk/*', 'siode/kependudukan/keluarga/*']) ? 'menu-open' : '' }}">
                     <a href="#"
-                        class="nav-link {{ request()->is(['populations', 'famillies']) || request()->is(['populations/*', 'famillies/*']) ? 'active' : '' }}">
+                        class="nav-link {{ request()->is(['siode/kependudukan/penduduk', 'siode/kependudukan/keluarga']) || request()->is(['siode/kependudukan/penduduk/*', 'siode/kependudukan/keluarga/*']) ? 'active' : '' }}">
                         <i class="nav-icon fas fa-solid fa-people-group text-info"></i>
                         <p>
                             Kependudukan
@@ -103,15 +103,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{!! route('siode.populations.index') !!}"
-                                class="nav-link {{ request()->is(['populations']) || request()->is(['populations/*']) ? 'active' : '' }}">
+                            <a href="{!! route('siode.kependudukan.penduduk.index') !!}"
+                                class="nav-link {{ request()->is(['siode/kependudukan/penduduk']) || request()->is(['siode/kependudukan/penduduk/*']) ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon text-blue"></i>
                                 <p>Penduduk</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{!! route('siode.famillies.index') !!}"
-                                class="nav-link {{ request()->is(['famillies']) || request()->is(['famillies/*']) ? 'active' : '' }}">
+                            <a href="{!! route('siode.kependudukan.keluarga.index') !!}"
+                                class="nav-link {{ request()->is(['siode/kependudukan/keluarga']) || request()->is(['siode/kependudukan/keluarga/*']) ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon text-green"></i>
                                 <p>Keluarga</p>
                             </a>
@@ -314,24 +314,7 @@
                         </ul>
                     </li>
                 @endcan
-                {{-- <li class="nav-item">
-                    <a href="{{ route('auth.change_password') }}"
-                        class="nav-link {{ request()->is('change_password') || request()->is('change_password') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-fw fa-key">
 
-                        </i>
-                        <p>Change password</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link"
-                        onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
-                        <i class="nav-icon fas fa-fw fa-sign-out-alt">
-
-                        </i>
-                        <p>{{ trans('global.logout') }}</p>
-                    </a>
-                </li> --}}
             </ul>
         </nav>
 

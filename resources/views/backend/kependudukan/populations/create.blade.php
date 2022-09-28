@@ -4,7 +4,7 @@
 @section('content')
     <div class="container-fluid p-0">
         <div class="wrapper">
-            <form method="POST" action="{!! route('siode.populations.store') !!}" enctype="multipart/form-data" autocomplete="off">
+            <form method="POST" action="{!! route('siode.kependudukan.penduduk.store') !!}" enctype="multipart/form-data" autocomplete="off">
                 @csrf
                 <div class="row">
                     <div class='col-sm-12'>
