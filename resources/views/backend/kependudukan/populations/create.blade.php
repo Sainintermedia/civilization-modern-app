@@ -1,6 +1,6 @@
 @extends('layouts.main')
-@section('title', 'Kartu keluarga')
-@section('breadcrumb', 'Kartu keluarga')
+@section('title', 'Anggota Keluarga')
+@section('breadcrumb', 'Anggota Keluarga')
 @section('content')
     <div class="container-fluid p-0">
         <div class="wrapper">
@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class='col-sm-12'>
                         <div class="form-group bg-primary" style="padding:10px">
-                            <strong>DATA KEPALA KELUARGA :</strong>
+                            <strong>DATA ANGGOTA KELUARGA :</strong>
                         </div>
                     </div>
                 </div>
@@ -52,10 +52,11 @@
                                             <div class="input-group input-group-sm">
                                                 <input type="text" name="no_kk" id="no_kk"
                                                     class="form-control form-control-sm rounded-0"
-                                                    aria-describedby="button-addon2" required="required" value=""
-                                                    readonly required>
-                                                <button class="btn btn-outline-secondary btn-sm rounded-0" type="button"
-                                                    id="button-addon2" data-toggle="modal" data-target="#modalFamillies"><i
+                                                    style="text-transform:uppercase" aria-describedby="button-addon2"
+                                                    required="required" value="" readonly required>
+                                                <button class="btn btn-outline-secondary btn-sm rounded-0"
+                                                    style="text-transform:uppercase" type="button" id="button-addon2"
+                                                    data-toggle="modal" data-target="#modalFamillies"><i
                                                         class="fas fa-search"></i></button>
                                             </div>
                                         </div>
@@ -63,30 +64,30 @@
                                     <div class="col">
                                         <label for="">Nama kepala Keluarga</label>
                                         <input id="nama_kk" type="text" class="form-control form-control-sm rounded-0"
-                                            required readonly>
+                                            style="text-transform:uppercase" required readonly>
                                     </div>
                                     <input id="id_kk" type="hidden" class="form-control form-control-sm rounded-0"
-                                        name="no_kk_id" readonly required>
+                                        style="text-transform:uppercase" name="no_kk_id" readonly required>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col-4">
                                         <label for="">No Induk Keluarga (NIK)</label>
-                                        <input type="number" class="form-control form-control-sm rounded-0" name="no_nik"
-                                            id="no_nik" required>
+                                        <input type="number" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="no_nik" id="no_nik" required>
                                     </div>
                                     <div class="col">
                                         <label for="">Nama Lengkap</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0" name="nama_kk"
-                                            id="" required>
+                                        <input type="text" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="nama_kk" id="" required>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Jenis Kelamin</label>
-                                        <select class="form-control select2 rounded-0" style="width: 100%;" name="jenkel"
-                                            id="" required>
+                                        <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                            style="width: 100%;" name="jenkel" id="" required>
                                             <option value="" hidden>Pilih Jenis Kelamin</option>
                                             @foreach ($sexes as $sex)
                                                 <option value="{!! $sex->id !!}">{!! $sex->nama !!}</option>
@@ -96,20 +97,20 @@
                                     <div class="col">
                                         <label for="">Tempat Lahir</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="tmpt_lahir" id="" required>
+                                            style="text-transform:uppercase" name="tmpt_lahir" id="" required>
                                     </div>
                                     <div class="col">
                                         <label for="">Tanggal Lahir</label>
                                         <input type="date" class="form-control form-control-sm rounded-0"
-                                            name="tgl_lahir" id="" required>
+                                            style="text-transform:uppercase" name="tgl_lahir" id="" required>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Agama</label>
-                                        <select class="form-control select2 rounded-0" style="width: 100%;" name="agama"
-                                            id="" required>
+                                        <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                            style="width: 100%;" name="agama" id="" required>
                                             <option value="" hidden>Pilih Agama</option>
                                             @foreach ($religions as $religion)
                                                 <option value="{!! $religion->id !!}">{!! $religion->nama !!}</option>
@@ -118,8 +119,8 @@
                                     </div>
                                     <div class="col">
                                         <label for="">Pendidikan</label>
-                                        <select class="form-control select2 rounded-0" style="width: 100%;"
-                                            name="pendidikan" id=""required>
+                                        <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                            style="width: 100%;" name="pendidikan" id=""required>
                                             <option value="" hidden>Pilih Pendidikan</option>
                                             @foreach ($educations as $education)
                                                 <option value="{!! $education->id !!}">{!! $education->nama !!}</option>
@@ -131,8 +132,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Jenis Pekerjaan</label>
-                                        <select class="form-control select2 rounded-0" style="width: 100%;"
-                                            name="jns_pekerjaan" id="" required>
+                                        <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                            style="width: 100%;" name="jns_pekerjaan" id="" required>
                                             <option value="" hidden>Pilih Pekerjaan</option>
                                             @foreach ($works as $work)
                                                 <option value="{!! $work->id !!}">{!! $work->nama !!}</option>
@@ -141,8 +142,8 @@
                                     </div>
                                     <div class="col">
                                         <label for="">Golongan Darah</label>
-                                        <select class="form-control select2 rounded-0" style="width: 100%;"
-                                            name="gol_darah" id="" required>
+                                        <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                            style="width: 100%;" name="gol_darah" id="" required>
                                             <option value="" hidden>Pilih Gol. Darah</option>
                                             @foreach ($bloods as $blood)
                                                 <option value="{!! $blood->id !!}">{!! $blood->nama !!}
@@ -163,8 +164,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Status Perkawinan</label>
-                                        <select class="form-control select2 rounded-0" style="width: 100%;"
-                                            name="sts_perkawinan" id="" required>
+                                        <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                            style="width: 100%;" name="sts_perkawinan" id="" required>
                                             <option value="" hidden>Pilih Status Perkawinan</option>
                                             @foreach ($marries as $marry)
                                                 <option value="{!! $marry->id !!}">{!! $marry->nama !!}
@@ -175,12 +176,13 @@
                                     <div class="col">
                                         <label for="">Tanggal Perkawinan</label>
                                         <input type="date" class="form-control form-control-sm rounded-0"
-                                            name="tgl_perkawinan" id="tgl_perkawinan" required>
+                                            style="text-transform:uppercase" name="tgl_perkawinan" id="tgl_perkawinan"
+                                            required>
                                     </div>
                                     <div class="col">
                                         <label for="">Hubungan Dalam Keluarga</label>
-                                        <select class="form-control select2 rounded-0" style="width: 100%;"
-                                            name="sts_hub_kel" id="" required>
+                                        <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                            style="width: 100%;" name="sts_hub_kel" id="" required>
                                             <option value="" hidden>Pilih Hubungan</option>
                                             @foreach ($relations as $ralation)
                                                 <option value="{!! $ralation->id !!}">{!! $ralation->nama !!}
@@ -200,8 +202,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Kewarganegaraan</label>
-                                        <select class="form-control select2 rounded-0" style="width: 100%;"
-                                            name="kwn" id="" required>
+                                        <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                            style="width: 100%;" name="kwn" id="" required>
                                             <option value="" hidden>Pilih Kewarganegaraan</option>
                                             @foreach ($citizens as $citizen)
                                                 <option value="{!! $citizen->id !!}">{!! $citizen->nama !!}
@@ -212,12 +214,12 @@
                                     <div class="col">
                                         <label for="">No Paspor</label>
                                         <input type="number" class="form-control form-control-sm rounded-0"
-                                            name="no_paspor" id="no_paspor">
+                                            style="text-transform:uppercase" name="no_paspor" id="no_paspor">
                                     </div>
                                     <div class="col">
                                         <label for="">No Kitap</label>
                                         <input type="number" class="form-control form-control-sm rounded-0"
-                                            name="no_kitap" id="no_kitap">
+                                            style="text-transform:uppercase" name="no_kitap" id="no_kitap">
                                     </div>
                                 </div>
                                 <br>
@@ -232,19 +234,19 @@
                                     <div class="col">
                                         <label for="">Nama Ayah</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nm_ayah" id="" required>
+                                            style="text-transform:uppercase" name="nm_ayah" id="" required>
                                     </div>
                                     <div class="col">
                                         <label for="">Nama ibu</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            name="nm_ibu" id="" required>
+                                            style="text-transform:uppercase" name="nm_ibu" id="" required>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col-6">
                                         <a style="margin-top:0px;" class="btn bg-gradient-secondary btn-sm rounded-0"
-                                            href="#">
+                                            style="text-transform:uppercase" href="#">
                                             {{ trans('Cancel') }}
                                         </a>
                                         <input type="submit" value="Submit"
