@@ -8,7 +8,7 @@
                 @csrf
                 <div class="row">
                     <div class='col-sm-12'>
-                        <div class="form-group bg-primary" style="padding:10px">
+                        <div class="form-group bg-secondary" style="padding:2px">
                             <strong>DATA ANGGOTA KELUARGA :</strong>
                         </div>
                     </div>
@@ -40,8 +40,8 @@
                             <div class="card-body text-sm">
                                 <div class="row">
                                     <div class='col-sm-12'>
-                                        <div class="form-group bg-primary" style="padding:10px">
-                                            <strong>Identitas Penduduk :</strong>
+                                        <div class="form-group bg-secondary" style="padding:2px">
+                                            <strong>IDENTITAS PENDUDUK :</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -155,8 +155,8 @@
                                 <br>
                                 <div class="row">
                                     <div class='col-sm-12'>
-                                        <div class="form-group bg-primary" style="padding:10px">
-                                            <strong>Status perkawinan :</strong>
+                                        <div class="form-group bg-secondary" style="padding:2px">
+                                            <strong>STATUS PERKAWINAN :</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -194,8 +194,8 @@
                                 <br>
                                 <div class="row">
                                     <div class='col-sm-12'>
-                                        <div class="form-group bg-primary" style="padding:10px">
-                                            <strong>Kewarganegaraan :</strong>
+                                        <div class="form-group bg-secondary" style="padding:2px">
+                                            <strong>KEWARGANEGARAAN :</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -225,8 +225,8 @@
                                 <br>
                                 <div class="row">
                                     <div class='col-sm-12'>
-                                        <div class="form-group bg-primary" style="padding:10px">
-                                            <strong>Nama Orang tua :</strong>
+                                        <div class="form-group bg-secondary" style="padding:2px">
+                                            <strong>NAMA ORANG TUA :</strong>
                                         </div>
                                     </div>
                                 </div>
