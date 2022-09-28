@@ -44,19 +44,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::delete('users_mass_destroy', [UsersController::class, 'massDestroy'])->name('users.mass_destroy');
 });
 
-
 Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], function () {
-
     Route::view('/dashboard', 'backend.info_desa.status_desa.index')->name('dashboard');
-    Route::view('/identitas-desa', 'backend.info_desa.status_desa.index')->name('identitas');
-    Route::view('/wilayah-administratif-desa', 'backend.info_desa.status_desa.index')->name('wilayahadministratif');
-    Route::view('/status-desa', 'backend.info_desa.status_desa.index')->name('statusdesa');
-    Route::view('/lembaga-desa', 'backend.info_desa.lembaga_desa.index')->name('lembagadesa');
     Route::view('/buku-administrasi-desa-umum', 'backend.buku_administrasi_desa.umum.index')->name('bukuadministrasidesaumum');
-    
+
     Route::get('/pemerintahandesa', [PemerintahandesaController::class, 'index'])->name('pemerintahandesa.index');
     Route::get('/buku-keputusan-desa', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
-        // Route::get('/surat_keterangan_usaha', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
+    // Route::get('/surat_keterangan_usaha', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
     Route::get('/surat-keterangan-usaha', function () {
         return view('backend.dokumen_surat.surat_keterangan_usaha');
     });
@@ -64,10 +58,19 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         return view('backend.dokumen_surat.surat_keterangan_tidak_mampu');
     });
 
-    
+    Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
+
+        Route::view('/identitas-desa', 'backend.info_desa.status_desa.index')->name('identitas');
+        Route::view('/wilayah-administratif-desa', 'backend.info_desa.status_desa.index')->name('wilayahadministratif');
+        Route::view('/status-desa', 'backend.info_desa.status_desa.index')->name('statusdesa');
+        Route::view('/lembaga-desa', 'backend.info_desa.lembaga_desa.index')->name('lembagadesa');
+
+    });
+
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
+
         Route::resource('/penduduk', PopulationController::class);
         Route::resource('/keluarga', FamillyController::class);
-    
+        
     });
 });

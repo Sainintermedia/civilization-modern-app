@@ -34,9 +34,9 @@
                 </li>
                 {{-- <li class="nav-item @yield('info')"> --}}
                 <li
-                    class="nav-item {{ request()->is(['siode/wilayah-administratif-desa', 'siode/identitas-desa', 'pemerintahandesa', 'siode/status-desa', 'siode/lembaga-desa']) || request()->is(['siode/wilayah-administratif-desa/*', 'siode/identitas-desa/*', 'siode/status-desa/*', 'pemerintahandesa/*', 'siode/lembaga-desa/*']) ? 'menu-open' : '' }}">
+                    class="nav-item {{ request()->is(['siode/info-desa/wilayah-administratif-desa', 'siode/info-desa/identitas-desa', 'pemerintahandesa', 'siode/info-desa/status-desa', 'siode/info-desa/lembaga-desa']) || request()->is(['siode/info-desa/wilayah-administratif-desa/*', 'siode/info-desa/identitas-desa/*', 'siode/info-desa/status-desa/*', 'pemerintahandesa/*', 'siode/info-desa/lembaga-desa/*']) ? 'menu-open' : '' }}">
                     <a href="#"
-                        class="nav-link {{ request()->is(['siode/wilayah-administratif-desa', 'siode/identitas-desa', 'pemerintahandesa', 'siode/status-desa', 'siode/lembaga-desa']) || request()->is(['siode/wilayah-administratif-desa/*', 'siode/identitas-desa/*', 'siode/status-desa/*', 'pemerintahandesa/*', 'siode/lembaga-desa/*']) ? 'active' : '' }}">
+                        class="nav-link {{ request()->is(['siode/info-desa/wilayah-administratif-desa', 'siode/info-desa/identitas-desa', 'pemerintahandesa', 'siode/info-desa/status-desa', 'siode/info-desa/lembaga-desa']) || request()->is(['siode/info-desa/wilayah-administratif-desa/*', 'siode/info-desa/identitas-desa/*', 'siode/info-desa/status-desa/*', 'pemerintahandesa/*', 'siode/info-desa/lembaga-desa/*']) ? 'active' : '' }}">
                         <i class="nav-icon fas fa-solid fa-circle-info text-danger"></i>
                         <p>
                             {{ trans('Info Desa') }}
@@ -45,15 +45,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{!! route('siode.identitas') !!}"
-                                class="nav-link {{ request()->is('siode/identitas-desa') || request()->is('siode/identitas-desa/*') ? 'active' : '' }}">
+                            <a href="{!! route('siode.infodesa.identitas') !!}"
+                                class="nav-link {{ request()->is('siode/info-desa/identitas-desa') || request()->is('siode/identitas-desa/*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon text-red"></i>
                                 <p>Identitas Desa</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{!! route('siode.wilayahadministratif') !!}"
-                                class="nav-link {{ request()->is('siode/wilayah-administratif-desa') || request()->is('siode/wilayah-administratif-desa/*') ? 'active' : '' }}">
+                            <a href="{!! route('siode.infodesa.wilayahadministratif') !!}"
+                                class="nav-link {{ request()->is('siode/info-desa/wilayah-administratif-desa') || request()->is('siode/wilayah-administratif-desa/*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Wilayah Administratif</p>
                             </a>
@@ -66,15 +66,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{!! route('siode.statusdesa') !!}"
-                                class="nav-link {{ request()->is(['siode/status-desa']) || request()->is(['siode/status-desa/*']) ? 'active' : '' }}">
+                            <a href="{!! route('siode.infodesa.statusdesa') !!}"
+                                class="nav-link {{ request()->is(['siode/info-desa/status-desa']) || request()->is(['siode/status-desa/*']) ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon text-green"></i>
                                 <p>Status Desa</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{!! route('siode.lembagadesa') !!}"
-                                class="nav-link {{ request()->is(['siode/lembaga-desa']) || request()->is(['siode/lembaga-desa/*']) ? 'active' : '' }}">
+                            <a href="{!! route('siode.infodesa.lembagadesa') !!}"
+                                class="nav-link {{ request()->is(['siode/info-desa/lembaga-desa']) || request()->is(['siode/lembaga-desa/*']) ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon text-blue"></i>
                                 <p>Lembaga Desa</p>
                             </a>
