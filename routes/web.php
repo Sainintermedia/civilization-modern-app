@@ -71,6 +71,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
 
         Route::resource('/penduduk', PopulationController::class);
         Route::resource('/keluarga', FamillyController::class);
+        Route::view('/kk', 'backend.kependudukan.keluarga.view')->name('kk');
         
     });
 });
