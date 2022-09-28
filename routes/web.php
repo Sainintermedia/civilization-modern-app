@@ -6,6 +6,8 @@ use App\Http\Controllers\Bukuadminsitrasidesa;
 use App\Http\Controllers\PopulationController;
 // use App\Http\Controllers\DependantDropdownController;
 use App\Http\Controllers\PemerintahandesaController;
+use App\Http\Controllers\SuratController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
@@ -64,7 +66,14 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     
     Route::get('/pemerintahandesa', [PemerintahandesaController::class, 'index'])->name('pemerintahandesa.index');
     Route::get('/buku_keputusan_desa', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
-    
+        // Route::get('/surat_keterangan_usaha', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
+    Route::get('/surat_keterangan_usaha', function () {
+        return view('backend.dokumen_surat.surat_keterangan_usaha');
+    });
+    Route::get('/surat_keterangan_tidak_mampu', function () {
+        return view('backend.dokumen_surat.surat_keterangan_tidak_mampu');
+    });
+
     
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
         Route::resource('/penduduk', PopulationController::class);
