@@ -38,5 +38,13 @@ Route::get('/buku_keputusan_desa', [PemerintahandesaController::class, 'buku_kep
 
 // });
 
+// Route::get('/surat_keterangan_usaha', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
+Route::get('/surat_keterangan_usaha', function () {
+    return view('backend.dokumen_surat.surat_keterangan_usaha');
+});
+Route::get('/surat_keterangan_tidak_mampu', function () {
+    return view('backend.dokumen_surat.surat_keterangan_tidak_mampu');
+});
+
 Route::resource('/populations', PopulationController::class);
 Route::resource('/famillies', FamillyController::class);
