@@ -143,8 +143,9 @@
                     </ul>
                 </li>
                 <li
-                    class="nav-item {{ request()->is(['bukuadministrasidesaumum']) || request()->is(['bukuadministrasidesaumum']) ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link">
+                    class="nav-item {{ request()->is(['siode/buku-administrasi-desa-umum']) || request()->is(['siode/buku-administrasi-desa-umum']) ? 'menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link {{ request()->is(['siode/buku-administrasi-desa-umum']) || request()->is(['siode/buku-administrasi-desa-umum']) ? 'active' : '' }}">
                         <i class="nav-icon fas fa-book text-success"></i>
                         <p>
                             Buku Administrasi Desa
@@ -153,8 +154,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="bukuadministrasidesaumum"
-                                class="nav-link {{ request()->is('bukuadministrasidesaumum') || request()->is('bukuadministrasidesaumum/*') ? 'active' : '' }}">
+                            <a href="{!! route('siode.bukuadministrasidesaumum') !!}"
+                                class="nav-link {{ request()->is('siode/buku-administrasi-desa-umum') || request()->is('siode/buku-administrasi-desa-umum/*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Administrasi Umum</p>
                             </a>

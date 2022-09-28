@@ -63,7 +63,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     // Route::get('/bukuadministrasidesaumum', function () {
     //     return view('backend.buku_administrasi_desa.umum.index')->name('buku.administrasi');
     // });
-    Route::view('/bukuadministrasidesaumum', 'backend.buku_administrasi_desa.umum.index')->name('bukuadministrasidesaumum');
+    Route::view('/buku-administrasi-desa-umum', 'backend.buku_administrasi_desa.umum.index')->name('bukuadministrasidesaumum');
     
     Route::get('/pemerintahandesa', [PemerintahandesaController::class, 'index'])->name('pemerintahandesa.index');
     Route::get('/buku_keputusan_desa', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
