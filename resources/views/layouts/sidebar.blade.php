@@ -108,7 +108,7 @@
                             </a>
                         </li>
 
-                        {{--  <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="../../index3.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Layanan Pelanggan</p>
@@ -119,7 +119,7 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Pendaftaran Kerjasama</p>
                             </a>
-                        </li>   --}}
+                        </li> --}}
                     </ul>
                 </li>
                 <li class="nav-item {!! request()->is(['siode/kependudukan/penduduk', 'siode/kependudukan/keluarga']) ||
@@ -346,12 +346,13 @@
                                     <p>{!! trans('cruds.user.title') !!}</p>
                                 </a>
                             </li>
-                            {{--  <li class="nav-item">
-                                <a href="{!! route('admin.audits.index') !!}" class="nav-link {!! request()->is('admin/audits') || request()->is('admin/audits/*') ? 'active' : '' !!}">
-                                    <i class="fa-solid fa-user-secret nav-icon"></i>
-                                    <p>Audits</p>
-                                </a>
-                            </li>  --}}
+                            {{-- <li class="nav-item">
+                            <a href="{!! route('admin.audits.index') !!}"
+                                class="nav-link {!! request()->is('admin/audits') || request()->is('admin/audits/*') ? 'active' : '' !!}">
+                                <i class="fa-solid fa-user-secret nav-icon"></i>
+                                <p>Audits</p>
+                            </a>
+                        </li> --}}
                         </ul>
                     </li>
                 @endcan
