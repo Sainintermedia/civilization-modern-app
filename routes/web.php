@@ -76,9 +76,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     });
 
     
-});
-Route::group(['middleware' => ['auth'], 'prefix' => 'siode/kependudukan', 'as' => 'siode.kependudukan.'], function () {
-    Route::resource('/penduduk', PopulationController::class);
-    Route::resource('/keluarga', FamillyController::class);
-
+    Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
+        Route::resource('/penduduk', PopulationController::class);
+        Route::resource('/keluarga', FamillyController::class);
+    
+    });
 });
