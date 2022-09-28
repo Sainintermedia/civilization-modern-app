@@ -6,7 +6,7 @@
     <div class="card card-warning card-outline rounded-0 py-0">
         <div class="card-header py-1">
 
-            <a href={!! route('populations.create') !!} type="button" class="card-title btn-sm text-sm rounded-0 bg-gradient-primary"><i
+            <a href={!! route('siode.kependudukan.penduduk.create') !!} type="button" class="card-title btn-sm text-sm rounded-0 bg-gradient-primary"><i
                     class="fa-solid fa-square-plus"></i> Data Penduduk</a>
         </div>
 

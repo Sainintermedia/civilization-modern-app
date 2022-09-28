@@ -3,8 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Database\Seeders\RoleSeed;
+use Database\Seeders\UserSeed;
 use Illuminate\Database\Seeder;
 use Database\Seeders\AgeTableSeeder;
+use Database\Seeders\PermissionSeed;
 use Database\Seeders\SexTableSeeder;
 use Database\Seeders\WorkTableSeeder;
 use Database\Seeders\BloodTableSeeder;
@@ -32,6 +35,9 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
+            PermissionSeed::class,
+            RoleSeed::class,
+            UserSeed::class,
             DisabilitiesTableSeeder::class,
             BloodTableSeeder::class,
             ReligionTableSeeder::class,
@@ -48,6 +54,7 @@ class DatabaseSeeder extends Seeder
             ChronicPainTableSeeder::class,
             BaseStatusTableSeeder::class,
             KtpStatusTableSeeder::class,
+
 
         ]);
     }

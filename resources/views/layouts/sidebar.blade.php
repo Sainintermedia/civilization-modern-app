@@ -34,7 +34,7 @@
                 </li>
                 {{-- <li class="nav-item @yield('info')"> --}}
                 <li
-                    class="nav-item {{ request()->is(['wilayahadministratif', 'identitas' , 'pemerintahandesa','buku_keputusan_desa']) || request()->is(['wilayahadministratif/*', 'identitas/*', 'pemerintahandesa/*','buku_keputusan_desa/*']) ? 'menu-open' : '' }}">
+                    class="nav-item {{ request()->is(['wilayahadministratif', 'identitas', 'pemerintahandesa', 'buku_keputusan_desa']) || request()->is(['wilayahadministratif/*', 'identitas/*', 'pemerintahandesa/*', 'buku_keputusan_desa/*']) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-solid fa-circle-info text-danger"></i>
                         <p>
@@ -59,8 +59,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{!! route('pemerintahandesa.index') !!}"
-                                class="nav-link {{ request()->is(['pemerintahandesa','buku_keputusan_desa']) || request()->is(['pemerintahandesa/*','buku_keputusan_desa/*']) ? 'active' : '' }}">
+                            <a href="{!! route('siode.pemerintahandesa.index') !!}"
+                                class="nav-link {{ request()->is(['pemerintahandesa', 'buku_keputusan_desa']) || request()->is(['pemerintahandesa/*', 'buku_keputusan_desa/*']) ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon text-yellow"></i>
                                 <p>Pemerintahan Desa</p>
                             </a>
@@ -92,9 +92,9 @@
                     </ul>
                 </li>
                 <li
-                    class="nav-item {{ request()->is(['populations', 'famillies']) || request()->is(['populations/*', 'famillies/*']) ? 'menu-open' : '' }}">
+                    class="nav-item {{ request()->is(['siode/kependudukan/penduduk', 'siode/kependudukan/keluarga']) || request()->is(['siode/kependudukan/penduduk/*', 'siode/kependudukan/keluarga/*']) ? 'menu-open' : '' }}">
                     <a href="#"
-                        class="nav-link {{ request()->is(['populations', 'famillies']) || request()->is(['populations/*', 'famillies/*']) ? 'active' : '' }}">
+                        class="nav-link {{ request()->is(['siode/kependudukan/penduduk', 'siode/kependudukan/keluarga']) || request()->is(['siode/kependudukan/penduduk/*', 'siode/kependudukan/keluarga/*']) ? 'active' : '' }}">
                         <i class="nav-icon fas fa-solid fa-people-group text-info"></i>
                         <p>
                             Kependudukan
@@ -103,15 +103,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{!! route('populations.index') !!}"
-                                class="nav-link {{ request()->is(['populations']) || request()->is(['populations/*']) ? 'active' : '' }}">
+                            <a href="{!! route('siode.kependudukan.penduduk.index') !!}"
+                                class="nav-link {{ request()->is(['siode/kependudukan/penduduk']) || request()->is(['siode/kependudukan/penduduk/*']) ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon text-blue"></i>
                                 <p>Penduduk</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{!! route('famillies.index') !!}"
-                                class="nav-link {{ request()->is(['famillies']) || request()->is(['famillies/*']) ? 'active' : '' }}">
+                            <a href="{!! route('siode.kependudukan.keluarga.index') !!}"
+                                class="nav-link {{ request()->is(['siode/kependudukan/keluarga']) || request()->is(['siode/kependudukan/keluarga/*']) ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon text-green"></i>
                                 <p>Keluarga</p>
                             </a>
@@ -269,6 +269,52 @@
                     </ul>
 
                 </li>
+                @can('users_manage')
+                    <li class="nav-header">Super Admin</li>
+                    <li class="nav-item {!! request()->is(['admin/users', 'admin/roles', 'admin/permissions', 'admin/audits']) ||
+                    request()->is(['admin/users/*', 'admin/roles/*', 'admin/permissions/*', 'admin/audits/*'])
+                        ? 'menu-open'
+                        : '' !!}">
+                        <a href="#" class="nav-link {!! request()->is(['admin/users', 'admin/roles', 'admin/permissions', 'admin/audits/']) ||
+                        request()->is(['admin/users/*', 'admin/roles/*', 'admin/permissions/*', 'admin/audits/*'])
+                            ? 'active'
+                            : '' !!}">
+                            <i class="nav-icon fa-fw fas fa-users text-danger"></i>
+                            <p>
+                                {!! trans('cruds.userManagement.title') !!}
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{!! route('admin.permissions.index') !!}" class="nav-link {!! request()->is('admin/permissions') || request()->is('admin/permissions/*') ? 'active' : '' !!}">
+                                    <i class="fa-fw fas fa-unlock-alt nav-icon">
+                                    </i>
+                                    <p>{!! trans('cruds.permission.title') !!}</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{!! route('admin.roles.index') !!}" class="nav-link {!! request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' !!}">
+                                    <i class="fa-fw fas fa-briefcase nav-icon"></i>
+                                    <p>{!! trans('cruds.role.title') !!}</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{!! route('admin.users.index') !!}" class="nav-link {!! request()->is('admin/users') || request()->is('admin/users/*') ? 'active' : '' !!}">
+                                    <i class="fa-fw fas fa-user nav-icon"></i>
+                                    <p>{!! trans('cruds.user.title') !!}</p>
+                                </a>
+                            </li>
+                            {{--  <li class="nav-item">
+                                <a href="{!! route('admin.audits.index') !!}" class="nav-link {!! request()->is('admin/audits') || request()->is('admin/audits/*') ? 'active' : '' !!}">
+                                    <i class="fa-solid fa-user-secret nav-icon"></i>
+                                    <p>Audits</p>
+                                </a>
+                            </li>  --}}
+                        </ul>
+                    </li>
+                @endcan
+
             </ul>
         </nav>
 
