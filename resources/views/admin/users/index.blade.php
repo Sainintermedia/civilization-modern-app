@@ -96,7 +96,7 @@
 @section('styles')
 
 @section('javas')
-    <script>
+    {{--  <script>
         $(function() {
             let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
             @can('users_manage')
@@ -149,5 +149,5 @@
                     .columns.adjust();
             });
         })
-    </script>
+    </script>  --}}
 @endsection

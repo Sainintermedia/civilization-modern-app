@@ -81,7 +81,7 @@
 @section('styles')
 
 @section('javas')
-    <script>
+    {{--  <script>
         $(function() {
             let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
             let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
@@ -132,5 +132,5 @@
                     .columns.adjust();
             });
         })
-    </script>
+    </script>  --}}
 @endsection
