@@ -9,11 +9,11 @@
             <div class="subpage">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card rounded-0">
+                        <div class="card rounded-0 text-sm">
                             <div class="card-body">
 
-                                <h1 class="text-center"><strong>SALINAN KARTU KELUARGA</strong></h1>
-                                <h2 class="text-center"><strong>No. 3603024587690003</strong></h2>
+                                <h4 class="text-center"><strong>SALINAN KARTU KELUARGA</strong></h4>
+                                <h5 class="text-center"><strong>No. 3603024587690003</strong></h5>
 
                                 <div class="row">
                                     <div class="col-1"></div>
@@ -180,7 +180,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="table-responsive">
+                                <div class="table">
                                     <div class="row">
                                         <div class="col-2 text-center">&nbsp;</div>
                                         <div class="col-7 text-center">&nbsp;</div>
@@ -217,36 +217,12 @@
                                         <div class="col-6 text-center">&nbsp;</div>
                                         <div class="col-3 text-center">SUPARDI RUSTAM</div>
                                     </div>
-                                    <table class="table no-border">
-                                        <tbody>
-                                            <tr>
-                                                <td width="25%">&nbsp;</td>
-                                                <td width="50%">&nbsp;</td>
-                                                <td class="text-center">Senggig1 , 28 September
-                                                    2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center"></td>
-                                                <td>&nbsp;</td>
-                                                <td class="text-center"> </td>
-                                            </tr>
-                                            <tr>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
-                                            </tr>
-                                            <tr>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">AHLUL</td>
-                                                <td width="50%">&nbsp;</td>
-                                                <td class="text-center"> </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <div class="row">
+                                        <div class="col-2 text-center">&nbsp;</div>
+                                        <div class="col-8 text-center">&nbsp;</div>
+                                        <div class="col-2 text-center">&nbsp;</div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
