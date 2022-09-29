@@ -1,227 +1,234 @@
-@extends('layouts.main')
+@extends('layouts.main2')
 @section('title', 'Dashboard')
 @section('breadcrumb', 'Dashboard')
 @section('content')
 
 
-    <form id="mainform" name="mainform" method="post">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box box-info">
-                    <div class="box-header with-border">
-                        <a href="https://berputar.opendesa.id/keluarga/cetak_kk/1"
-                            class="btn btn-social btn-flat bg-purple btn-sm visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block"
-                            target="_blank"><i class="fa fa-print "></i> Cetak</a>
-                        <a href="https://berputar.opendesa.id/keluarga/doc_kk/1"
-                            class="btn btn-social btn-flat bg-navy btn-sm visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block"
-                            target="_blank"><i class="fa fa-download"></i> Unduh</a>
-                        <a href="https://berputar.opendesa.id/keluarga/anggota/1/1/1"
-                            class="btn btn-social btn-flat btn-info btn-sm btn-sm visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block"
-                            title="Rincian Anggota Keluarga">
-                            <i class="fa fa-arrow-circle-left"></i>Kembali Ke Daftar Anggota Keluarga
-                        </a>
-                        <a href="https://berputar.opendesa.id/keluarga"
-                            class="btn btn-social btn-flat btn-info btn-sm btn-sm visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block"
-                            title="Kembali Ke Daftar Anggota Keluarga">
-                            <i class="fa fa-arrow-circle-left"></i>Kembali Ke Daftar Keluarga
-                        </a>
-                    </div>
-                    <div class="box-header">
-                        <h3 class="text-center"><strong>SALINAN KARTU KELUARGA</strong></h3>
-                        <h5 class="text-center"><strong>No. 5201140104126994 </strong></h5>
-                    </div>
-                    <div class="box-body">
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">ALAMAT</label>
-                                    <div class="col-sm-8">
-                                        <p class="text-muted">: - MANGSIT</p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">RT/RW</label>
-                                    <div class="col-sm-9">
-                                        <p class="text-muted">: 004 / -</p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">DESA / KELURAHAN</label>
-                                    <div class="col-sm-9">
-                                        <p class="text-muted">: SENGGIG1 </p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">KECAMATAN</label>
-                                    <div class="col-sm-9">
-                                        <p class="text-muted">: BATULAY4R </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <label class="col-sm-5 control-label">KABUPATEN</label>
-                                    <div class="col-sm-7">
-                                        <p class="text-muted">: LOMBOK BART </p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-5 control-label">KODE POS</label>
-                                    <div class="col-sm-7">
-                                        <p class="text-muted">: 83355</p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-5 control-label">PROVINSI</label>
-                                    <div class="col-sm-7">
-                                        <p class="text-muted">: NUSA TENGGARA BARAT</p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-5 control-label">JUMLAH ANGGOTA</label>
-                                    <div class="col-sm-7">
-                                        <p class="text-muted">: 3</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-hover ">
-                                        <thead class="bg-gray disabled color-palette">
+    <div class="book">
+        <div class="page">
+            <div class="subpage">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card rounded-0">
+                            <div class="card-body">
+
+                                <h1 class="text-center"><strong>SALINAN KARTU KELUARGA</strong></h1>
+                                <h2 class="text-center"><strong>No. 3603024587690003</strong></h2>
+
+                                <div class="row">
+                                    <div class="col-1"></div>
+                                    <div class="col-2">
+                                        <table class="table table-borderless table-sm text-sm">
                                             <tr>
-                                                <th class="text-center">No</th>
-                                                <th class="text-center">Nama Lengkap</th>
-                                                <th class="text-center">NIK</th>
-                                                <th class="text-center">Jenis Kelamin</th>
-                                                <th class="text-center">Tempat Lahir</th>
-                                                <th class="text-center">Tanggal Lahir</th>
-                                                <th class="text-center">Agama</th>
-                                                <th class="text-center">Pendidikan</th>
-                                                <th class="text-center">Jenis Pekerjaan</th>
-                                                <th class="text-center">Golongan Darah</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center">1</td>
-                                                <td>AHLUL</td>
-                                                <td>5201142005716996</td>
-                                                <td>LAKI-LAKI</td>
-                                                <td>MANGSIT</td>
-                                                <td>20-05-1970</td>
-                                                <td>ISLAM</td>
-                                                <td>STRATA III</td>
-                                                <td>TUKANG BATU</td>
-                                                <td>TIDAK TAHU</td>
+                                                <td>Nama Kepala Keluarga</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-center">2</td>
-                                                <td>AHMAD HABIB</td>
-                                                <td>5201140301916995</td>
-                                                <td>LAKI-LAKI</td>
-                                                <td>MANGSIT</td>
-                                                <td>03-01-1990</td>
-                                                <td>ISLAM</td>
-                                                <td>TAMAT SD / SEDERAJAT</td>
-                                                <td>BELUM/TIDAK BEKERJA</td>
-                                                <td>TIDAK TAHU</td>
+                                                <td>Alamat</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-center">3</td>
-                                                <td>AHMAD ALLIF RIZKI</td>
-                                                <td>5201140706966997</td>
-                                                <td>LAKI-LAKI</td>
-                                                <td>MANGSIT</td>
-                                                <td>07-06-2007</td>
-                                                <td>ISLAM</td>
-                                                <td>TIDAK / BELUM SEKOLAH</td>
-                                                <td>BELUM/TIDAK BEKERJA</td>
-                                                <td>TIDAK TAHU</td>
+                                                <td>RT/RW</td>
                                             </tr>
-                                        </tbody>
-                                    </table>
+                                            <tr>
+                                                <td>Kode Pos</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-4">
+                                        <table class="table table-borderless table-sm text-sm">
+                                            <tr>
+                                                <td>: ARIEF HIDAYAT</td>
+                                            </tr>
+                                            <tr>
+                                                <td>: KP. KALAPA</td>
+                                            </tr>
+                                            <tr>
+                                                <td>: 005/002</td>
+                                            </tr>
+                                            <tr>
+                                                <td>: 15610</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-2">
+                                        <table class="table table-borderless table-sm text-sm">
+                                            <tr>
+                                                <td>Desa/Kelurahan</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Kecamatan</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Kabupaten/Kota</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Provinsi</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-3">
+                                        <table class="table table-borderless table-sm text-sm">
+                                            <tr>
+                                                <td>: PANGKAT</td>
+                                            </tr>
+                                            <tr>
+                                                <td>: JAYANTI</td>
+                                            </tr>
+                                            <tr>
+                                                <td>: TANGERANG</td>
+                                            </tr>
+                                            <tr>
+                                                <td>: BANTEN</td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-hover ">
-                                        <thead class="bg-gray disabled color-palette">
-                                            <tr>
-                                                <th class="text-center">No</th>
-                                                <th class="text-center">Status Perkawinan</th>
-                                                <th class="text-center">Tanggal Perkawinan</th>
-                                                <th class="text-center">Status Hubungan Dalam Keluarga</th>
-                                                <th class="text-center">Kewarganegaraan</th>
-                                                <th class="text-center">No. Paspor</th>
-                                                <th class="text-center">No. KITAS / KITAP</th>
-                                                <th class="text-center">Nama Ayah</th>
-                                                <th class="text-center">Nama Ibu</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center">1</td>
-                                                <td>KAWIN BELUM TERCATAT</td>
-                                                <td class="text-center">-</td>
-                                                <td>KEPALA KELUARGA</td>
-                                                <td>WNI</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>ARFAH</td>
-                                                <td>RAISAH</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">2</td>
-                                                <td>BELUM KAWIN</td>
-                                                <td class="text-center">-</td>
-                                                <td>ANAK</td>
-                                                <td>WNI</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>AHLUL</td>
-                                                <td>RUSDAH</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">3</td>
-                                                <td>BELUM KAWIN</td>
-                                                <td class="text-center">-</td>
-                                                <td>ANAK</td>
-                                                <td>WNI</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>AHLUL</td>
-                                                <td>RUSDAH</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="row">
+                                    <div class="col-12">
+
+                                        <table class="table table-bordered table-sm text-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="2" class="text-center"><br>No</th>
+                                                    <th rowspan="2" class="text-center"><br>Nama Lengkap</th>
+                                                    <th rowspan="2" class="text-center"><br>NIK</th>
+                                                    <th rowspan="2" class="text-center">Jenis<br>Kelamin</th>
+                                                    <th rowspan="2" class="text-center"><br>Tempat Lahir</th>
+                                                    <th rowspan="2" class="text-center">Tanggal<br>Lahir</th>
+                                                    <th rowspan="2" class="text-center"><br>Agama</th>
+                                                    <th rowspan="2" class="text-center"><br>Pendidikan</th>
+                                                    <th rowspan="2" class="text-center"><br>Jenis Pekerjaan</th>
+                                                    <th rowspan="2" class="text-center">Golongan<br>Darah</th>
+                                                </tr>
+                                                <tr>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="text-center">(1)</td>
+                                                    <td class="text-center">(2)</td>
+                                                    <td class="text-center">(3)</td>
+                                                    <td class="text-center">(4)</td>
+                                                    <td class="text-center">(5)</td>
+                                                    <td class="text-center">(6)</td>
+                                                    <td class="text-center">(7)</td>
+                                                    <td class="text-center">(8)</td>
+                                                    <td class="text-center">(9)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td>ARIEF HIDAYAT</td>
+                                                    <td>3603021404970001</td>
+                                                    <td>LAKI-LAKI</td>
+                                                    <td>KUNINGAN</td>
+                                                    <td>14-04-1997</td>
+                                                    <td>ISLAM</td>
+                                                    <td>DIPLOMA IV/STRATA I</td>
+                                                    <td>KARYAWAN SWASTA</td>
+                                                    <td>TIDAK TAHU</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table table-bordered table-sm text-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="2" class="text-center"><br>No.</th>
+                                                    <th rowspan="2" class="text-center">Status<br>Perkawinan</th>
+                                                    <th rowspan="2" class="text-center">
+                                                        Tanggal<br>Perkawinan/Perceraian</th>
+                                                    <th rowspan="2" class="text-center">Status Hubungan<br>Dalam
+                                                        Keluarga</th>
+                                                    <th rowspan="2" class="text-center"><br>Kewarganegaraan</th>
+                                                    <th colspan="2" class="text-center">Dokumen Imigrasi</th>
+                                                    <th colspan="2" class="text-center">Nama Orang Tua</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center">No. Paspor</th>
+                                                    <th class="text-center">No. KITAP</th>
+                                                    <th class="text-center">Ayah</th>
+                                                    <th class="text-center">Ibu</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="text-center">(10)</td>
+                                                    <td class="text-center">(11)</td>
+                                                    <td class="text-center">(12)</td>
+                                                    <td class="text-center">(13)</td>
+                                                    <td class="text-center">(14)</td>
+                                                    <td class="text-center">(15)</td>
+                                                    <td class="text-center">(16)</td>
+                                                    <td class="text-center">(17)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td>KAWIN TERCATAT</td>
+                                                    <td>14-05-2022</td>
+                                                    <td>KEPALA KELUARGA</td>
+                                                    <td>WNI</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>AHMAD JUDIN</td>
+                                                    <td>TASRI</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                                 <div class="table-responsive">
+                                    <div class="row">
+                                        <div class="col-2 text-center">&nbsp;</div>
+                                        <div class="col-7 text-center">&nbsp;</div>
+                                        <div class="col-3 text-center">Senggig1 , 28 September
+                                            2022</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-2 text-center">&nbsp;</div>
+                                        <div class="col-7 text-center">&nbsp;</div>
+                                        <div class="col-3 text-center">&nbsp;</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3 text-center">KEPALA KELUARGA</div>
+                                        <div class="col-6 text-center">&nbsp;</div>
+                                        <div class="col-3 text-center">KEPALA DESA SENGGI</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-2 text-center">&nbsp;</div>
+                                        <div class="col-8 text-center">&nbsp;</div>
+                                        <div class="col-2 text-center">&nbsp;</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-2 text-center">&nbsp;</div>
+                                        <div class="col-8 text-center">&nbsp;</div>
+                                        <div class="col-2 text-center">&nbsp;</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-2 text-center">&nbsp;</div>
+                                        <div class="col-8 text-center">&nbsp;</div>
+                                        <div class="col-2 text-center">&nbsp;</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3 text-center">ARIEF HIDAYAT</div>
+                                        <div class="col-6 text-center">&nbsp;</div>
+                                        <div class="col-3 text-center">SUPARDI RUSTAM</div>
+                                    </div>
                                     <table class="table no-border">
                                         <tbody>
                                             <tr>
                                                 <td width="25%">&nbsp;</td>
                                                 <td width="50%">&nbsp;</td>
-                                                <td class="text-center" width="25%">Senggig1 , 28 September
+                                                <td class="text-center">Senggig1 , 28 September
                                                     2022</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-center">KEPALA KELUARGA</td>
+                                                <td class="text-center"></td>
                                                 <td>&nbsp;</td>
-                                                <td class="text-center">KEPALA DESA SENGGIG1 </td>
-                                            </tr>
-                                            <tr>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
-                                            </tr>
-                                            <tr>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
+                                                <td class="text-center"> </td>
                                             </tr>
                                             <tr>
                                                 <td>&nbsp;</td>
@@ -236,7 +243,7 @@
                                             <tr>
                                                 <td class="text-center">AHLUL</td>
                                                 <td width="50%">&nbsp;</td>
-                                                <td class="text-center">SUPARDI RUSTAM </td>
+                                                <td class="text-center"> </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -247,7 +254,9 @@
                 </div>
             </div>
         </div>
-    </form>
+    </div>
+
+
 
 
 
