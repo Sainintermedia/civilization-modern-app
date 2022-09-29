@@ -11,5 +11,6 @@
 <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/fontawesome-free/css/all.min.css') !!}">
 
 <link rel="stylesheet" href="{!! URL::asset('assets/admin/dist/css/adminlte.min.css') !!}">
-
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<script src="{{ asset('js/app.js') }}" defer></script>
 {{--  <link href="{!! asset('assets/admin/css/custom.css') !!}" rel="stylesheet" />  --}}

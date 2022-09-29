@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\PemerintahandesaController;
 use App\Http\Controllers\Admin\PermissionsController;
+use App\Http\Controllers\DependentDropdownController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 
 /*
@@ -59,19 +60,21 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     });
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
-
         Route::view('/identitas-desa', 'backend.info_desa.status_desa.index')->name('identitas');
         Route::view('/wilayah-administratif-desa', 'backend.info_desa.status_desa.index')->name('wilayahadministratif');
         Route::view('/status-desa', 'backend.info_desa.status_desa.index')->name('statusdesa');
         Route::view('/lembaga-desa', 'backend.info_desa.lembaga_desa.index')->name('lembagadesa');
-
     });
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
-
         Route::resource('/penduduk', PopulationController::class);
         Route::resource('/keluarga', FamillyController::class);
         Route::view('/kk', 'backend.kependudukan.keluarga.view')->name('kk');
-        
     });
 });
+
+Route::get('dependent-dropdown', [DependentDropdownController::class, 'index'])->name('dependent-dropdown.index');
+
+Route::post('dependent-dropdown-city', [DependentDropdownController::class, 'store'])->name('dependent-dropdown.store.city');
+Route::post('dependent-dropdown-district', [DependentDropdownController::class, 'storeDistrict'])->name('dependent-dropdown.store.district');
+Route::post('dependent-dropdown-village', [DependentDropdownController::class, 'storeVillage'])->name('dependent-dropdown.store.village');
