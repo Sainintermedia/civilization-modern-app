@@ -67,14 +67,14 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     });
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
-        Route::resource('/penduduk', PopulationController::class);
-        Route::resource('/keluarga', FamillyController::class);
-        Route::view('/kk', 'backend.kependudukan.keluarga.view')->name('kk');
+        Route::resource('penduduk', PopulationController::class);
+        Route::resource('keluarga', FamillyController::class);
+        Route::view('kk', 'backend.kependudukan.keluarga.view')->name('kk');
     });
 });
 
+//// ROUTE UNTUK DROPDOWN WILAYAH ////
 Route::get('dependent-dropdown', [DependentDropdownController::class, 'index'])->name('dependent-dropdown.index');
-
 Route::post('dependent-dropdown-city', [DependentDropdownController::class, 'store'])->name('dependent-dropdown.store.city');
 Route::post('dependent-dropdown-district', [DependentDropdownController::class, 'storeDistrict'])->name('dependent-dropdown.store.district');
 Route::post('dependent-dropdown-village', [DependentDropdownController::class, 'storeVillage'])->name('dependent-dropdown.store.village');

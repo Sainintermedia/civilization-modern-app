@@ -36,30 +36,6 @@ class FamillyController extends Controller
         $religions = Religion::orderBy('id', 'ASC')->pluck('nama', 'id');
         $citizens = Citizen::orderBy('id', 'ASC')->pluck('nama', 'id');
         $sexes = Sex::orderBy('id', 'ASC')->pluck('nama', 'id');
-        // $works = Work::select('id', 'nama')
-        //     ->orderBy('nama', 'ASC')
-        //     ->get();
-        // $marries = Marry::select('id', 'nama')
-        //     ->orderBy('nama', 'ASC')
-        //     ->get();
-        // $relations = Relation::select('id', 'nama')
-        //     ->orderBy('id', 'ASC')
-        //     ->get();
-        // $bloods = Blood::select('id', 'nama')
-        //     ->orderBy('id', 'ASC')
-        //     ->get();
-        // $educations = Education::select('id', 'nama')
-        //     ->orderBy('id', 'ASC')
-        //     ->get();
-        // $religions = Religion::select('id', 'nama')
-        //     ->orderBy('id', 'ASC')
-        //     ->get();
-        // $citizens = Citizen::select('id', 'nama')
-        //     ->orderBy('id', 'ASC')
-        //     ->get();
-        // $sexes = Sex::select('id', 'nama')
-        //     ->orderBy('id', 'ASC')
-        //     ->get();
         return view('backend.kependudukan.keluarga.create', [
             'works' => $works, 
             'marries' => $marries, 

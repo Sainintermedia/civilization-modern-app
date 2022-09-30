@@ -348,15 +348,14 @@
 @endsection
 @section('styles')
 
-    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/select2/css/select2.min.css">
-    <link rel="stylesheet"
-        href="https://adminlte.io/themes/v3/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/select2/css/select2.min.css') !!}">
+    <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') !!}">
 
 @endsection
 
 @section('javas')
 
-    <script src="https://adminlte.io/themes/v3/plugins/select2/js/select2.full.min.js"></script>
+    <script src="{!! URL::asset('assets/admin/plugins/select2/js/select2.full.min.js') !!}"></script>
     <script>
         $(function() {
             //Initialize Select2 Elements
