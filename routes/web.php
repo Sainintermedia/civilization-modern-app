@@ -36,7 +36,7 @@ Route::get('change_password', [ChangePasswordController::class, 'showChangePassw
 Route::patch('change_password', [ChangePasswordController::class, 'changePassword'])->name('auth.change_password');
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
-    // Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resource('permissions', PermissionsController::class);
     Route::delete('permissions_mass_destroy', [PermissionsController::class, 'massDestroy'])->name('permissions.mass_destroy');
     Route::resource('roles', RolesController::class);
