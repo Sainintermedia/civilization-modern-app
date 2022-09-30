@@ -83,9 +83,16 @@ class PopulationController extends Controller
 
     public function edit($id)
     {
+        $populationsub = Formula::findOrFail($id);
+        return $populationsub;
     }
 
     public function update(Request $request, $id)
+    {
+    }
+
+
+     public function destroy($id)
     {
     }
 }
