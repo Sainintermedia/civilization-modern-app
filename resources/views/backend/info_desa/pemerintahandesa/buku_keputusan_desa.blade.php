@@ -13,8 +13,8 @@
 
  
                           <div class="list-group" id="list-tab" role="tablist">
-                            <a class="list-group-item list-group-item-action" href="/pemerintahandesa">Buku Peraturan Desa</a>
-                            <a class="list-group-item list-group-item-action active"  href="/buku_keputusan_desa" role="tab" >Buku Keputusan Desa</a>
+                            <a class="list-group-item list-group-item-action" href="{!! route('siode.pemerintahandesa') !!}{!! route('siode.pemerintahandesa') !!}">Buku Peraturan Desa</a>
+                            <a class="list-group-item list-group-item-action active"  href="{!! route('siode.buku_keputusan_desa') !!}" role="tab" >Buku Keputusan Desa</a>
                             {{-- <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Messages</a>
                             <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Settings</a> --}}
                           </div>
@@ -23,7 +23,7 @@
                     <div class="card card-warning card-outline rounded-0 py-0">
                         <div class="card-header py-1">
                 
-                            <a href={!! route('populations.create') !!} type="button" class="card-title btn-sm text-sm rounded-0 bg-gradient-primary"><i
+                            <a href="#" type="button" class="card-title btn-sm text-sm rounded-0 bg-gradient-primary"><i
                                     class="fa-solid fa-square-plus"></i> Data Penduduk</a>
                         </div>
                 
