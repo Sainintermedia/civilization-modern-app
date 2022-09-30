@@ -39,10 +39,9 @@
                                     <a href="{!! route('siode.kependudukan.penduduk.show', $familly->id) !!}" class="btn bg-gradient-primary btn-xs text-xs">
                                         <i class="fa-solid fa-qrcode"></i> Show</a>
                                     <a href="{!! route('siode.kependudukan.penduduk.edit', $familly->id) !!}" class="btn bg-gradient-warning btn-xs text-xs">
-                                        <i class="fa-regular fa-square-check"></i>Edit</a>
+                                        <i class="fa-regular fa-square-check"></i> Edit</a>
                                     <button type="submit" class="btn bg-gradient-danger btn-xs text-xs" name="button"><i
-                                            class="fa-solid fa-trash"></i>
-                                        Delete</button>
+                                            class="fa-solid fa-trash"></i> Delete</button>
                                 </form>
                             </td>
                         </tr>
@@ -70,8 +69,9 @@
 @section('styles')
     <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') !!}">
     <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') !!}">
-    {{--  <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css') !!}">  --}}
+
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css?v=3.2.0">
+    {{--  <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css') !!}">  --}}
 @endsection
 
 @section('javas')
