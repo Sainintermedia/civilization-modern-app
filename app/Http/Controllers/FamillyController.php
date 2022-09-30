@@ -76,7 +76,7 @@ class FamillyController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        return $data;
+        // return $data;
         $population = new Population();
         $population->no_kk = $data['no_kk'];
         $population->nama_kk = $data['nama_kk'];
@@ -88,7 +88,7 @@ class FamillyController extends Controller
         $population->kecamatan = $data['kecamatan'];
         $population->kabkot = $data['kabkot'];
         $population->provinsi = $data['provinsi'];
-        // $population->save();
+        $population->save();
         $insertidpopulation = $population->id;
 
         $populationsub = new PopulationSub();
@@ -110,7 +110,7 @@ class FamillyController extends Controller
         $populationsub->nm_ayah = $data['nm_ayah'];
         $populationsub->nm_ibu = $data['nm_ibu'];
         $populationsub->jenkel = $data['jenkel'];
-        // $populationsub->save();
+        $populationsub->save();
         $insertidpopulationsub = $populationsub->id;
 
         return redirect()

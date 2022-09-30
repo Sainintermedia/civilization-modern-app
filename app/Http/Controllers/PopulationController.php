@@ -75,7 +75,7 @@ class PopulationController extends Controller
         $populationsub->nm_ayah = $data['nm_ayah'];
         $populationsub->nm_ibu = $data['nm_ibu'];
         $populationsub->jenkel = $data['jenkel'];
-        // $populationsub->save();
+        $populationsub->save();
 
         return redirect()
             ->route('siode.kependudukan.penduduk.index ')
