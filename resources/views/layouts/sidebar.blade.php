@@ -25,7 +25,7 @@
 
                 <li class="nav-header">MENU UTAMA</li>
                 <li class="nav-item">
-                    <a href="dashboard" class="nav-link">
+                    <a href="{!! route('siode.dashboard.index') !!}" class="nav-link">
                         <i class="nav-icon fas fa-solid fa-house-chimney"></i>
                         <p>
                             Home
@@ -34,7 +34,7 @@
                 </li>
                 {{-- <li class="nav-item @yield('info')"> --}}
                 <li
-                    class="nav-item {{ request()->is(['wilayahadministratif', 'identitas', 'pemerintahandesa', 'buku_keputusan_desa']) || request()->is(['wilayahadministratif/*', 'identitas/*', 'pemerintahandesa/*', 'buku_keputusan_desa/*']) ? 'menu-open' : '' }}">
+                    class="nav-item {{ request()->is(['siode/wilayahadministratif', 'siode/identitas', 'siode/pemerintahandesa', 'siode/buku_keputusan_desa']) || request()->is(['siode/wilayahadministratif/*', 'siode/identitas/*', 'siode/pemerintahandesa/*', 'siode/buku_keputusan_desa/*']) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-solid fa-circle-info text-danger"></i>
                         <p>
@@ -44,23 +44,23 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="identitas"
-                                class="nav-link {{ request()->is('identitas') || request()->is('identitas/*') ? 'active' : '' }}">
+                            <a href="{!! route('siode.identitas') !!}"
+                                class="nav-link {{ request()->is('siode/identitas') || request()->is('siode/identitas/*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon text-red"></i>
                                 <p>Identitas Desa</p>
                             </a>
                         </li>
                         {{-- <li class="nav-item {{request()->is('wilayahadministratif') ||request()->is('wilayahadministratif/*')? 'menu=open':''}}"> --}}
                         <li class="nav-item">
-                            <a href="wilayahadministratif"
-                                class="nav-link {{ request()->is('wilayahadministratif') || request()->is('wilayahadministratif/*') ? 'active' : '' }}">
+                            <a href="{!! route('siode.wilayahadministratif') !!}"
+                                class="nav-link {{ request()->is('siode/wilayahadministratif') || request()->is('siode/wilayahadministratif/*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Wilayah Administratif</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{!! route('siode.pemerintahandesa.index') !!}"
-                                class="nav-link {{ request()->is(['pemerintahandesa', 'buku_keputusan_desa']) || request()->is(['pemerintahandesa/*', 'buku_keputusan_desa/*']) ? 'active' : '' }}">
+                            <a href="{!! route('siode.pemerintahandesa') !!}"
+                                class="nav-link {{ request()->is(['siode/pemerintahandesa', 'siode/buku_keputusan_desa']) || request()->is(['siode/pemerintahandesa/*', 'siode/buku_keputusan_desa/*']) ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon text-yellow"></i>
                                 <p>Pemerintahan Desa</p>
                             </a>
