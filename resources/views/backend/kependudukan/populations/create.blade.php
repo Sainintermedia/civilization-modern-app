@@ -41,7 +41,7 @@
                                 <div class="row">
                                     <div class='col-sm-12'>
                                         <div class="form-group bg-secondary" style="padding:2px">
-                                            <strong>IDENTITAS PENDUDUK :</strong>
+                                            <strong>IDENTITAS KEPALA KELUARGA :</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -65,11 +65,82 @@
                                         <label for="">Nama kepala Keluarga</label>
                                         <input id="nama_kk" type="text" class="form-control form-control-sm rounded-0"
                                             style="text-transform:uppercase" required readonly>
+                                        <input id="id_kk" type="hidden" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="no_kk_id" readonly required>
                                     </div>
-                                    <input id="id_kk" type="hidden" class="form-control form-control-sm rounded-0"
-                                        style="text-transform:uppercase" name="no_kk_id" readonly required>
                                 </div>
                                 <br>
+                                <div class="row">
+                                    <div class='col-sm-12'>
+                                        <div class="form-group bg-secondary" style="padding:2px">
+                                            <strong>ALAMAT KARTU KELUARGA :</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="">Provinsi</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="" id="provinsi" readonly
+                                            required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Kabupaten / Kota</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="" id="kabkot" readonly
+                                            required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="">Kecamatan</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="" id="kecamatan" readonly
+                                            required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Desa</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="" id="desa" readonly
+                                            required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="">Dusun / Kampung</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="" id="kp" readonly
+                                            required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Rt</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="" id="rt" readonly
+                                            required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Rw</label>
+                                        <input type="text" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="" id="rw" readonly
+                                            required>
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="">Kode Pos</label>
+                                        <input type="number" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="" id="kodepos" readonly
+                                            required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class='col-sm-12'>
+                                        <div class="form-group bg-secondary" style="padding:2px">
+                                            <strong>IDENTITAS ANGGOTA KELUARGA :</strong>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-4">
                                         <label for="">No Induk Keluarga (NIK)</label>
@@ -89,8 +160,8 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="jenkel" id="" required>
                                             <option value="" hidden>Pilih Jenis Kelamin</option>
-                                            @foreach ($sexes as $sex)
-                                                <option value="{!! $sex->id !!}">{!! $sex->nama !!}</option>
+                                            @foreach ($sexes as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -112,8 +183,8 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="agama" id="" required>
                                             <option value="" hidden>Pilih Agama</option>
-                                            @foreach ($religions as $religion)
-                                                <option value="{!! $religion->id !!}">{!! $religion->nama !!}</option>
+                                            @foreach ($religions as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -122,8 +193,8 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="pendidikan" id=""required>
                                             <option value="" hidden>Pilih Pendidikan</option>
-                                            @foreach ($educations as $education)
-                                                <option value="{!! $education->id !!}">{!! $education->nama !!}</option>
+                                            @foreach ($educations as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -135,8 +206,8 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="jns_pekerjaan" id="" required>
                                             <option value="" hidden>Pilih Pekerjaan</option>
-                                            @foreach ($works as $work)
-                                                <option value="{!! $work->id !!}">{!! $work->nama !!}</option>
+                                            @foreach ($works as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -145,8 +216,8 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="gol_darah" id="" required>
                                             <option value="" hidden>Pilih Gol. Darah</option>
-                                            @foreach ($bloods as $blood)
-                                                <option value="{!! $blood->id !!}">{!! $blood->nama !!}
+                                            @foreach ($bloods as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -167,8 +238,8 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="sts_perkawinan" id="" required>
                                             <option value="" hidden>Pilih Status Perkawinan</option>
-                                            @foreach ($marries as $marry)
-                                                <option value="{!! $marry->id !!}">{!! $marry->nama !!}
+                                            @foreach ($marries as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -176,16 +247,15 @@
                                     <div class="col">
                                         <label for="">Tanggal Perkawinan</label>
                                         <input type="date" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="tgl_perkawinan" id="tgl_perkawinan"
-                                            required>
+                                            style="text-transform:uppercase" name="tgl_perkawinan" id="tgl_perkawinan">
                                     </div>
                                     <div class="col">
                                         <label for="">Hubungan Dalam Keluarga</label>
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="sts_hub_kel" id="" required>
                                             <option value="" hidden>Pilih Hubungan</option>
-                                            @foreach ($relations as $ralation)
-                                                <option value="{!! $ralation->id !!}">{!! $ralation->nama !!}
+                                            @foreach ($relations as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -205,8 +275,8 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="kwn" id="" required>
                                             <option value="" hidden>Pilih Kewarganegaraan</option>
-                                            @foreach ($citizens as $citizen)
-                                                <option value="{!! $citizen->id !!}">{!! $citizen->nama !!}
+                                            @foreach ($citizens as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -260,92 +330,12 @@
             </form>
         </div>
     </div>
-    <div class="modal fade" id="modalFamillies" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0 text-sm">
-                <div class="modal-header">
-                    <h5 class="modal-title">Data Kepala Keluarga</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table id="exampleFamillies" class="table table-bordered table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="" width="15">No</th>
-                                <th scope="col">No Kartu keluarga</th>
-                                <th scope="col">Nama Kepala Keluarga</th>
-                                <th scope="col" class="text-center">#</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($famillies as $familly)
-                                <tr class="">
-                                    <td class="text-center">{!! $loop->iteration !!}</td>
-                                    <td>{!! $familly->no_kk !!}</td>
-                                    <td>{!! $familly->nama_kk !!}</td>
-                                    <td scope="row" class="text-center" width="15"><button
-                                            class="btnreg btn btn-primary btn-xs text-xs" id="selectFamillies"
-                                            data-no_kk="{!! $familly->no_kk !!}" data-id_kk="{!! $familly->id !!}"
-                                            data-nama_kk="{!! $familly->nama_kk !!}" data-dismiss="modal" </button>Select
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
+    @include('backend.kependudukan.populations.partials.modal-create')
 @endsection
 @section('styles')
-    <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') !!}">
-    <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') !!}">
-
-
-    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/select2/css/select2.min.css">
-    <link rel="stylesheet"
-        href="https://adminlte.io/themes/v3/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-
+    @include('backend.kependudukan.populations.partials.styles-create')
 @endsection
 
 @section('javas')
-    <script src="{!! URL::asset('assets/admin/plugins/datatables/jquery.dataTables.min.js') !!}"></script>
-    <script src="{!! URL::asset('assets/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') !!}"></script>
-    <script src="{!! URL::asset('assets/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js') !!}"></script>
-    <script src="{!! URL::asset('assets/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') !!}"></script>
-
-    <script src="https://adminlte.io/themes/v3/plugins/select2/js/select2.full.min.js"></script>
-    <script>
-        $(function() {
-            //Initialize Select2 Elements
-            $('.select2').select2()
-        });
-    </script>
-    <script>
-        $(function() {
-            $("#exampleFamillies").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $(document).on('click', '#selectFamillies', function() {
-                var id_kk = $(this).data('id_kk');
-                var nama_kk = $(this).data('nama_kk');
-                var no_kk = $(this).data('no_kk');
-                $('#id_kk').val(id_kk);
-                $('#nama_kk').val(nama_kk);
-                $('#no_kk').val(no_kk);
-            })
-        })
-    </script>
-
+    @include('backend.kependudukan.populations.partials.javascript-create')
 @endsection

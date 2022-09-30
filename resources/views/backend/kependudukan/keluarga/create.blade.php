@@ -69,26 +69,37 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Provinsi</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="provinsi" id="" required>
+                                        <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                            style="width: 100%;" name="provinsi" id="province" required>
+                                            <option value="" hidden>Pilih Provinsi</option>
+                                            @foreach ($provinces as $id => $name)
+                                                <option value="{{ $id }}">{{ $name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="col">
                                         <label for="">Kabupaten / Kota</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="kabkot" id="" required>
+                                        <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                            style="width: 100%;" name="kabkot" id="city" required>
+                                            <option value="" hidden>Pilih Kab/Kota</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col">
                                         <label for="">Kecamatan</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="kecamatan" id="" required>
+                                        <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                            style="width: 100%;" name="kecamatan" id="district" required>
+                                            <option value="" hidden>Pilih Kab/Kota</option>
+                                        </select>
                                     </div>
                                     <div class="col">
                                         <label for="">Desa</label>
-                                        <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="desa" id="" required>
+                                        <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                            style="width: 100%;" name="desa" id="village" required>
+                                            <option value="" hidden>Pilih Kab/Kota</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <br>
@@ -158,8 +169,9 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="jenkel" id="" required>
                                             <option value="" hidden>Pilih Jenis Kelamin</option>
-                                            @foreach ($sexes as $sex)
-                                                <option value="{!! $sex->id !!}">{!! $sex->nama !!}</option>
+                                            @foreach ($sexes as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -181,8 +193,9 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="agama" id="" required>
                                             <option value="" hidden>Pilih Agama</option>
-                                            @foreach ($religions as $religion)
-                                                <option value="{!! $religion->id !!}">{!! $religion->nama !!}</option>
+                                            @foreach ($religions as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -191,8 +204,9 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="pendidikan" id=""required>
                                             <option value="" hidden>Pilih Pendidikan</option>
-                                            @foreach ($educations as $education)
-                                                <option value="{!! $education->id !!}">{!! $education->nama !!}</option>
+                                            @foreach ($educations as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -204,8 +218,9 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="jns_pekerjaan" id="" required>
                                             <option value="" hidden>Pilih Pekerjaan</option>
-                                            @foreach ($works as $work)
-                                                <option value="{!! $work->id !!}">{!! $work->nama !!}</option>
+                                            @foreach ($works as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -214,8 +229,8 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="gol_darah" id="" required>
                                             <option value="" hidden>Pilih Gol. Darah</option>
-                                            @foreach ($bloods as $blood)
-                                                <option value="{!! $blood->id !!}">{!! $blood->nama !!}
+                                            @foreach ($bloods as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -236,8 +251,8 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="sts_perkawinan" id="" required>
                                             <option value="" hidden>Pilih Status Perkawinan</option>
-                                            @foreach ($marries as $marry)
-                                                <option value="{!! $marry->id !!}">{!! $marry->nama !!}
+                                            @foreach ($marries as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -245,16 +260,15 @@
                                     <div class="col">
                                         <label for="">Tanggal Perkawinan</label>
                                         <input type="date" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="tgl_perkawinan" id="tgl_perkawinan"
-                                            required>
+                                            style="text-transform:uppercase" name="tgl_perkawinan" id="tgl_perkawinan">
                                     </div>
                                     <div class="col">
                                         <label for="">Hubungan Dalam Keluarga</label>
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="sts_hub_kel" id="" required>
                                             <option value="" hidden>Pilih Hubungan</option>
-                                            @foreach ($relations as $ralation)
-                                                <option value="{!! $ralation->id !!}">{!! $ralation->nama !!}
+                                            @foreach ($relations as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -274,8 +288,8 @@
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                             style="width: 100%;" name="kwn" id="" required>
                                             <option value="" hidden>Pilih Kewarganegaraan</option>
-                                            @foreach ($citizens as $citizen)
-                                                <option value="{!! $citizen->id !!}">{!! $citizen->nama !!}
+                                            @foreach ($citizens as $id => $nama)
+                                                <option value="{!! $id !!}">{!! $nama !!}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -347,6 +361,46 @@
         $(function() {
             //Initialize Select2 Elements
             $('.select2').select2()
+        });
+    </script>
+    <script>
+        $(function() {
+            $('#province').on('change', function() {
+                axios.post('{{ route('dependent-dropdown.store.city') }}', {
+                        id: $(this).val()
+                    })
+                    .then(function(response) {
+                        $('#city').empty();
+
+                        $.each(response.data, function(id, name) {
+                            $('#city').append(new Option(name, id))
+                        })
+                    });
+            });
+            $('#city').on('change', function() {
+                axios.post('{{ route('dependent-dropdown.store.district') }}', {
+                        id: $(this).val()
+                    })
+                    .then(function(response) {
+                        $('#district').empty();
+
+                        $.each(response.data, function(id, name) {
+                            $('#district').append(new Option(name, id))
+                        })
+                    });
+            });
+            $('#district').on('change', function() {
+                axios.post('{{ route('dependent-dropdown.store.village') }}', {
+                        id: $(this).val()
+                    })
+                    .then(function(response) {
+                        $('#village').empty();
+
+                        $.each(response.data, function(id, name) {
+                            $('#village').append(new Option(name, id))
+                        })
+                    });
+            });
         });
     </script>
 
