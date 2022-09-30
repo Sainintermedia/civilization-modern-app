@@ -72,40 +72,25 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-<<<<<<< HEAD
-                            <a href="{!! route('siode.identitas') !!}"
-                                class="nav-link {{ request()->is('siode/identitas') || request()->is('siode/identitas/*') ? 'active' : '' }}">
-=======
                             <a href="{!! route('siode.infodesa.identitas') !!}" class="nav-link {!! request()->is('siode/info-desa/identitas-desa') || request()->is('siode/identitas-desa/*') ? 'active' : '' !!}">
->>>>>>> 986d6e27d9326d8a8adb5c6002e7804d738ece49
                                 <i class="far fa-circle nav-icon text-red"></i>
                                 <p>Identitas Desa</p>
                             </a>
                         </li>
                         <li class="nav-item">
-<<<<<<< HEAD
-                            <a href="{!! route('siode.wilayahadministratif') !!}"
-                                class="nav-link {{ request()->is('siode/wilayahadministratif') || request()->is('siode/wilayahadministratif/*') ? 'active' : '' }}">
-=======
                             <a href="{!! route('siode.infodesa.wilayahadministratif') !!}" class="nav-link {!! request()->is('siode/info-desa/wilayah-administratif-desa') ||
                             request()->is('siode/wilayah-administratif-desa/*')
                                 ? 'active'
                                 : '' !!}">
->>>>>>> 986d6e27d9326d8a8adb5c6002e7804d738ece49
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Wilayah Administratif</p>
                             </a>
                         </li>
                         <li class="nav-item">
-<<<<<<< HEAD
-                            <a href="{!! route('siode.pemerintahandesa') !!}"
-                                class="nav-link {{ request()->is(['siode/pemerintahandesa', 'siode/buku_keputusan_desa']) || request()->is(['siode/pemerintahandesa/*', 'siode/buku_keputusan_desa/*']) ? 'active' : '' }}">
-=======
                             <a href="{!! route('siode.pemerintahandesa.index') !!}" class="nav-link {!! request()->is(['pemerintahandesa', 'buku_keputusan_desa']) ||
                             request()->is(['pemerintahandesa/*', 'buku_keputusan_desa/*'])
                                 ? 'active'
                                 : '' !!}">
->>>>>>> 986d6e27d9326d8a8adb5c6002e7804d738ece49
                                 <i class="far fa-circle nav-icon text-yellow"></i>
                                 <p>Pemerintahan Desa</p>
                             </a>

@@ -46,7 +46,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 });
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], function () {
-    Route::view('/dashboard', 'backend.info_desa.status_desa.index')->name('dashboard');
+    Route::view('/dashboard', 'backend.info_desa.status_desa.index')->name('dashboard.index');
     Route::view('/buku-administrasi-desa-umum', 'backend.buku_administrasi_desa.umum.index')->name('bukuadministrasidesaumum');
 
     Route::get('/pemerintahandesa', [PemerintahandesaController::class, 'index'])->name('pemerintahandesa.index');
@@ -73,8 +73,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     });
 });
 
+//// ROUTE UNTUK DROPDOWN WILAYAH ////
 Route::get('dependent-dropdown', [DependentDropdownController::class, 'index'])->name('dependent-dropdown.index');
-
 Route::post('dependent-dropdown-city', [DependentDropdownController::class, 'store'])->name('dependent-dropdown.store.city');
 Route::post('dependent-dropdown-district', [DependentDropdownController::class, 'storeDistrict'])->name('dependent-dropdown.store.district');
 Route::post('dependent-dropdown-village', [DependentDropdownController::class, 'storeVillage'])->name('dependent-dropdown.store.village');

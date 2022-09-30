@@ -22,7 +22,6 @@ class PopulationController extends Controller
         $famillies = PopulationSub::select('id','no_nik','nama','jenkel','tmpt_lahir','tgl_lahir')
         ->orderBy('nama','ASC')
         ->get();
-        // return $famillies;
         return view('backend.kependudukan.populations.index', compact('famillies'));
     }
 
@@ -84,9 +83,16 @@ class PopulationController extends Controller
 
     public function edit($id)
     {
+        $populationsub = Formula::findOrFail($id);
+        return $populationsub;
     }
 
     public function update(Request $request, $id)
+    {
+    }
+
+
+     public function destroy($id)
     {
     }
 }
