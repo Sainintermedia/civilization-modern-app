@@ -14,6 +14,7 @@ use App\Models\Population;
 use Illuminate\Http\Request;
 use App\Models\PopulationSub;
 use App\Http\Controllers\Controller;
+use Laravolt\Indonesia\Models\Province;
 
 class FamillyController extends Controller
 {
@@ -26,31 +27,50 @@ class FamillyController extends Controller
 
     public function create()
     {
-        $works = Work::select('id', 'nama')
-            ->orderBy('nama', 'ASC')
-            ->get();
-        $marries = Marry::select('id', 'nama')
-            ->orderBy('nama', 'ASC')
-            ->get();
-        $relations = Relation::select('id', 'nama')
-            ->orderBy('id', 'ASC')
-            ->get();
-        $bloods = Blood::select('id', 'nama')
-            ->orderBy('id', 'ASC')
-            ->get();
-        $educations = Education::select('id', 'nama')
-            ->orderBy('id', 'ASC')
-            ->get();
-        $religions = Religion::select('id', 'nama')
-            ->orderBy('id', 'ASC')
-            ->get();
-        $citizens = Citizen::select('id', 'nama')
-            ->orderBy('id', 'ASC')
-            ->get();
-        $sexes = Sex::select('id', 'nama')
-            ->orderBy('id', 'ASC')
-            ->get();
-        return view('backend.kependudukan.keluarga.create', compact('works', 'marries', 'relations', 'bloods', 'educations', 'religions', 'citizens', 'sexes'));
+        $provinces = Province::where('code', '36')->pluck('name', 'code');
+        $works = Work::orderBy('nama', 'ASC')->pluck('nama', 'id');
+        $marries = Marry::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $relations = Relation::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $bloods = Blood::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $educations = Education::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $religions = Religion::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $citizens = Citizen::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $sexes = Sex::orderBy('id', 'ASC')->pluck('nama', 'id');
+        // $works = Work::select('id', 'nama')
+        //     ->orderBy('nama', 'ASC')
+        //     ->get();
+        // $marries = Marry::select('id', 'nama')
+        //     ->orderBy('nama', 'ASC')
+        //     ->get();
+        // $relations = Relation::select('id', 'nama')
+        //     ->orderBy('id', 'ASC')
+        //     ->get();
+        // $bloods = Blood::select('id', 'nama')
+        //     ->orderBy('id', 'ASC')
+        //     ->get();
+        // $educations = Education::select('id', 'nama')
+        //     ->orderBy('id', 'ASC')
+        //     ->get();
+        // $religions = Religion::select('id', 'nama')
+        //     ->orderBy('id', 'ASC')
+        //     ->get();
+        // $citizens = Citizen::select('id', 'nama')
+        //     ->orderBy('id', 'ASC')
+        //     ->get();
+        // $sexes = Sex::select('id', 'nama')
+        //     ->orderBy('id', 'ASC')
+        //     ->get();
+        return view('backend.kependudukan.keluarga.create', [
+            'works' => $works, 
+            'marries' => $marries, 
+            'relations' => $relations,
+            'bloods' => $bloods,
+            'educations' => $educations,
+            'religions' => $religions,
+            'citizens' => $citizens, 
+            'sexes' => $sexes,
+            'provinces' => $provinces,
+        ]);
     }
 
     public function store(Request $request)
@@ -94,7 +114,7 @@ class FamillyController extends Controller
         $insertidpopulationsub = $populationsub->id;
 
         return redirect()
-            ->route('keluarga.index')
+            ->route('siode.kependudukan.keluarga.index ')
             ->with('store', 'Data saved successfully');
     }
 

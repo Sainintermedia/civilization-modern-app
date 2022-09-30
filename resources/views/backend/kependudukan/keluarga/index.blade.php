@@ -31,9 +31,9 @@
                             <td>{!! $population->no_kk !!}</td>
                             @foreach ($population->populationsubs as $value)
                                 <td>{!! $value->no_nik !!}</td>
-                                <td>{!! $value->nama !!}</td>
+                                <td>{!! strtoupper($value->nama) !!}</td>
                                 <td>{!! $value->jenkel == 1 ? 'LAKI-LAKI' : 'PEREMPUAN' !!}</td>
-                                <td>{!! $value->tmpt_lahir !!}</td>
+                                <td>{!! strtoupper($value->tmpt_lahir) !!}</td>
                                 <td>{!! $value->tgl_lahir !!}</td>
                             @endforeach
                             <td>S</td>

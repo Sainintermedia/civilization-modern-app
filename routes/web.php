@@ -1,24 +1,20 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FamillyController;
-use App\Http\Controllers\Bukuadminsitrasidesa;
-use App\Http\Controllers\PopulationController;
-// use App\Http\Controllers\DependantDropdownController;
-use App\Http\Controllers\PemerintahandesaController;
-use App\Http\Controllers\SuratController;
-use App\Http\Controllers\IdentitasController;
-use App\Http\Controllers\WilayahadministratifController;
-use App\Http\Controllers\StatusdesaController;
-use App\Http\Controllers\LembagadesaController;
-
-
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\DependantDropdownController;
+use App\Http\Controllers\SuratController;
+use App\Http\Controllers\FamillyController;
+
+use App\Http\Controllers\Bukuadminsitrasidesa;
+use App\Http\Controllers\PopulationController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\PemerintahandesaController;
 use App\Http\Controllers\Admin\PermissionsController;
+use App\Http\Controllers\DependentDropdownController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 
 /*
@@ -48,32 +44,37 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('users', UsersController::class);
     Route::delete('users_mass_destroy', [UsersController::class, 'massDestroy'])->name('users.mass_destroy');
 });
+
 Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], function () {
+    Route::view('/dashboard', 'backend.info_desa.status_desa.index')->name('dashboard');
+    Route::view('/buku-administrasi-desa-umum', 'backend.buku_administrasi_desa.umum.index')->name('bukuadministrasidesaumum');
 
-    // Route::get('/dashboard', function () {
-    //     return view('dashboard.index');
-    // });
-    Route::view('/dashboard', [HomeController::class, 'dashboard.index'])->name('dashboard.index');
-    Route::view('/identitas', [IdentitasController::class, 'backend.info_desa.identitas_desa.index'])->name('identitas');
-    Route::view('/wilayahadministratif', [WilayahadministratifController::class, 'backend.info_desa.wilayah_administratif.index'])->name('wilayahadministratif');
-    Route::view('/status_desa', [StatusdesaController::class, 'backend.info_desa.status_desa.index'])->name('status_desa');
-    Route::view('/lembagadesa', [LembagadesaController::class, 'backend.info_desa.lembaga_desa.index'])->name('lembagadesa');
-
-    Route::view('/pemerintahandesa', [PemerintahandesaController::class, 'backend.info_desa.pemerintahandesa.index'])->name('pemerintahandesa');
-    Route::view('/buku_keputusan_desa', [PemerintahandesaController::class, 'backend.info_desa.pemerintahandesa.buku_keputusan_desa'])->name('buku_keputusan_desa');
-        // Route::get('/surat_keterangan_usaha', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
-    Route::get('/surat_keterangan_usaha', function () {
+    Route::get('/pemerintahandesa', [PemerintahandesaController::class, 'index'])->name('pemerintahandesa.index');
+    Route::get('/buku-keputusan-desa', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
+    // Route::get('/surat_keterangan_usaha', [PemerintahandesaController::class, 'buku_keputusan_desa'])->name('pemerintahandesa.buku_keputusan_desa');
+    Route::get('/surat-keterangan-usaha', function () {
         return view('backend.dokumen_surat.surat_keterangan_usaha');
     });
-    Route::get('/surat_keterangan_tidak_mampu', function () {
+    Route::get('/surat-keterangan-tidak-mampu', function () {
         return view('backend.dokumen_surat.surat_keterangan_tidak_mampu');
     });
-    
-    Route::view('/bukuadministrasidesaumum', [Bukuadminsitrasidesa::class, 'backend.buku_administrasi_desa.umum.index'])->name('bukuadministrasidesaumum');
-    
+
+    Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
+        Route::view('/identitas-desa', 'backend.info_desa.status_desa.index')->name('identitas');
+        Route::view('/wilayah-administratif-desa', 'backend.info_desa.status_desa.index')->name('wilayahadministratif');
+        Route::view('/status-desa', 'backend.info_desa.status_desa.index')->name('statusdesa');
+        Route::view('/lembaga-desa', 'backend.info_desa.lembaga_desa.index')->name('lembagadesa');
+    });
+
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
         Route::resource('/penduduk', PopulationController::class);
         Route::resource('/keluarga', FamillyController::class);
-
+        Route::view('/kk', 'backend.kependudukan.keluarga.view')->name('kk');
     });
 });
+
+Route::get('dependent-dropdown', [DependentDropdownController::class, 'index'])->name('dependent-dropdown.index');
+
+Route::post('dependent-dropdown-city', [DependentDropdownController::class, 'store'])->name('dependent-dropdown.store.city');
+Route::post('dependent-dropdown-district', [DependentDropdownController::class, 'storeDistrict'])->name('dependent-dropdown.store.district');
+Route::post('dependent-dropdown-village', [DependentDropdownController::class, 'storeVillage'])->name('dependent-dropdown.store.village');

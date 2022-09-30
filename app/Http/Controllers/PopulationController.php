@@ -29,36 +29,32 @@ class PopulationController extends Controller
     public function create()
     {
         $famillies = Population::all();
-        $works = Work::select('id', 'nama')
-            ->orderBy('nama', 'ASC')
-            ->get();
-        $marries = Marry::select('id', 'nama')
-            ->orderBy('nama', 'ASC')
-            ->get();
-        $relations = Relation::select('id', 'nama')
-            ->orderBy('id', 'ASC')
-            ->get();
-        $bloods = Blood::select('id', 'nama')
-            ->orderBy('id', 'ASC')
-            ->get();
-        $educations = Education::select('id', 'nama')
-            ->orderBy('id', 'ASC')
-            ->get();
-        $religions = Religion::select('id', 'nama')
-            ->orderBy('id', 'ASC')
-            ->get();
-        $citizens = Citizen::select('id', 'nama')
-            ->orderBy('id', 'ASC')
-            ->get();
-        $sexes = Sex::select('id', 'nama')
-            ->orderBy('id', 'ASC')
-            ->get();
-        return view('backend.kependudukan.populations.create', compact('works', 'marries', 'relations', 'bloods', 'educations', 'religions', 'citizens', 'sexes','famillies'));
+        $works = Work::orderBy('nama', 'ASC')->pluck('nama', 'id');
+        $marries = Marry::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $relations = Relation::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $bloods = Blood::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $educations = Education::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $religions = Religion::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $citizens = Citizen::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $sexes = Sex::orderBy('id', 'ASC')->pluck('nama', 'id');
+
+        return view('backend.kependudukan.populations.create',[
+            'works' => $works, 
+            'marries' => $marries, 
+            'relations' => $relations,
+            'bloods' => $bloods,
+            'educations' => $educations,
+            'religions' => $religions,
+            'citizens' => $citizens, 
+            'sexes' => $sexes,
+            'famillies' => $famillies,
+        ]);
     }
 
     public function store(Request $request)
     {
         $data = $request->all();
+        return $data;
 
         $populationsub = new PopulationSub();
         $populationsub->no_nik = $data['no_nik'];
@@ -82,7 +78,7 @@ class PopulationController extends Controller
         $populationsub->save();
 
         return redirect()
-            ->route('populations.index')
+            ->route('siode.kependudukan.penduduk.index ')
             ->with('store', 'Data saved successfully');
     }
 
