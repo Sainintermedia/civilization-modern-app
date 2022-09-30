@@ -46,7 +46,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 });
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], function () {
-    Route::view('/dashboard', 'backend.info_desa.status_desa.index')->name('dashboard');
+    Route::view('/dashboard', 'backend.info_desa.status_desa.index')->name('dashboard.index');
     Route::view('/buku-administrasi-desa-umum', 'backend.buku_administrasi_desa.umum.index')->name('bukuadministrasidesaumum');
 
     Route::get('/pemerintahandesa', [PemerintahandesaController::class, 'index'])->name('pemerintahandesa.index');
@@ -67,9 +67,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     });
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
-        Route::resource('penduduk', PopulationController::class);
-        Route::resource('keluarga', FamillyController::class);
-        Route::view('kk', 'backend.kependudukan.keluarga.view')->name('kk');
+        Route::resource('/penduduk', PopulationController::class);
+        Route::resource('/keluarga', FamillyController::class);
+        Route::view('/kk', 'backend.kependudukan.keluarga.view')->name('kk');
     });
 });
 
