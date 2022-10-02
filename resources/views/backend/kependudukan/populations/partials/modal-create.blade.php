@@ -22,11 +22,11 @@
                             <tr class="">
                                 <td class="text-center">{!! $loop->iteration !!}</td>
                                 <td>{!! $familly->no_kk !!}</td>
-                                <td style="text-transform:uppercase">{!! $familly->nama_kk !!}</td>
+                                <td style="text-transform:uppercase">{!! $familly->nama !!}</td>
                                 <td scope="row" class="text-center" width="15"><button
                                         class="btnreg btn bg-gradient-info btn-sm text-sm rounded-0"
                                         id="selectFamillies" data-no_kk="{!! $familly->no_kk !!}"
-                                        data-id_kk="{!! $familly->id !!}" data-nama_kk="{!! $familly->nama_kk !!}"
+                                        data-id_kk="{!! $familly->id !!}" data-nama="{!! $familly->nama !!}"
                                         data-kp="{!! $familly->kp !!}" data-rw="{!! $familly->rw !!}"
                                         data-rt="{!! $familly->rt !!}" data-kodepos="{!! $familly->kodepos !!}"
                                         data-kecamatan="{!! $familly->district->name !!}" data-desa="{!! $familly->village->name !!}"

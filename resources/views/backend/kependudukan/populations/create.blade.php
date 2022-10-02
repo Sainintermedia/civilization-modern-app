@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="col">
                                         <label for="">Nama kepala Keluarga</label>
-                                        <input id="nama_kk" type="text" class="form-control form-control-sm rounded-0"
+                                        <input id="nama" type="text" class="form-control form-control-sm rounded-0"
                                             style="text-transform:uppercase" required readonly>
                                         <input id="id_kk" type="hidden" class="form-control form-control-sm rounded-0"
                                             style="text-transform:uppercase" name="no_kk_id" readonly required>
@@ -150,7 +150,7 @@
                                     <div class="col">
                                         <label for="">Nama Lengkap</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="nama_kk" id="" required>
+                                            style="text-transform:uppercase" name="nama" id="" required>
                                     </div>
                                 </div>
                                 <br>
@@ -316,7 +316,7 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <a style="margin-top:0px;" class="btn bg-gradient-secondary btn-sm rounded-0"
-                                            style="text-transform:uppercase" href="#">
+                                            style="text-transform:uppercase" href="{!! route('siode.kependudukan.penduduk.index') !!}">
                                             {{ trans('Cancel') }}
                                         </a>
                                         <input type="submit" value="Submit"

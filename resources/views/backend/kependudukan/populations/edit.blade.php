@@ -51,7 +51,7 @@
                                         <div class="form-group">
                                             <label for="inputName">No Kartu Keluarga</label>
                                             <div class="input-group input-group-sm">
-                                                <input type="text" name="no_kk" id="no_kk"
+                                                <input type="text" id="no_kk"
                                                     class="form-control form-control-sm rounded-0"
                                                     style="text-transform:uppercase" aria-describedby="button-addon2"
                                                     required="required" value="{!! $populationsubs->populations->no_kk !!}" readonly required>
@@ -64,8 +64,8 @@
                                     </div>
                                     <div class="col">
                                         <label for="">Nama kepala Keluarga</label>
-                                        <input id="nama_kk" type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" value="{!! $populationsubs->populations->nama_kk !!}" required
+                                        <input id="nama" type="text" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" value="{!! $populationsubs->populations->nama !!}" required
                                             readonly>
                                         <input id="id_kk" type="hidden" class="form-control form-control-sm rounded-0"
                                             style="text-transform:uppercase" value="{!! $populationsubs->no_kk_id !!}" name="no_kk_id"
@@ -155,7 +155,7 @@
                                         <label for="">Nama Lengkap</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
                                             style="text-transform:uppercase" value="{!! $populationsubs->nama !!}"
-                                            name="nama_kk" id="" required>
+                                            name="nama" id="" required>
                                     </div>
                                 </div>
                                 <br>
@@ -337,7 +337,7 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <a style="margin-top:0px;" class="btn bg-gradient-secondary btn-sm rounded-0"
-                                            style="text-transform:uppercase" href="#">
+                                            style="text-transform:uppercase" href="{!! route('siode.kependudukan.penduduk.index') !!}">
                                             {{ trans('Cancel') }}
                                         </a>
                                         <input type="submit" value="Submit"

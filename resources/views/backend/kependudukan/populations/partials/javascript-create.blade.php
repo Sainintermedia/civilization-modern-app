@@ -21,7 +21,7 @@
     $(document).ready(function() {
         $(document).on('click', '#selectFamillies', function() {
             var id_kk = $(this).data('id_kk');
-            var nama_kk = $(this).data('nama_kk');
+            var nama = $(this).data('nama');
             var no_kk = $(this).data('no_kk');
             var kp = $(this).data('kp');
             var rt = $(this).data('rt');
@@ -32,7 +32,7 @@
             var kabkot = $(this).data('kabkot');
             var provinsi = $(this).data('provinsi');
             $('#id_kk').val(id_kk);
-            $('#nama_kk').val(nama_kk);
+            $('#nama').val(nama);
             $('#no_kk').val(no_kk);
             $('#kp').val(kp);
             $('#rt').val(rt);

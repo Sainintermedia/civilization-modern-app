@@ -58,7 +58,7 @@ class PopulationController extends Controller
         $populationsub = new PopulationSub();
         $populationsub->no_nik = $data['no_nik'];
         $populationsub->no_kk_id = $data['no_kk_id'];
-        $populationsub->nama = $data['nama_kk'];
+        $populationsub->nama = $data['nama'];
         $populationsub->tmpt_lahir = $data['tmpt_lahir'];
         $populationsub->tgl_lahir = $data['tgl_lahir'];
         $populationsub->agama = $data['agama'];
@@ -77,7 +77,7 @@ class PopulationController extends Controller
         $populationsub->save();
 
         return redirect()
-            ->route('siode.kependudukan.penduduk.index ')
+            ->route('siode.kependudukan.penduduk.index')
             ->with('store', 'Data saved successfully');
     }
 
@@ -85,7 +85,6 @@ class PopulationController extends Controller
     {
         $populationsubs = PopulationSub::findOrFail($id);
         $famillies = Population::all();
-        // return $famillies;
         $works = Work::orderBy('nama', 'ASC')->pluck('nama', 'id');
         $marries = Marry::orderBy('id', 'ASC')->pluck('nama', 'id');
         $relations = Relation::orderBy('id', 'ASC')->pluck('nama', 'id');
@@ -109,14 +108,35 @@ class PopulationController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, PopulationSub $penduduk)
     {
-        $data = $request->all();
-        return $data;
+        $penduduk->no_kk_id = $request->no_kk_id;
+        $penduduk->nama = $request->nama;
+        $penduduk->jenkel = $request->jenkel;
+        $penduduk->tmpt_lahir = $request->tmpt_lahir;
+        $penduduk->tgl_lahir = $request->tgl_lahir;
+        $penduduk->agama = $request->agama;
+        $penduduk->pendidikan = $request->pendidikan;
+        $penduduk->jns_pekerjaan = $request->jns_pekerjaan;
+        $penduduk->gol_darah = $request->gol_darah;
+        $penduduk->sts_perkawinan = $request->sts_perkawinan;
+        $penduduk->tgl_perkawinan = $request->tgl_perkawinan;
+        $penduduk->sts_hub_kel = $request->sts_hub_kel;
+        $penduduk->kwn = $request->kwn;
+        $penduduk->no_paspor = $request->no_paspor;
+        $penduduk->no_kitap = $request->no_kitap;
+        $penduduk->nm_ayah = $request->nm_ayah;
+        $penduduk->nm_ibu = $request->nm_ibu;
+        $penduduk->update();
+        return redirect()
+            ->route('siode.kependudukan.penduduk.index')
+            ->with('store', 'Data saved successfully');
+
     }
 
 
      public function destroy($id)
     {
+        
     }
 }
