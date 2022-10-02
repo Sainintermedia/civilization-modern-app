@@ -16,12 +16,13 @@
                     <tr class="text-center">
                         <th style="width: 10px">No</th>
                         <th>No KK</th>
-                        <th>No Nik</th>
                         <th>Nama</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Tempat Lahir</th>
-                        <th>Taggal lahir</th>
-                        <th>Aksi</th>
+                        <th>Kp</th>
+                        <th>Rt</th>
+                        <th>Rw</th>
+                        <th>Desa</th>
+                        <th>Kecamatan</th>
+                        <th style="width: 175px">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,16 +30,24 @@
                         <tr class="text-center">
                             <td>{!! $loop->iteration !!}</td>
                             <td>{!! $population->no_kk !!}</td>
-                            <td>{!! $population->nama_kk !!}</td>
-                            <td>{!! $population->kp !!}</td>
+                            <td style="text-transform:uppercase">{!! $population->nama !!}</td>
+                            <td style="text-transform:uppercase">{!! $population->kp !!}</td>
                             <td>{!! $population->rt !!}</td>
                             <td>{!! $population->rw !!}</td>
-                            <td>{!! $population->village->name !!}</td>
-                            <td>{!! $population->district->name !!}</td>
-                            <td>S</td>
-                            {{--  @foreach ($user->roles()->pluck('name') as $role)
-                                        <span class="badge badge-info">{{ $role }}</span>
-                                    @endforeach  --}}
+                            <td style="text-transform:uppercase">{!! $population->village->name !!}</td>
+                            <td style="text-transform:uppercase">{!! $population->district->name !!}</td>
+                            <td style="width: 175px">
+                                <form method="POST" action="{!! route('siode.kependudukan.keluarga.destroy', $population->id) !!}" class="text-center">
+                                    @csrf
+                                    @method('delete')
+                                    <a href="{!! route('siode.kependudukan.penduduk.show', $population->id) !!}" class="btn bg-gradient-primary btn-xs text-xs">
+                                        <i class="fa-solid fa-qrcode"></i> Show</a>
+                                    <a href="{!! route('siode.kependudukan.penduduk.edit', $population->id) !!}" class="btn bg-gradient-warning btn-xs text-xs">
+                                        <i class="fa-regular fa-square-check"></i> Edit</a>
+                                    <button type="submit" class="btn bg-gradient-danger btn-xs text-xs" name="button"><i
+                                            class="fa-solid fa-trash"></i> Delete</button>
+                                </form>
+                            </td>
                         </tr>
                     @empty
                         <h4>tidak ada data</h4>
@@ -46,14 +55,15 @@
                 </tbody>
                 <tfoot>
                     <tr class="text-center">
-                        <th>No</th>
+                        <th style="width: 10px">No</th>
                         <th>No KK</th>
-                        <th>No Nik</th>
                         <th>Nama</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Tempat Lahir</th>
-                        <th>Taggal lahir</th>
-                        <th>Aksi</th>
+                        <th>Kp</th>
+                        <th>Rt</th>
+                        <th>Rw</th>
+                        <th>Desa</th>
+                        <th>Kecamatan</th>
+                        <th style="width: 175px">Aksi</th>
                     </tr>
                 </tfoot>
             </table>
@@ -66,6 +76,8 @@
     <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') !!}">
     <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') !!}">
     {{--  <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css') !!}">  --}}
+
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css?v=3.2.0">
 @endsection
 
 @section('javas')

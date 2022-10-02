@@ -20,7 +20,7 @@ class PopulationController extends Controller
     public function index()
     {
         $populationsubs = PopulationSub::select('id','no_nik','nama','jenkel','tmpt_lahir','tgl_lahir')
-        ->orderBy('nama','ASC')
+        ->orderBy('created_at','DESC')
         ->get();
         return view('backend.kependudukan.populations.index', compact('populationsubs'));
     }
@@ -137,6 +137,9 @@ class PopulationController extends Controller
 
      public function destroy($id)
     {
-        
+        PopulationSub::findOrFail($id)->delete();
+        return redirect()
+            ->route('siode.kependudukan.penduduk.index')
+            ->with('store', 'Data saved successfully');
     }
 }

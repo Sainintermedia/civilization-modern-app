@@ -22,6 +22,7 @@ class FamillyController extends Controller
     {
         // $populations = Population::all();
         $populations = Population::with('populationsubs', 'village:code,name', 'district:code,name')
+        ->orderBy('created_at', 'DESC')
         ->get();
         // return $populations;
         return view('backend.kependudukan.keluarga.index', compact('populations'));

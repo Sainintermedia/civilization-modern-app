@@ -20,7 +20,7 @@
                         <th>Jenis Kelamin</th>
                         <th>Tempat Lahir</th>
                         <th>Taggal lahir</th>
-                        <th>Aksi</th>
+                        <th style="width: 175px">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,11 +28,11 @@
                         <tr class="text-center">
                             <td>{!! $loop->iteration !!}</td>
                             <td>{!! $populationsub->no_nik !!}</td>
-                            <td>{!! $populationsub->nama !!}</td>
+                            <td style="text-transform:uppercase">{!! $populationsub->nama !!}</td>
                             <td>{!! $populationsub->jenkel == 1 ? 'LAKI-LAKI' : 'PEREMPUAN' !!}</td>
-                            <td>{!! $populationsub->tmpt_lahir !!}</td>
+                            <td style="text-transform:uppercase">{!! $populationsub->tmpt_lahir !!}</td>
                             <td>{!! $populationsub->tgl_lahir !!}</td>
-                            <td>
+                            <td style="width: 175px">
                                 <form method="POST" action="{!! route('siode.kependudukan.penduduk.destroy', $populationsub->id) !!}" class="text-center">
                                     @csrf
                                     @method('delete')
@@ -57,7 +57,7 @@
                         <th>Jenis Kelamin</th>
                         <th>Tempat Lahir</th>
                         <th>Taggal lahir</th>
-                        <th>Aksi</th>
+                        <th style="width: 175px">Aksi</th>
                     </tr>
                 </tfoot>
             </table>
