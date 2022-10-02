@@ -20,8 +20,10 @@ class FamillyController extends Controller
 {
     public function index()
     {
-        $populations = Population::select('id','no_kk')
+        // $populations = Population::all();
+        $populations = Population::with('populationsubs', 'village:code,name', 'district:code,name')
         ->get();
+        // return $populations;
         return view('backend.kependudukan.keluarga.index', compact('populations'));
     }
 
@@ -81,7 +83,7 @@ class FamillyController extends Controller
         $populationsub->tgl_perkawinan = $data['tgl_perkawinan'];
         $populationsub->sts_hub_kel = $data['sts_hub_kel'];
         $populationsub->kwn = $data['kwn'];
-        $populationsub->no_paspor = $data['np_paspor'];
+        $populationsub->no_paspor = $data['no_paspor'];
         $populationsub->no_kitap = $data['no_kitap'];
         $populationsub->nm_ayah = $data['nm_ayah'];
         $populationsub->nm_ibu = $data['nm_ibu'];

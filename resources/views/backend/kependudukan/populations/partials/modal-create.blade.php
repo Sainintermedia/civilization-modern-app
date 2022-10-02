@@ -29,8 +29,8 @@
                                         data-id_kk="{!! $familly->id !!}" data-nama_kk="{!! $familly->nama_kk !!}"
                                         data-kp="{!! $familly->kp !!}" data-rw="{!! $familly->rw !!}"
                                         data-rt="{!! $familly->rt !!}" data-kodepos="{!! $familly->kodepos !!}"
-                                        data-kecamatan="{!! $familly->kecamatan !!}" data-desa="{!! $familly->desa !!}"
-                                        data-kabkot="{!! $familly->kabkot !!}" data-provinsi="{!! $familly->provinsi !!}"
+                                        data-kecamatan="{!! $familly->district->name !!}" data-desa="{!! $familly->village->name !!}"
+                                        data-kabkot="{!! $familly->cities->name !!}" data-provinsi="{!! $familly->provinces->name !!}"
                                         data-dismiss="modal" </button>Select
                                 </td>
                             </tr>

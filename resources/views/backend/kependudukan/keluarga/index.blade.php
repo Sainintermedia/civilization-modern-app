@@ -29,14 +29,16 @@
                         <tr class="text-center">
                             <td>{!! $loop->iteration !!}</td>
                             <td>{!! $population->no_kk !!}</td>
-                            @foreach ($population->populationsubs as $value)
-                                <td>{!! $value->no_nik !!}</td>
-                                <td>{!! strtoupper($value->nama) !!}</td>
-                                <td>{!! $value->jenkel == 1 ? 'LAKI-LAKI' : 'PEREMPUAN' !!}</td>
-                                <td>{!! strtoupper($value->tmpt_lahir) !!}</td>
-                                <td>{!! $value->tgl_lahir !!}</td>
-                            @endforeach
+                            <td>{!! $population->nama_kk !!}</td>
+                            <td>{!! $population->kp !!}</td>
+                            <td>{!! $population->rt !!}</td>
+                            <td>{!! $population->rw !!}</td>
+                            <td>{!! $population->village->name !!}</td>
+                            <td>{!! $population->district->name !!}</td>
                             <td>S</td>
+                            {{--  @foreach ($user->roles()->pluck('name') as $role)
+                                        <span class="badge badge-info">{{ $role }}</span>
+                                    @endforeach  --}}
                         </tr>
                     @empty
                         <h4>tidak ada data</h4>

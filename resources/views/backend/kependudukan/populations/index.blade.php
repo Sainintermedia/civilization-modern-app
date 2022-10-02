@@ -24,21 +24,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($famillies as $value => $familly)
+                    @forelse ($populationsubs as $value => $populationsub)
                         <tr class="text-center">
                             <td>{!! $loop->iteration !!}</td>
-                            <td>{!! $familly->no_nik !!}</td>
-                            <td>{!! $familly->nama !!}</td>
-                            <td>{!! $familly->jenkel == 1 ? 'LAKI-LAKI' : 'PEREMPUAN' !!}</td>
-                            <td>{!! $familly->tmpt_lahir !!}</td>
-                            <td>{!! $familly->tgl_lahir !!}</td>
+                            <td>{!! $populationsub->no_nik !!}</td>
+                            <td>{!! $populationsub->nama !!}</td>
+                            <td>{!! $populationsub->jenkel == 1 ? 'LAKI-LAKI' : 'PEREMPUAN' !!}</td>
+                            <td>{!! $populationsub->tmpt_lahir !!}</td>
+                            <td>{!! $populationsub->tgl_lahir !!}</td>
                             <td>
-                                <form method="POST" action="{!! route('siode.kependudukan.penduduk.destroy', $familly->id) !!}" class="text-center">
+                                <form method="POST" action="{!! route('siode.kependudukan.penduduk.destroy', $populationsub->id) !!}" class="text-center">
                                     @csrf
                                     @method('delete')
-                                    <a href="{!! route('siode.kependudukan.penduduk.show', $familly->id) !!}" class="btn bg-gradient-primary btn-xs text-xs">
+                                    <a href="{!! route('siode.kependudukan.penduduk.show', $populationsub->id) !!}" class="btn bg-gradient-primary btn-xs text-xs">
                                         <i class="fa-solid fa-qrcode"></i> Show</a>
-                                    <a href="{!! route('siode.kependudukan.penduduk.edit', $familly->id) !!}" class="btn bg-gradient-warning btn-xs text-xs">
+                                    <a href="{!! route('siode.kependudukan.penduduk.edit', $populationsub->id) !!}" class="btn bg-gradient-warning btn-xs text-xs">
                                         <i class="fa-regular fa-square-check"></i> Edit</a>
                                     <button type="submit" class="btn bg-gradient-danger btn-xs text-xs" name="button"><i
                                             class="fa-solid fa-trash"></i> Delete</button>

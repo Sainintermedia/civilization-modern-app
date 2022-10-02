@@ -19,10 +19,10 @@ class PopulationController extends Controller
 {
     public function index()
     {
-        $famillies = PopulationSub::select('id','no_nik','nama','jenkel','tmpt_lahir','tgl_lahir')
+        $populationsubs = PopulationSub::select('id','no_nik','nama','jenkel','tmpt_lahir','tgl_lahir')
         ->orderBy('nama','ASC')
         ->get();
-        return view('backend.kependudukan.populations.index', compact('famillies'));
+        return view('backend.kependudukan.populations.index', compact('populationsubs'));
     }
 
     public function create()
@@ -53,7 +53,7 @@ class PopulationController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        return $data;
+        // return $data;
 
         $populationsub = new PopulationSub();
         $populationsub->no_nik = $data['no_nik'];
@@ -69,7 +69,7 @@ class PopulationController extends Controller
         $populationsub->tgl_perkawinan = $data['tgl_perkawinan'];
         $populationsub->sts_hub_kel = $data['sts_hub_kel'];
         $populationsub->kwn = $data['kwn'];
-        $populationsub->no_paspor = $data['np_paspor'];
+        $populationsub->no_paspor = $data['no_paspor'];
         $populationsub->no_kitap = $data['no_kitap'];
         $populationsub->nm_ayah = $data['nm_ayah'];
         $populationsub->nm_ibu = $data['nm_ibu'];
@@ -83,12 +83,36 @@ class PopulationController extends Controller
 
     public function edit($id)
     {
-        $populationsub = Formula::findOrFail($id);
-        return $populationsub;
+        $populationsubs = PopulationSub::findOrFail($id);
+        $famillies = Population::all();
+        // return $famillies;
+        $works = Work::orderBy('nama', 'ASC')->pluck('nama', 'id');
+        $marries = Marry::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $relations = Relation::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $bloods = Blood::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $educations = Education::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $religions = Religion::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $citizens = Citizen::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $sexes = Sex::orderBy('id', 'ASC')->pluck('nama', 'id');
+
+        return view('backend.kependudukan.populations.edit',[
+            'works' => $works, 
+            'marries' => $marries, 
+            'relations' => $relations,
+            'bloods' => $bloods,
+            'educations' => $educations,
+            'religions' => $religions,
+            'citizens' => $citizens, 
+            'sexes' => $sexes,
+            'famillies' => $famillies,
+            'populationsubs' => $populationsubs,
+        ]);
     }
 
     public function update(Request $request, $id)
     {
+        $data = $request->all();
+        return $data;
     }
 
 
