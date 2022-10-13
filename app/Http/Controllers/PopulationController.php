@@ -19,9 +19,21 @@ class PopulationController extends Controller
 {
     public function index()
     {
-        $populationsubs = PopulationSub::select('id','no_nik','nama','jenkel','tmpt_lahir','tgl_lahir')
-        ->orderBy('created_at','DESC')
-        ->get();
+        $populationsubs = PopulationSub::select('id', 'no_nik', 'nama', 'jenkel', 'tmpt_lahir', 'tgl_lahir', 'created_at')
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
+        return view('backend.kependudukan.populations.index', compact('populationsubs'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $populationsubs = PopulationSub::select('id', 'no_nik', 'nama', 'jenkel', 'tmpt_lahir', 'tgl_lahir', 'created_at')
+            ->where('no_nik', 'like', '%' . $search . '%')
+            ->orWhere('nama', 'like', '%' . $search . '%')
+            ->orWhere('tmpt_lahir', 'like', '%' . $search . '%')
+            ->orderBy('created_at', 'DESC')
+            ->paginate();
         return view('backend.kependudukan.populations.index', compact('populationsubs'));
     }
 
@@ -37,14 +49,14 @@ class PopulationController extends Controller
         $citizens = Citizen::orderBy('id', 'ASC')->pluck('nama', 'id');
         $sexes = Sex::orderBy('id', 'ASC')->pluck('nama', 'id');
 
-        return view('backend.kependudukan.populations.create',[
-            'works' => $works, 
-            'marries' => $marries, 
+        return view('backend.kependudukan.populations.create', [
+            'works' => $works,
+            'marries' => $marries,
             'relations' => $relations,
             'bloods' => $bloods,
             'educations' => $educations,
             'religions' => $religions,
-            'citizens' => $citizens, 
+            'citizens' => $citizens,
             'sexes' => $sexes,
             'famillies' => $famillies,
         ]);
@@ -94,14 +106,14 @@ class PopulationController extends Controller
         $citizens = Citizen::orderBy('id', 'ASC')->pluck('nama', 'id');
         $sexes = Sex::orderBy('id', 'ASC')->pluck('nama', 'id');
 
-        return view('backend.kependudukan.populations.edit',[
-            'works' => $works, 
-            'marries' => $marries, 
+        return view('backend.kependudukan.populations.edit', [
+            'works' => $works,
+            'marries' => $marries,
             'relations' => $relations,
             'bloods' => $bloods,
             'educations' => $educations,
             'religions' => $religions,
-            'citizens' => $citizens, 
+            'citizens' => $citizens,
             'sexes' => $sexes,
             'famillies' => $famillies,
             'populationsubs' => $populationsubs,
@@ -131,11 +143,9 @@ class PopulationController extends Controller
         return redirect()
             ->route('siode.kependudukan.penduduk.index')
             ->with('store', 'Data saved successfully');
-
     }
 
-
-     public function destroy($id)
+    public function destroy($id)
     {
         PopulationSub::findOrFail($id)->delete();
         return redirect()

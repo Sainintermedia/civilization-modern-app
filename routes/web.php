@@ -67,8 +67,12 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     });
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
+        Route::get('penduduk/cari', [PopulationController::class, 'search'])->name('penduduk.cari');
         Route::resource('/penduduk', PopulationController::class);
+
+        Route::get('keluarga/cari', [FamillyController::class, 'search'])->name('keluarga.cari');
         Route::resource('/keluarga', FamillyController::class);
+
         Route::view('/kk', 'backend.kependudukan.keluarga.view')->name('kk');
     });
 });

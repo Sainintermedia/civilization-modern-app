@@ -34,6 +34,11 @@ class Population extends Model
         return $this->hasMany(PopulationSub::class, 'no_kk_id');
     }
 
+    public function populationsub()
+    {
+        return $this->hasOne(PopulationSub::class, 'no_kk_id');
+    }
+
     public function provinces()
     {
         return $this->hasOne(Province::class, 'code', 'provinsi');
