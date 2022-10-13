@@ -36,7 +36,7 @@ class Population extends Model
 
     public function populationsub()
     {
-        return $this->hasOne(PopulationSub::class, 'no_kk_id');
+        return $this->hasOne(PopulationSub::class, 'no_nik', 'no_nik');
     }
 
     public function provinces()

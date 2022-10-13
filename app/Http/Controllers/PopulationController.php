@@ -65,7 +65,7 @@ class PopulationController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        // return $data;
+        return $data;
 
         $populationsub = new PopulationSub();
         $populationsub->no_nik = $data['no_nik'];
@@ -122,7 +122,11 @@ class PopulationController extends Controller
 
     public function update(Request $request, PopulationSub $penduduk)
     {
+        // $data = $request->all();
+        // return $data;
+
         $penduduk->no_kk_id = $request->no_kk_id;
+        $penduduk->no_nik = $request->no_nik;
         $penduduk->nama = $request->nama;
         $penduduk->jenkel = $request->jenkel;
         $penduduk->tmpt_lahir = $request->tmpt_lahir;

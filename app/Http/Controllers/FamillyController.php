@@ -72,6 +72,7 @@ class FamillyController extends Controller
         // return $data;
         $population = new Population();
         $population->no_kk = $data['no_kk'];
+        $population->no_nik = $data['no_nik'];
         $population->nama = $data['nama'];
         $population->kp = $data['kp'];
         $population->rt = $data['rt'];
@@ -109,7 +110,7 @@ class FamillyController extends Controller
         // $insertidpopulationsub = $populationsub->id;
 
         return redirect()
-            ->route('siode.kependudukan.keluarga.index ')
+            ->route('siode.kependudukan.keluarga.index')
             ->with('store', 'Data saved successfully');
     }
 
@@ -142,7 +143,9 @@ class FamillyController extends Controller
 
     public function update(Request $request, Population $population, PopulationSub $populationsub, $id)
     {
+        $population = Population::findOrFail($id);
         $population->no_kk = $request->no_kk;
+        $population->no_nik = $request->no_nik;
         $population->provinsi = $request->provinsi;
         $population->kabkot = $request->kabkot;
         $population->kecamatan = $request->kecamatan;
@@ -151,9 +154,10 @@ class FamillyController extends Controller
         $population->rt = $request->rt;
         $population->rw = $request->rw;
         $population->kodepos = $request->kodepos;
-        $population->save();
+        $population->update();
         // return $population;
 
+        $populationsub = PopulationSub::findOrFail($id);
         $populationsub->no_kk_id = $request->no_kk_id;
         $populationsub->nama = $request->nama;
         $populationsub->jenkel = $request->jenkel;
@@ -171,7 +175,7 @@ class FamillyController extends Controller
         $populationsub->no_kitap = $request->no_kitap;
         $populationsub->nm_ayah = $request->nm_ayah;
         $populationsub->nm_ibu = $request->nm_ibu;
-        $population->populationsub()->save($populationsub);
+        $population->update();
 
         return redirect()
             ->route('siode.kependudukan.keluarga.index')
@@ -180,5 +184,11 @@ class FamillyController extends Controller
 
     public function destroy($id)
     {
+        $populations = Population::with(['populationsubs'])->findOrFail($id);
+        $populations->delete();
+
+        return redirect()
+            ->route('siode.kependudukan.keluarga.index')
+            ->with('deleted', 'Data deleted successfully');
     }
 }
