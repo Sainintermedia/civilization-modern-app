@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews
@@ -20,3 +21,37 @@
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
     
 </IfModule>
+=======
+# <IfModule mod_rewrite.c>
+#     <IfModule mod_negotiation.c>
+#         Options -MultiViews -Indexes
+#     </IfModule>
+
+#     RewriteEngine On
+
+#     # Handle Authorization Header
+#     RewriteCond %{HTTP:Authorization} .
+#     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+#     # Redirect Trailing Slashes If Not A Folder...
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteCond %{REQUEST_URI} (.+)/$
+#     RewriteRule ^ %1 [L,R=301]
+
+#     # Send Requests To Front Controller...
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteRule ^ index.php [L]
+# </IfModule>
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c> Options -MultiViews </IfModule>
+
+    RewriteEngine On RewriteCond %{REQUEST_FILENAME} -d [OR] RewriteCond
+    %{REQUEST_FILENAME} -f RewriteRule ^ ^$1 [N] RewriteCond %{REQUEST_URI}
+    (\.\w+$) [NC] RewriteRule ^(.*)$ public/$1 RewriteCond %{REQUEST_FILENAME}
+    !-d RewriteCond %{REQUEST_FILENAME} !-f RewriteRule ^ server.php RewriteCond
+    %{HTTP:Authorization} ^(.+)$ RewriteRule .* -
+    [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+>>>>>>> 166cc976a20c8fabc41ec83235f9c889de3ab024

@@ -4,8 +4,9 @@
 @section('content')
     <div class="container-fluid p-0">
         <div class="wrapper">
-            <form method="POST" action="{!! route('siode.kependudukan.penduduk.store') !!}" enctype="multipart/form-data" autocomplete="off">
+            <form method="POST" action="{!! route('siode.kependudukan.penduduk.update', $populationsubs->id) !!}" enctype="multipart/form-data" autocomplete="off">
                 @csrf
+                @method('PUT')
                 <div class="row">
                     <div class='col-sm-12'>
                         <div class="form-group bg-secondary" style="padding:2px">
@@ -50,11 +51,11 @@
                                         <div class="form-group">
                                             <label for="inputName">No Kartu Keluarga</label>
                                             <div class="input-group input-group-sm">
-                                                <input type="text" name="no_kk" id="no_kk"
+                                                <input type="text" id="no_kk"
                                                     class="form-control form-control-sm rounded-0"
                                                     style="text-transform:uppercase" aria-describedby="button-addon2"
-                                                    required="required" value="" readonly required>
-                                                <button class="btn btn-outline-secondary btn-sm rounded-0"
+                                                    required="required" value="{!! $populationsubs->populations->no_kk !!}" readonly required>
+                                                <button class="btn bg-gradient-secondary btn-sm rounded-0"
                                                     style="text-transform:uppercase" type="button" id="button-addon2"
                                                     data-toggle="modal" data-target="#modalFamillies"><i
                                                         class="fas fa-search"></i></button>
@@ -63,10 +64,12 @@
                                     </div>
                                     <div class="col">
                                         <label for="">Nama kepala Keluarga</label>
-                                        <input id="nama_kk" type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" required readonly>
+                                        <input id="nama" type="text" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" value="{!! $populationsubs->populations->nama !!}" required
+                                            readonly>
                                         <input id="id_kk" type="hidden" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="no_kk_id" readonly required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->no_kk_id !!}" name="no_kk_id"
+                                            readonly required>
                                     </div>
                                 </div>
                                 <br>
@@ -81,14 +84,14 @@
                                     <div class="col">
                                         <label for="">Provinsi</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="" id="provinsi" readonly
-                                            required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->populations->provinces->name !!}" name=""
+                                            id="provinsi" readonly required>
                                     </div>
                                     <div class="col">
                                         <label for="">Kabupaten / Kota</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="" id="kabkot" readonly
-                                            required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->populations->cities->name !!}" name=""
+                                            id="kabkot" readonly required>
                                     </div>
                                 </div>
                                 <br>
@@ -96,14 +99,14 @@
                                     <div class="col">
                                         <label for="">Kecamatan</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="" id="kecamatan" readonly
-                                            required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->populations->district->name !!}" name=""
+                                            id="kecamatan" readonly required>
                                     </div>
                                     <div class="col">
                                         <label for="">Desa</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="" id="desa" readonly
-                                            required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->populations->village->name !!}" name=""
+                                            id="desa" readonly required>
                                     </div>
                                 </div>
                                 <br>
@@ -111,26 +114,26 @@
                                     <div class="col-4">
                                         <label for="">Dusun / Kampung</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="" id="kp" readonly
-                                            required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->populations->kp !!}" name=""
+                                            id="kp" readonly required>
                                     </div>
                                     <div class="col">
                                         <label for="">Rt</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="" id="rt" readonly
-                                            required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->populations->rt !!}"
+                                            name="" id="rt" readonly required>
                                     </div>
                                     <div class="col">
                                         <label for="">Rw</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="" id="rw" readonly
-                                            required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->populations->rw !!}"
+                                            name="" id="rw" readonly required>
                                     </div>
                                     <div class="col-4">
                                         <label for="">Kode Pos</label>
                                         <input type="number" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="" id="kodepos" readonly
-                                            required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->populations->kodepos !!}"
+                                            name="" id="kodepos" readonly required>
                                     </div>
                                 </div>
                                 <br>
@@ -145,12 +148,14 @@
                                     <div class="col-4">
                                         <label for="">No Induk Keluarga (NIK)</label>
                                         <input type="number" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="no_nik" id="no_nik" required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->no_nik !!}"
+                                            name="no_nik" id="no_nik" required>
                                     </div>
                                     <div class="col">
                                         <label for="">Nama Lengkap</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="nama_kk" id="" required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->nama !!}"
+                                            name="nama" id="" required>
                                     </div>
                                 </div>
                                 <br>
@@ -161,19 +166,23 @@
                                             style="width: 100%;" name="jenkel" id="" required>
                                             <option value="" hidden>Pilih Jenis Kelamin</option>
                                             @foreach ($sexes as $id => $nama)
-                                                <option value="{!! $id !!}">{!! $nama !!}</option>
+                                                <option value="{!! $id !!}" {!! $id == $populationsubs->jenkel ? 'selected' : '' !!}>
+                                                    {!! $nama !!}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="col">
                                         <label for="">Tempat Lahir</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="tmpt_lahir" id="" required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->tmpt_lahir !!}"
+                                            name="tmpt_lahir" id="" required>
                                     </div>
                                     <div class="col">
                                         <label for="">Tanggal Lahir</label>
                                         <input type="date" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="tgl_lahir" id="" required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->tgl_lahir !!}"
+                                            name="tgl_lahir" id="" required>
                                     </div>
                                 </div>
                                 <br>
@@ -184,7 +193,8 @@
                                             style="width: 100%;" name="agama" id="" required>
                                             <option value="" hidden>Pilih Agama</option>
                                             @foreach ($religions as $id => $nama)
-                                                <option value="{!! $id !!}">{!! $nama !!}</option>
+                                                <option value="{!! $id !!}" {!! $id == $populationsubs->agama ? 'selected' : '' !!}>
+                                                    {!! $nama !!}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -194,7 +204,8 @@
                                             style="width: 100%;" name="pendidikan" id=""required>
                                             <option value="" hidden>Pilih Pendidikan</option>
                                             @foreach ($educations as $id => $nama)
-                                                <option value="{!! $id !!}">{!! $nama !!}</option>
+                                                <option value="{!! $id !!}" {!! $id == $populationsubs->pendidikan ? 'selected' : '' !!}>
+                                                    {!! $nama !!}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -207,7 +218,8 @@
                                             style="width: 100%;" name="jns_pekerjaan" id="" required>
                                             <option value="" hidden>Pilih Pekerjaan</option>
                                             @foreach ($works as $id => $nama)
-                                                <option value="{!! $id !!}">{!! $nama !!}</option>
+                                                <option value="{!! $id !!}" {!! $id == $populationsubs->jns_pekerjaan ? 'selected' : '' !!}>
+                                                    {!! $nama !!}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -217,7 +229,8 @@
                                             style="width: 100%;" name="gol_darah" id="" required>
                                             <option value="" hidden>Pilih Gol. Darah</option>
                                             @foreach ($bloods as $id => $nama)
-                                                <option value="{!! $id !!}">{!! $nama !!}
+                                                <option value="{!! $id !!}" {!! $id == $populationsubs->gol_darah ? 'selected' : '' !!}>
+                                                    {!! $nama !!}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -239,7 +252,8 @@
                                             style="width: 100%;" name="sts_perkawinan" id="" required>
                                             <option value="" hidden>Pilih Status Perkawinan</option>
                                             @foreach ($marries as $id => $nama)
-                                                <option value="{!! $id !!}">{!! $nama !!}
+                                                <option value="{!! $id !!}" {!! $id == $populationsubs->sts_perkawinan ? 'selected' : '' !!}>
+                                                    {!! $nama !!}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -247,7 +261,8 @@
                                     <div class="col">
                                         <label for="">Tanggal Perkawinan</label>
                                         <input type="date" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="tgl_perkawinan" id="tgl_perkawinan">
+                                            style="text-transform:uppercase" value="{!! $populationsubs->tgl_perkawinan !!}"
+                                            name="tgl_perkawinan" id="tgl_perkawinan">
                                     </div>
                                     <div class="col">
                                         <label for="">Hubungan Dalam Keluarga</label>
@@ -255,7 +270,8 @@
                                             style="width: 100%;" name="sts_hub_kel" id="" required>
                                             <option value="" hidden>Pilih Hubungan</option>
                                             @foreach ($relations as $id => $nama)
-                                                <option value="{!! $id !!}">{!! $nama !!}
+                                                <option value="{!! $id !!}" {!! $id == $populationsubs->sts_hub_kel ? 'selected' : '' !!}>
+                                                    {!! $nama !!}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -276,7 +292,8 @@
                                             style="width: 100%;" name="kwn" id="" required>
                                             <option value="" hidden>Pilih Kewarganegaraan</option>
                                             @foreach ($citizens as $id => $nama)
-                                                <option value="{!! $id !!}">{!! $nama !!}
+                                                <option value="{!! $id !!}" {!! $id == $populationsubs->kwn ? 'selected' : '' !!}>
+                                                    {!! $nama !!}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -284,12 +301,14 @@
                                     <div class="col">
                                         <label for="">No Paspor</label>
                                         <input type="number" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="no_paspor" id="no_paspor">
+                                            style="text-transform:uppercase" value="{!! $populationsubs->no_paspor !!}"
+                                            name="no_paspor" id="no_paspor">
                                     </div>
                                     <div class="col">
                                         <label for="">No Kitap</label>
                                         <input type="number" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="no_kitap" id="no_kitap">
+                                            style="text-transform:uppercase" value="{!! $populationsubs->no_kitap !!}"
+                                            name="no_kitap" id="no_kitap">
                                     </div>
                                 </div>
                                 <br>
@@ -304,19 +323,21 @@
                                     <div class="col">
                                         <label for="">Nama Ayah</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="nm_ayah" id="" required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->nm_ayah !!}"
+                                            name="nm_ayah" id="" required>
                                     </div>
                                     <div class="col">
                                         <label for="">Nama ibu</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="nm_ibu" id="" required>
+                                            style="text-transform:uppercase" value="{!! $populationsubs->nm_ibu !!}"
+                                            name="nm_ibu" id="" required>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col-6">
                                         <a style="margin-top:0px;" class="btn bg-gradient-secondary btn-sm rounded-0"
-                                            style="text-transform:uppercase" href="#">
+                                            style="text-transform:uppercase" href="{!! route('siode.kependudukan.penduduk.index') !!}">
                                             {{ trans('Cancel') }}
                                         </a>
                                         <input type="submit" value="Submit"

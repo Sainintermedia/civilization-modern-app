@@ -4,7 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="csrf-token" content="{!! csrf_token() !!}">
 
-<title>SiODe| @yield('title')</title>
+<title>SiODe | @yield('title')</title>
 <link href="{!! URL::asset('assets/admin/img/logo1.png') !!}" rel='shortcut icon'>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 

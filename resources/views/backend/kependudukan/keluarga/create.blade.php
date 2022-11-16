@@ -159,7 +159,7 @@
                                     <div class="col">
                                         <label for="">Nama Lengkap</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="nama_kk" id="" required>
+                                            style="text-transform:uppercase" name="nama" id="" required>
                                     </div>
                                 </div>
                                 <br>
@@ -297,7 +297,7 @@
                                     <div class="col">
                                         <label for="">No Paspor</label>
                                         <input type="number" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="np_paspor" id="np_paspor">
+                                            style="text-transform:uppercase" name="no_paspor" id="no_paspor">
                                     </div>
                                     <div class="col">
                                         <label for="">No Kitap</label>

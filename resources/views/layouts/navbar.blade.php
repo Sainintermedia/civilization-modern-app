@@ -10,7 +10,7 @@
 
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <img src="#" class="user-image img-circle elevation-2" alt="User Image">
+                <img src="{!! URL::asset('assets/admin/dist/img/logo.png') !!}" class="user-image img-circle elevation-2" alt="User Image">
                 <span class="d-none d-md-inline"><strong>{!! Auth::user()->name !!}</strong></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-sm dropdown-menu-right text-center"

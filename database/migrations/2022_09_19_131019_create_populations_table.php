@@ -16,7 +16,7 @@ class CreatePopulationsTable extends Migration
         Schema::create('populations', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('no_kk')->nullable()->default(16);
-            // $table->bigInteger('no_nik_id')->nullable()->default(16);
+            $table->bigInteger('no_nik')->nullable()->default(16);
             $table->string('nama_kk')->nullable();
             $table->string('kp')->nullable();
             $table->integer('rt')->nullable();
