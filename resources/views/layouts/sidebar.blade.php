@@ -38,6 +38,7 @@
                     'pemerintahandesa',
                     'siode/info-desa/status-desa',
                     'siode/info-desa/lembaga-desa',
+                    'siode/infodesa.pemerintahan-desa',
                 ]) ||
                 request()->is([
                     'siode/info-desa/wilayah-administratif-desa/*',
@@ -45,13 +46,14 @@
                     'siode/info-desa/status-desa/*',
                     'pemerintahandesa/*',
                     'siode/info-desa/lembaga-desa/*',
+                    'siode/infodesa.pemerintahan-desa/*',
                 ])
                     ? 'menu-open'
                     : '' !!}">
                     <a href="#" class="nav-link {!! request()->is([
                         'siode/info-desa/wilayah-administratif-desa',
                         'siode/info-desa/identitas-desa',
-                        'pemerintahandesa',
+                        'siode/infodesa.pemerintahan-desa',
                         'siode/info-desa/status-desa',
                         'siode/info-desa/lembaga-desa',
                     ]) ||
@@ -59,7 +61,7 @@
                         'siode/info-desa/wilayah-administratif-desa/*',
                         'siode/info-desa/identitas-desa/*',
                         'siode/info-desa/status-desa/*',
-                        'pemerintahandesa/*',
+                        'siode/infodesa.pemerintahan-desa/*',
                         'siode/info-desa/lembaga-desa/*',
                     ])
                         ? 'active'
@@ -87,8 +89,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{!! route('siode.pemerintahandesa.index') !!}" class="nav-link {!! request()->is(['pemerintahandesa', 'buku_keputusan_desa']) ||
-                            request()->is(['pemerintahandesa/*', 'buku_keputusan_desa/*'])
+                            <a href="{!! route('siode.infodesa.pemerintahan-desa.index') !!}" class="nav-link {!! request()->is([
+                                'siode/info-desa/pemerintahan-desa', 
+                                'siode/info-desa/buku-keputusan-desa','buku_inventaris_kekayaan_desa']) 
+                                || request()->is([
+                                'siode/info-desa/pemerintahan-desa/*', 'siode/info-desa/buku-keputusan-desa/*','buku_inventaris_kekayaan_desa/*'])
                                 ? 'active'
                                 : '' !!}">
                                 <i class="far fa-circle nav-icon text-yellow"></i>
