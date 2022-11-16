@@ -31,6 +31,7 @@ use App\Http\Controllers\Auth\ChangePasswordController;
 */
 
 Auth::routes();
+
 Route::redirect('/', 'admin/home');
 Auth::routes(['register' => false]);
 
