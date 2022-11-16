@@ -13,7 +13,7 @@ class CreateSexesTable extends Migration
      */
     public function up()
     {
-        Schema::create('M_sexes', function (Blueprint $table) {
+        Schema::create('m_sexes', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
         });
