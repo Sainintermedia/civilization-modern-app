@@ -58,7 +58,7 @@
                                         <form method="POST" action="{!! route('siode.kependudukan.keluarga.destroy', $population->id) !!}" class="text-center">
                                             @csrf
                                             @method('delete')
-                                            <a href="{!! route('siode.kependudukan.keluarga.show', $population->id) !!}" class="btn bg-gradient-info btn-xs text-xs">
+                                            <a href="{!! route('siode.kependudukan.keluarga.kk') !!}" class="btn bg-gradient-info btn-xs text-xs">
                                                 <i class="fa-solid fa-eye"></i> Show</a>
                                             <a href="{!! route('siode.kependudukan.keluarga.edit', $population->id) !!}"
                                                 class="btn bg-gradient-warning btn-xs text-xs">

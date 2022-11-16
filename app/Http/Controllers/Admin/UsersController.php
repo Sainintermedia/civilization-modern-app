@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\Admin\StoreUsersRequest;
 use App\Http\Requests\Admin\UpdateUsersRequest;
 
@@ -39,7 +40,12 @@ class UsersController extends Controller
         if (! Gate::allows('users_manage')) {
             return abort(401);
         }
-        $user = User::create($request->all());
+        $data = $request->all();
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
         $roles = $request->input('roles') ? $request->input('roles') : [];
         $user->assignRole($roles);
 
@@ -62,7 +68,12 @@ class UsersController extends Controller
             return abort(401);
         }
 
-        $user->update($request->all());
+        $data = $request->all();
+        $user->update([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
         $roles = $request->input('roles') ? $request->input('roles') : [];
         $user->syncRoles($roles);
 

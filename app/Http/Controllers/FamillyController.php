@@ -69,7 +69,6 @@ class FamillyController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        // return $data;
         $population = new Population();
         $population->no_kk = $data['no_kk'];
         $population->no_nik = $data['no_nik'];
@@ -83,11 +82,9 @@ class FamillyController extends Controller
         $population->kabkot = $data['kabkot'];
         $population->provinsi = $data['provinsi'];
         $population->save();
-        // $insertidpopulation = $population->id;
 
         $populationsubs = new PopulationSub();
         $populationsubs->no_nik = $data['no_nik'];
-        // $populationsubs->no_kk_id = $insertidpopulation;
         $populationsubs->nama = $data['nama'];
         $populationsubs->tmpt_lahir = $data['tmpt_lahir'];
         $populationsubs->tgl_lahir = $data['tgl_lahir'];
@@ -105,9 +102,6 @@ class FamillyController extends Controller
         $populationsubs->nm_ibu = $data['nm_ibu'];
         $populationsubs->jenkel = $data['jenkel'];
         $population->populationsubs()->save($populationsubs);
-        // return $population;
-        // $populationsub->save();
-        // $insertidpopulationsub = $populationsub->id;
 
         return redirect()
             ->route('siode.kependudukan.keluarga.index')
