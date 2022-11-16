@@ -75,7 +75,6 @@
 
 @endsection
 
-@endsection
 @section('styles')
 
 @endsection
