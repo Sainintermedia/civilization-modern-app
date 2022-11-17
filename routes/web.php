@@ -18,6 +18,8 @@ use App\Http\Controllers\Admin\PermissionsController;
 use App\Http\Controllers\DependentDropdownController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\AbsenController;
+use App\Http\Controllers\FrontController;
+
 
 
 /*
@@ -64,6 +66,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         
         Route::resource('/pemerintahan-desa', PemerintahandesaController::class);
         Route::resource('/buku-keputusan-desa',BukukeputusandesaController::class);
+      
          
     });
 
@@ -101,4 +104,7 @@ Route::get('/surat-keterangan-usaha', function () {
 });
 Route::get('/surat-keterangan-tidak-mampu', function () {
     return view('backend.dokumen_surat.surat_keterangan_tidak_mampu');
+});
+Route::get('/front', function () {
+    return view('frontend.main');
 });
