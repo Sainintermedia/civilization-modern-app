@@ -18,11 +18,11 @@
                                     <h3 class="card-title">Wilayah Administratif</h3>
                                     </div>
                                   
-                                    <div class="card-body">
+                                    <div class="card-body table-responsive">
                             
                                   
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered table-striped dataTable table-hover">
+                                                    <table class="table-hover table-sm table-striped table-bordered table">
                                                         <thead class="bg-gray disabled color-palette">
                                                             <tr>
                                                                 <th class="padat">No</th>
@@ -173,7 +173,7 @@
                             </div>
                             </div>
                         </div>
-                    <input type="hidden" name="sidcsrf" value="087a1cc6d85a487d9f31f7a07974f04d"></form>
+                    </form>
                 </div>
             </div>
         </div>
