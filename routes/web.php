@@ -77,15 +77,15 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
 
         Route::view('/kk', 'backend.kependudukan.keluarga.view')->name('kk');
     });
-    Route::group(['middleware' => ['auth'], 'prefix' => 'absenstaf', 'as' => 'absenstaf.'], function () {
-        // Route::get('penduduk/cari', [PopulationController::class, 'search'])->name('penduduk.cari');
-        // Route::resource('/penduduk', PopulationController::class);
+    // Route::group(['middleware' => ['auth'], 'prefix' => 'absenstaf', 'as' => 'absenstaf.'], function () {
+    //     // Route::get('penduduk/cari', [PopulationController::class, 'search'])->name('penduduk.cari');
+    //     // Route::resource('/penduduk', PopulationController::class);
 
-        // Route::get('keluarga/cari', [FamillyController::class, 'search'])->name('keluarga.cari');
-        Route::get('/absenstaf', AbsenController::class);
+    //     // Route::get('keluarga/cari', [FamillyController::class, 'search'])->name('keluarga.cari');
+    //     Route::get('/absenstaf', AbsenController::class);
 
-        // Route::view('/kk', 'backend.kependudukan.keluarga.view')->name('kk');
-    });
+    //     // Route::view('/kk', 'backend.kependudukan.keluarga.view')->name('kk');
+    // });
 });
 
 //// ROUTE UNTUK DROPDOWN WILAYAH ////
