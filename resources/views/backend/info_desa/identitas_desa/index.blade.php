@@ -4,354 +4,161 @@
 @section('identitas', 'active')
 @section('info', 'show')
 @section('content')
-<div class="content-wrapper" style="min-height: 2646.44px;">
-
-    <section class="content-header">
-    <div class="container-fluid">
-    <div class="row mb-2">
-    <div class="col-sm-6">
-    <h1>Invoice</h1>
-    </div>
-    <div class="col-sm-6">
-    <ol class="breadcrumb float-sm-right">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active">Invoice</li>
-    </ol>
-    </div>
-    </div>
-    </div>
-    </section>
-    <section class="content">
+<section class="content">
     <div class="container-fluid">
     <div class="row">
     <div class="col-12">
     <div class="callout callout-info">
-    <h5><i class="fas fa-info"></i> Note:</h5>
-    This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+    <h5><i class="fas fa-info"></i> Nama Desa:</h5>
+    Cisoka Kecamatan Cisoka
     </div>
     
     <div class="invoice p-3 mb-3">
     
     <div class="row">
     <div class="col-12">
-    <h4>
-    <i class="fas fa-globe"></i> AdminLTE, Inc.
-    <small class="float-right">Date: 2/10/2014</small>
-    </h4>
+    
     </div>
     
     </div>
     
-    <div class="row invoice-info">
-    <div class="col-sm-4 invoice-col">
-    From
-    <address>
-    <strong>Admin, Inc.</strong><br>
-    795 Folsom Ave, Suite 600<br>
-    San Francisco, CA 94107<br>
-    Phone: (804) 123-5432<br>
-    Email: info@almasaeedstudio.com
-    </address>
-    </div>
-    
-    <div class="col-sm-4 invoice-col">
-    To
-    <address>
-    <strong>John Doe</strong><br>
-    795 Folsom Ave, Suite 600<br>
-    San Francisco, CA 94107<br>
-    Phone: (555) 539-1037<br>
-    Email: john.doe@example.com
-    </address>
-    </div>
-    
-    <div class="col-sm-4 invoice-col">
-    <b>Invoice #007612</b><br>
-    <br>
-    <b>Order ID:</b> 4F3S8J<br>
-    <b>Payment Due:</b> 2/22/2014<br>
-    <b>Account:</b> 968-34567
-    </div>
+        <div class="row invoice-info">
+            <div class="col-sm-2 invoice-col">
+            
+            </div>
+        <div class="col-sm-8 invoice-col">
+            <a href="https://3dwarehouse.sketchup.com/warehouse/v1.0/content/public/50f1e0af-5dcb-489e-ad45-c57a3c7cf6ab" data-toggle="lightbox" data-title="sample 2 - black" data-gallery="gallery">
+                <img src="https://3dwarehouse.sketchup.com/warehouse/v1.0/content/public/50f1e0af-5dcb-489e-ad45-c57a3c7cf6ab" class="img-fluid mb-2" alt="black sample">
+                </a>
+        <address>
+        </div>
+        <div class="col-sm-2 invoice-col">
+            
+        </div>
     
     </div>
     
     
     <div class="row">
     <div class="col-12 table-responsive">
-    <table class="table table-striped">
-    <thead>
-    <tr>
-    <th>Qty</th>
-    <th>Product</th>
-    <th>Serial #</th>
-    <th>Description</th>
-    <th>Subtotal</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>1</td>
-    <td>Call of Duty</td>
-    <td>455-981-221</td>
-    <td>El snort testosterone trophy driving gloves handsome</td>
-    <td>$64.50</td>
-    </tr>
-    <tr>
-    <td>1</td>
-    <td>Need for Speed IV</td>
-    <td>247-925-726</td>
-    <td>Wes Anderson umami biodiesel</td>
-    <td>$50.00</td>
-    </tr>
-    <tr>
-    <td>1</td>
-    <td>Monsters DVD</td>
-    <td>735-845-642</td>
-    <td>Terry Richardson helvetica tousled street art master</td>
-    <td>$10.70</td>
-    </tr>
-    <tr>
-    <td>1</td>
-    <td>Grown Ups Blue Ray</td>
-    <td>422-568-642</td>
-    <td>Tousled lomo letterpress</td>
-    <td>$25.99</td>
-    </tr>
-    </tbody>
-    </table>
+    <table class="table table-bordered table-striped table-hover tabel-rincian">
+        <tbody>
+          <tr>
+            <th colspan="3" class="subtitle_head"><strong>DESA</strong></th>
+          </tr>
+          <tr>
+            <td width="300">Nama Desa</td><td width="1">:</td>
+            <td>Waluyojati</td>
+          </tr>
+          <tr>
+            <td>Kode Desa</td><td>:</td>
+            <td>18.10.01.2007</td>
+          </tr>
+          <tr>
+            <td>Kode Pos Desa</td><td>:</td>
+            <td>37162</td>
+          </tr>
+          <tr>
+            <td>Nama Kepala Desa</td><td>:</td>
+            <td>H. AHLUL, S.Pd.I</td>
+          </tr>
+          <tr>
+            <td>NIP Kepala Desa</td><td>:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Alamat Kantor Desa</td><td>:</td>
+            <td>Jl. Raya DAPANDRA</td>
+          </tr>
+          <tr>
+            <td>E-Mail Desa</td><td>:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Telpon Desa</td><td>:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Website Desa</td><td>:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="3" class="subtitle_head"><strong>KECAMATAN</strong></th>
+          </tr>
+          <tr>
+            <td>Nama Kecamatan</td><td>:</td>
+            <td>Pringsewu</td>
+          </tr>
+          <tr>
+            <td>Kode Kecamatan</td><td>:</td>
+            <td>18.10.01</td>
+          </tr>
+          <tr>
+            <td>Nama Camat</td><td>:</td>
+            <td>Qwerty</td>
+          </tr>
+          <tr>
+            <td>NIP Camat</td><td>:</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th colspan="3" class="subtitle_head"><strong>KABUPATEN</strong></th>
+          </tr>
+          <tr>
+            <td>Nama Kabupaten</td><td>:</td>
+            <td>Pringsewu</td>
+          </tr>
+          <tr>
+            <td>Kode Kabupaten</td><td>:</td>
+            <td>18.10</td>
+          </tr>
+          <tr>
+            <th colspan="3" class="subtitle_head"><strong>PROVINSI</strong></th>
+          </tr>
+          <tr>
+            <td>Nama Provinsi</td><td>:</td>
+            <td>Lampung</td>
+          </tr>
+          <tr>
+            <td>Kode Provinsi</td><td>:</td>
+            <td>18</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     
     </div>
     
-    <div class="row">
-    
-    <div class="col-6">
-    <p class="lead">Payment Methods:</p>
-    <img src="../../dist/img/credit/visa.png" alt="Visa">
-    <img src="../../dist/img/credit/mastercard.png" alt="Mastercard">
-    <img src="../../dist/img/credit/american-express.png" alt="American Express">
-    <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
-     <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
-    Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem
-    plugg
-    dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
-    </p>
-    </div>
-    
-    <div class="col-6">
-    <p class="lead">Amount Due 2/22/2014</p>
-    <div class="table-responsive">
-    <table class="table">
-    <tbody><tr>
-    <th style="width:50%">Subtotal:</th>
-    <td>$250.30</td>
-    </tr>
-    <tr>
-    <th>Tax (9.3%)</th>
-    <td>$10.34</td>
-    </tr>
-    <tr>
-    <th>Shipping:</th>
-    <td>$5.80</td>
-    </tr>
-    <tr>
-    <th>Total:</th>
-    <td>$265.24</td>
-    </tr>
-    </tbody></table>
-    </div>
-    </div>
-    
-    </div>
     
     
-    <div class="row no-print">
-    <div class="col-12">
-    <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-    <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
-    Payment
-    </button>
-    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-    <i class="fas fa-download"></i> Generate PDF
-    </button>
-    </div>
-    </div>
+    
+
     </div>
     
     </div>
     </div>
     </div>
     </section>
-    
-    </div>
-        {{-- <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                    <div class="col-12">
-                    <div class="callout callout-info">
-                    <h5><i class="fas fa-info"></i> Note:</h5>
-                    This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
-                    </div>
-                    
-                    <div class="invoice p-3 mb-3">
-                    
-                    <div class="row">
-                    <div class="col-12">
-                    <h4>
-                    <i class="fas fa-globe"></i> AdminLTE, Inc.
-                    <small class="float-right">Date: 2/10/2014</small>
-                    </h4>
-                    </div>
-                    
-                    </div>
-                    
-                    <div class="row invoice-info">
-                    <div class="col-sm-4 invoice-col">
-                    From
-                    <address>
-                    <strong>Admin, Inc.</strong><br>
-                    795 Folsom Ave, Suite 600<br>
-                    San Francisco, CA 94107<br>
-                    Phone: (804) 123-5432<br>
-                    Email: info@almasaeedstudio.com
-                    </address>
-                    </div>
-                    
-                    <div class="col-sm-4 invoice-col">
-                    To
-                    <address>
-                    <strong>John Doe</strong><br>
-                    795 Folsom Ave, Suite 600<br>
-                    San Francisco, CA 94107<br>
-                    Phone: (555) 539-1037<br>
-                    Email: john.doe@example.com
-                    </address>
-                    </div>
-                    
-                    <div class="col-sm-4 invoice-col">
-                    <b>Invoice #007612</b><br>
-                    <br>
-                    <b>Order ID:</b> 4F3S8J<br>
-                    <b>Payment Due:</b> 2/22/2014<br>
-                    <b>Account:</b> 968-34567
-                    </div>
-                    
-                    </div>
-                    
-                    
-                    <div class="row">
-                    <div class="col-12 table-responsive">
-                    <table class="table table-striped">
-                    <thead>
-                    <tr>
-                    <th>Qty</th>
-                    <th>Product</th>
-                    <th>Serial #</th>
-                    <th>Description</th>
-                    <th>Subtotal</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                    <td>1</td>
-                    <td>Call of Duty</td>
-                    <td>455-981-221</td>
-                    <td>El snort testosterone trophy driving gloves handsome</td>
-                    <td>$64.50</td>
-                    </tr>
-                    <tr>
-                    <td>1</td>
-                    <td>Need for Speed IV</td>
-                    <td>247-925-726</td>
-                    <td>Wes Anderson umami biodiesel</td>
-                    <td>$50.00</td>
-                    </tr>
-                    <tr>
-                    <td>1</td>
-                    <td>Monsters DVD</td>
-                    <td>735-845-642</td>
-                    <td>Terry Richardson helvetica tousled street art master</td>
-                    <td>$10.70</td>
-                    </tr>
-                    <tr>
-                    <td>1</td>
-                    <td>Grown Ups Blue Ray</td>
-                    <td>422-568-642</td>
-                    <td>Tousled lomo letterpress</td>
-                    <td>$25.99</td>
-                    </tr>
-                    </tbody>
-                    </table>
-                    </div>
-                    
-                    </div>
-                    
-                    <div class="row">
-                    
-                    <div class="col-6">
-                    <p class="lead">Payment Methods:</p>
-                    <img src="../../dist/img/credit/visa.png" alt="Visa">
-                    <img src="../../dist/img/credit/mastercard.png" alt="Mastercard">
-                    <img src="../../dist/img/credit/american-express.png" alt="American Express">
-                    <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
-                    <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
-                    Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem
-                    plugg
-                    dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
-                    </p>
-                    </div>
-                    
-                    <div class="col-6">
-                    <p class="lead">Amount Due 2/22/2014</p>
-                    <div class="table-responsive">
-                    <table class="table">
-                    <tbody><tr>
-                    <th style="width:50%">Subtotal:</th>
-                    <td>$250.30</td>
-                    </tr>
-                    <tr>
-                    <th>Tax (9.3%)</th>
-                    <td>$10.34</td>
-                    </tr>
-                    <tr>
-                    <th>Shipping:</th>
-                    <td>$5.80</td>
-                    </tr>
-                    <tr>
-                    <th>Total:</th>
-                    <td>$265.24</td>
-                    </tr>
-                    </tbody></table>
-                    </div>
-                    </div>
-                    
-                    </div>
-                    
-                    
-                    <div class="row no-print">
-                    <div class="col-12">
-                    <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-                    <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
-                    Payment
-                    </button>
-                    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                    <i class="fas fa-download"></i> Generate PDF
-                    </button>
-                    </div>
-                    </div>
-                    </div>
-                    
-                    </div>
-                    </div>
-                </div>
-            </section> --}}
-
-
 @endsection
 @section('styles')
-
+    {{-- <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') !!}">
+    <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') !!}"> --}}
+    {{--  <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css') !!}">  --}}
 @endsection
 
 @section('javas')
+    <script src="{!! URL::asset('assets/admin/plugins/datatables/jquery.dataTables.min.js') !!}"></script>
+    <script src="{!! URL::asset('assets/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') !!}"></script>
+    <script src="{!! URL::asset('assets/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js') !!}"></script>
+    <script src="{!! URL::asset('assets/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') !!}"></script>
 
+    {{-- <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+            });
+        });
+    </script> --}}
 @endsection
