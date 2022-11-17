@@ -307,7 +307,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../../index.html" class="nav-link">
+                            <a href="{!! route('siode.absenstaf.absenstaf.index') !!}" class="nav-link">
                                 <i class="nav-icon far fa-plus-square text-green"></i>
                                 <p>Laporan Absen Staf Desa</p>
                             </a>
