@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
         Route::view('/identitas-desa', 'backend.info_desa.status_desa.index')->name('identitas');
-        Route::view('/wilayah-administratif-desa', 'backend.info_desa.status_desa.index')->name('wilayahadministratif');
+        Route::view('/wilayah-administratif-desa', 'backend.info_desa.wilayah_administratif.index')->name('wilayahadministratif');
         Route::view('/status-desa', 'backend.info_desa.status_desa.index')->name('statusdesa');
         Route::view('/lembaga-desa', 'backend.info_desa.lembaga_desa.index')->name('lembagadesa');
 

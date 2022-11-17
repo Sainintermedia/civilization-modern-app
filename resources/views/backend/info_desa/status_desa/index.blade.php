@@ -2,214 +2,145 @@
 @section('title', 'Status Desa')
 @section('breadcrumb', 'Status Desa')
 @section('content')
-
-    <div class="wrapper">
-        <div class="row">
-            <div class="col-12">
-                <div class="card card-primary card-outline">
-                    <div class="card-body">
-                        <p class="card-text">
-                        <div class="card">
-                            <div class="card-header">
-                                <input class="form-control form-control-sm col-sm-2" type="text"
-                                    placeholder=".form-control-sm">
-                                <h3 class="card-title">DataTable with default features</h3>
-                            </div>
-
-                            <div class="card-body">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 4.0
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td> 4</td>
-                                            <td>X</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 5.0
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td>5</td>
-                                            <td>C</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 5.5
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td>5.5</td>
-                                            <td>A</td>
-                                        </tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-            </p>
-        </div>
+<section class="content">
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-12">
+    <div class="callout callout-info">
+    <h5><i class="fas fa-info"></i> Nama Desa:</h5>
+    Cisoka Kecamatan Cisoka
     </div>
-    {{-- <div class="col-md-9">
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <a href="https://demosid.opendesa.id/identitas_desa" class="btn btn-social btn-flat btn-info btn-sm visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block" title="Kembali Ke Data Desa"><i class="fa fa-arrow-circle-o-left"></i> Kembali Ke Data Identitas Desa</a>
-        </div>
-        <div class="box-body">
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="nama">Nama Desa</label>
-                <div class="col-sm-8">
-                                                            <select id="pilih_desa" name="pilih_desa" class="form-control input-sm select-nama-desa" data-placeholder="Nampar Tabang - Lamba Leda - Manggarai Timur - Nusa Tenggara Timur" data-token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6bnVsbCwidGltZXN0YW1wIjoxNjAzNDY2MjM5fQ.HVCNnMLokF2tgHwjQhSIYo6-2GNXB4-Kf28FSIeXnZw" data-tracker='https://pantau.opensid.my.id' style="display: none;"></select>
-                                                        <input type="hidden" id="nama_desa" class="form-control input-sm nama_terbatas required" minlength="3" maxlength="50" name="nama_desa" value="Nampar Tabang">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="kode_desa">Kode Desa</label>
-                <div class="col-sm-2">
-                    <input readonly id="kode_desa" name="kode_desa" class="form-control input-sm  required"  type="text" onkeyup="tampil_kode_desa()" placeholder="Kode Desa" value="5319032005" ></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="kode_pos">Kode Pos Desa</label>
-                <div class="col-sm-2">
-                    <input id="kode_pos" name="kode_pos" class="form-control input-sm number" minlength="5" maxlength="5" type="text" placeholder="Kode Pos Desa" value="83355"></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="pamong_id">Nama Kepala</label>
-                <div class="col-sm-8">
-                    <select class="form-control input-sm" id="kades" name="pamong_id">
-                        <option value="">--- Pilih Kepala ---</option>
-                                                                    <option value="20" data-nip="197905062010011007"  >Mustahiq S.Adm (Sekretaris Desa)</option>
-                                                                    <option value="21" data-nip="-"  >Syafruddin  (Kaur Pemerintahan )</option>
-                                                                    <option value="22" data-nip="-"  >Supardi Rustam  (Kaur Umum )</option>
-                                                                    <option value="23" data-nip="-"  >Mardiana  (Kaur Keuangan)</option>
-                                                                    <option value="24" data-nip="-"  >Syafi-i. SE  (Kaur Pembangunan )</option>
-                                                                    <option value="25" data-nip=""  >Mahrup  (Kaur Keamanan dan Ketertiban)</option>
-                                                                    <option value="14" data-nip="" selected='selected' >Muhammad Ilham  (Kepala)</option>
-                                                            </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="nip_kepala_desa">NIP Kepala</label>
-                <div class="col-sm-8">
-                    <input readonly id="nip_kepala_desa" name="nip_kepala_desa" class="form-control input-sm nomor_sk" maxlength="50" type="text" placeholder="NIP Kepala" value=""></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="alamat_kantor">Alamat Kantor Desa</label>
-                <div class="col-sm-8">
-                    <textarea id="alamat_kantor" name="alamat_kantor" class="form-control input-sm alamat required" maxlength="100" placeholder="Alamat Kantor Desa" rows="3" style="resize:none;">Jl. Raya Senggigi Km 10 Kerandangan </textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="email_desa">E-Mail Desa</label>
-                <div class="col-sm-8">
-                    <input id="email_desa" name="email_desa" class="form-control input-sm email" maxlength="50" type="text" placeholder="E-Mail Desa" value=""></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="telepon">Telpon Desa</label>
-                <div class="col-sm-8">
-                    <input id="telepon" name="telepon" class="form-control input-sm bilangan" type="text" maxlength="15" placeholder="Telpon Desa" value=""></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="website">Website Desa</label>
-                <div class="col-sm-8">
-                    <input id="website" name="website" class="form-control input-sm url" maxlength="50" type="text" placeholder="Website Desa" value=""></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="nama_kecamatan">Nama Kecamatan</label>
-                <div class="col-sm-8">
-                    <input readonly id="nama_kecamatan" name="nama_kecamatan" class="form-control input-sm required" type="text" placeholder="Nama Kecamatan" value="Lamba Leda"></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="kode_kecamatan">Kode Kecamatan</label>
-                <div class="col-sm-2">
-                    <input readonly id="kode_kecamatan" name="kode_kecamatan" class="form-control input-sm required" type="text" placeholder="Kode Kecamatan" value="531903" ></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="nama_kecamatan">Nama Camat</label>
-                <div class="col-sm-8">
-                    <input id="nama_kepala_camat" name="nama_kepala_camat" class="form-control input-sm nama required" maxlength="50" type="text" placeholder="Nama Camat" value="Bambang Budi Sanyoto, S. H"></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="nip_kepala_camat">NIP Camat</label>
-                <div class="col-sm-4">
-                    <input id="nip_kepala_camat" name="nip_kepala_camat" class="form-control input-sm nomor_sk" maxlength="50" type="text" placeholder="NIP Camat" value="-"></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="nama_kabupaten">Nama Kabupaten</label>
-                <div class="col-sm-8">
-                    <input readonly id="nama_kabupaten" name="nama_kabupaten" class="form-control input-sm required" type="text" placeholder="Nama Kabupaten" value="Manggarai Timur"></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="kode_kabupaten">Kode Kabupaten</label>
-                <div class="col-sm-2">
-                    <input readonly id="kode_kabupaten" name="kode_kabupaten" class="form-control input-sm required" type="text" placeholder="Kode Kabupaten" value="5319"></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="nama_propinsi">Nama Provinsi</label>
-                <div class="col-sm-8">
-                    <input readonly id="nama_propinsi" name="nama_propinsi" class="form-control input-sm required" type="text" placeholder="Nama Propinsi" value="Nusa Tenggara Timur"></input>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="kode_propinsi">Kode Provinsi</label>
-                <div class="col-sm-2">
-                    <input readonly id="kode_propinsi" name="kode_propinsi" class="form-control input-sm required" type="text" placeholder="Kode Provinsi" value="53"></input>
-                </div>
-            </div>
-        </div>
-        <div class='box-footer'>
-            <button type='reset' class='btn btn-social btn-flat btn-danger btn-sm' ><i class='fa fa-times'></i> Batal</button>
-            <button type='submit' class='btn btn-social btn-flat btn-info btn-sm pull-right'><i class='fa fa-check'></i> Simpan</button>
-        </div>
+    
+    <div class="invoice p-3 mb-3">
+    
+    <div class="row">
+    <div class="col-12">
+    
     </div>
-</div>
-</form>
-</div> --}}
+    
+    </div>
+    
+        <div class="row invoice-info">
+            <div class="col-sm-2 invoice-col">
+            
+            </div>
+        <div class="col-sm-8 invoice-col">
+            <a href="https://3dwarehouse.sketchup.com/warehouse/v1.0/content/public/50f1e0af-5dcb-489e-ad45-c57a3c7cf6ab" data-toggle="lightbox" data-title="sample 2 - black" data-gallery="gallery">
+                <img src="https://3dwarehouse.sketchup.com/warehouse/v1.0/content/public/50f1e0af-5dcb-489e-ad45-c57a3c7cf6ab" class="img-fluid mb-2" alt="black sample">
+                </a>
+        <address>
+        </div>
+        <div class="col-sm-2 invoice-col">
+            
+        </div>
+    
+    </div>
+    
+    
+    <div class="row">
+    <div class="col-12 table-responsive">
+    <table class="table table-bordered table-striped table-hover tabel-rincian">
+        <tbody>
+          <tr>
+            <th colspan="3" class="subtitle_head"><strong>DESA</strong></th>
+          </tr>
+          <tr>
+            <td width="300">Nama Desa</td><td width="1">:</td>
+            <td>Waluyojati</td>
+          </tr>
+          <tr>
+            <td>Kode Desa</td><td>:</td>
+            <td>18.10.01.2007</td>
+          </tr>
+          <tr>
+            <td>Kode Pos Desa</td><td>:</td>
+            <td>37162</td>
+          </tr>
+          <tr>
+            <td>Nama Kepala Desa</td><td>:</td>
+            <td>H. AHLUL, S.Pd.I</td>
+          </tr>
+          <tr>
+            <td>NIP Kepala Desa</td><td>:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Alamat Kantor Desa</td><td>:</td>
+            <td>Jl. Raya DAPANDRA</td>
+          </tr>
+          <tr>
+            <td>E-Mail Desa</td><td>:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Telpon Desa</td><td>:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Website Desa</td><td>:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="3" class="subtitle_head"><strong>KECAMATAN</strong></th>
+          </tr>
+          <tr>
+            <td>Nama Kecamatan</td><td>:</td>
+            <td>Pringsewu</td>
+          </tr>
+          <tr>
+            <td>Kode Kecamatan</td><td>:</td>
+            <td>18.10.01</td>
+          </tr>
+          <tr>
+            <td>Nama Camat</td><td>:</td>
+            <td>Qwerty</td>
+          </tr>
+          <tr>
+            <td>NIP Camat</td><td>:</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th colspan="3" class="subtitle_head"><strong>KABUPATEN</strong></th>
+          </tr>
+          <tr>
+            <td>Nama Kabupaten</td><td>:</td>
+            <td>Pringsewu</td>
+          </tr>
+          <tr>
+            <td>Kode Kabupaten</td><td>:</td>
+            <td>18.10</td>
+          </tr>
+          <tr>
+            <th colspan="3" class="subtitle_head"><strong>PROVINSI</strong></th>
+          </tr>
+          <tr>
+            <td>Nama Provinsi</td><td>:</td>
+            <td>Lampung</td>
+          </tr>
+          <tr>
+            <td>Kode Provinsi</td><td>:</td>
+            <td>18</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    </div>
+    
+    
+    
+    
 
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    </section>
 @endsection
 @section('styles')
-    <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') !!}">
-    <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') !!}">
+    {{-- <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') !!}">
+    <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') !!}"> --}}
     {{--  <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css') !!}">  --}}
 @endsection
 
@@ -219,7 +150,7 @@
     <script src="{!! URL::asset('assets/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js') !!}"></script>
     <script src="{!! URL::asset('assets/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') !!}"></script>
 
-    <script>
+    {{-- <script>
         $(function() {
             $("#example1").DataTable({
                 "responsive": true,
@@ -227,5 +158,5 @@
                 "autoWidth": false,
             });
         });
-    </script>
+    </script> --}}
 @endsection
