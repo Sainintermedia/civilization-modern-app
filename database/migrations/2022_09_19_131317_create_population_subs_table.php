@@ -24,7 +24,7 @@ class CreatePopulationSubsTable extends Migration
             $table->string('agama')->nullable();
             $table->string('pendidikan')->nullable();
             $table->string('jns_pekerjaan')->nullable();
-            $table->string('gol_datah')->nullable();
+            $table->string('gol_darah')->nullable();
             $table->string('sts_perkawinan')->nullable();
             $table->string('tgl_perkawinan')->nullable();
             $table->string('sts_hub_kel')->nullable();
