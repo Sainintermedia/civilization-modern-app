@@ -5,20 +5,22 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
 // use App\Http\Controllers\DependantDropdownController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\FamillyController;
-use App\Http\Controllers\BukukeputusandesaController;
 
+use App\Http\Controllers\Auth\AbsenController;
 use App\Http\Controllers\Bukuadminsitrasidesa;
 use App\Http\Controllers\PopulationController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\FamillyCardController;
 use App\Http\Controllers\PemerintahandesaController;
 use App\Http\Controllers\Admin\PermissionsController;
+use App\Http\Controllers\BukukeputusandesaController;
 use App\Http\Controllers\DependentDropdownController;
+use App\Http\Controllers\FamillyCardMemberController;
 use App\Http\Controllers\Auth\ChangePasswordController;
-use App\Http\Controllers\Auth\AbsenController;
-use App\Http\Controllers\FrontController;
 
 
 
@@ -72,13 +74,16 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
 
     
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
-        Route::get('penduduk/cari', [PopulationController::class, 'search'])->name('penduduk.cari');
-        Route::resource('/penduduk', PopulationController::class);
+        // Route::get('penduduk/cari', [PopulationController::class, 'search'])->name('penduduk.cari');
+        // Route::resource('/penduduk', PopulationController::class);
 
-        Route::get('keluarga/cari', [FamillyController::class, 'search'])->name('keluarga.cari');
-        Route::resource('/keluarga', FamillyController::class);
+        // Route::get('keluarga/cari', [FamillyController::class, 'search'])->name('keluarga.cari');
+        // Route::resource('/keluarga', FamillyController::class);
 
         Route::view('/kk', 'backend.kependudukan.keluarga.view')->name('kk');
+
+        Route::resource('kartu-keluarga/kepala-keluarga', FamillyCardController::class);
+        Route::resource('kartu-keluarga/anggota-keluarga', FamillyCardMemberController::class);
     });
     // Route::group(['middleware' => ['auth'], 'prefix' => 'absenstaf', 'as' => 'absenstaf.'], function () {
     //     // Route::get('penduduk/cari', [PopulationController::class, 'search'])->name('penduduk.cari');

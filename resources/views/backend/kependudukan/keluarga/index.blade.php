@@ -8,12 +8,12 @@
             <div class="card card-warning card-outline rounded-0">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <a href="{!! route('siode.kependudukan.keluarga.create') !!}" type="button"
+                        <a href="{!! route('siode.kependudukan.kepala-keluarga.create') !!}" type="button"
                             class="card-title btn-sm bg-gradient-primary text-sm"><i class="fa-solid fa-square-plus"></i>
                             Keluarga</a>
                     </h3>
                     <div class="card-tools">
-                        <form method="GET" action="{!! route('siode.kependudukan.keluarga.cari') !!}" autocomplete="off">
+                        <form method="GET" action="#" autocomplete="off">
                             @csrf
                             <div class="input-group input-group-sm text-sm" style="width: 250px;">
                                 <input type="text" name="search" class="form-control float-right"
@@ -44,8 +44,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($populations as $value => $population)
-                                <tr class="text-center">
+                            @forelse ($famillycards as $value => $famillycard)
+                                {{--  <tr class="text-center">
                                     <td>{!! $loop->iteration !!}</td>
                                     <td>{!! $population->no_kk !!}</td>
                                     <td style="text-transform:uppercase">{!! $population->nama !!}</td>
@@ -67,7 +67,7 @@
                                                 name="button"><i class="fa-solid fa-trash"></i> Delete</button>
                                         </form>
                                     </td>
-                                </tr>
+                                </tr>  --}}
                             @empty
                                 <h4>tidak ada data</h4>
                             @endforelse
@@ -88,9 +88,9 @@
                     </table>
                 </div>
                 <div class="card-footer clearfix">
-                    Jumlah Data : {{ $populations->total() }}
+                    Jumlah Data : {{ $famillycards->total() }}
                     <ul class="pagination pagination-sm float-right m-0">
-                        {{ $populations->links() }}
+                        {{ $famillycards->links() }}
                     </ul>
                 </div>
             </div>

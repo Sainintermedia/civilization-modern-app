@@ -2,25 +2,76 @@
 @section('title', 'Kartu keluarga')
 @section('breadcrumb', 'Kartu keluarga')
 @section('content')
-    <div class="container-fluid p-0">
-        <div class="wrapper">
-            <form method="POST" action="{!! route('siode.kependudukan.keluarga.store') !!}" enctype="multipart/form-data" autocomplete="off">
-                @csrf
+    <form method="POST" action="{!! route('siode.kependudukan.kepala-keluarga.store') !!}" enctype="multipart/form-data" autocomplete="off">
+        @csrf
+        <div class="row">
+            <div class='col-sm-12'>
+                <div class="form-group bg-secondary" style="padding:2px">
+                    <strong>DATA KEPALA KELUARGA :</strong>
+                </div>
+            </div>
+        </div>
+        <div class="card rounded-0">
+            <div class="card-header">
+                <div class="card-title">
+                    <strong>Input data kepala keluarga</strong>
+                </div>
+            </div>
+            <div class="card-body">
                 <div class="row">
-                    <div class='col-sm-12'>
-                        <div class="form-group bg-secondary" style="padding:2px">
-                            <strong>DATA KEPALA KELUARGA :</strong>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="">No Kartu Keluarga</label>
+                            <input type="number" class="form-control form-control-sm rounded-0"
+                                style="text-transform:uppercase" name="no_kk" id="no_kk" required>
                         </div>
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col">
+                        <div class="form-group bg-secondary" style="padding: 2px">
+                            <strong>DATA KEPALA KELUARGA</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="">Provinsi</label>
+                            <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                style="width: 100%;" name="provinsi" id="province" required>
+                                <option value="" hidden>Pilih Provinsi</option>
+                                @foreach ($provinces as $id => $name)
+                                    <option value="{{ $id }}">{{ $name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="">Kabupaten / Kota</label>
+                            <select class="form-control select2 rounded-0" style="text-transform:uppercase"
+                                style="width: 100%;" name="kabkot" id="city" required>
+                                <option value="" hidden>Pilih Kab/Kota</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+
+            </div>
+        </div>
+
+
+        {{--  <div class="row">
                     <div class="col-3">
                         <div class="card card-dark card-outline rounded-0">
                             <div class="card-body text-sm">
-                                {{-- <img class="penduduk" id="foto"
-                                src="https://berputar.opendesa.id/assets/images/pengguna/kuser.png" alt="Foto Penduduk"> --}}
+                                <img class="penduduk" id="foto"
+                                src="https://berputar.opendesa.id/assets/images/pengguna/kuser.png" alt="Foto Penduduk">
                                 <br>
-                                {{--  <div class="input-group input-group-sm text-center">
+                                <div class="input-group input-group-sm text-center">
                                     <input type="file" class="hidden" id="file" name="foto">
                                     <input type="text" class="hidden" id="file_path" name="foto">
                                     <input type="hidden" name="old_foto" id="old_foto" value="">
@@ -30,7 +81,7 @@
                                         <button type="button" class="btn btn-danger btn-block btn-flat btn-mb-5"
                                             onclick="kamera();"><i class="fa fa-camera"></i> Kamera</button>
                                     </span>
-                                </div>  --}}
+                                </div>
                                 <h3>Input Kartu keluarga</h3>
                             </div>
                         </div>
@@ -40,29 +91,20 @@
                             <div class="card-body text-sm">
                                 <div class="row">
                                     <div class="col-6">
-                                        <label for="">No Kartu Keluarga</label>
-                                        <input type="number" class="form-control form-control-sm rounded-0"
-                                            style="text-transform:uppercase" name="no_kk" id="no_kk" required>
+                                        <div class="form-group">
+                                            <label for="">No Kartu Keluarga</label>
+                                            <input type="number" class="form-control form-control-sm rounded-0"
+                                                style="text-transform:uppercase" name="no_kk" id="no_kk" required>
+                                        </div>
                                     </div>
                                 </div>
-                                {{--  <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                                    <label for="name">{{ trans('cruds.permission.fields.title') }}*</label>
-                                    <input type="text" id="name" name="name" class="form-control"
-                                        value="{{ old('name', isset($permission) ? $permission->name : '') }}" required>
-                                    @if ($errors->has('name'))
-                                        <em class="invalid-feedback">
-                                            {{ $errors->first('name') }}
-                                        </em>
-                                    @endif
-                                    <p class="helper-block">
-                                        {{ trans('cruds.permission.fields.title_helper') }}
-                                    </p>
-                                </div>  --}}
-                                <br>
+
                                 <div class="row">
                                     <div class='col-sm-12'>
-                                        <div class="form-group bg-secondary" style="padding:2px">
-                                            <strong>ALAMAT KARTU KELUARGA :</strong>
+                                        <div class="form-group">
+                                            <div class="form-group bg-secondary" style="padding:2px">
+                                                <strong>ALAMAT KARTU KELUARGA :</strong>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -286,7 +328,7 @@
                                     <div class="col">
                                         <label for="">Kewarganegaraan</label>
                                         <select class="form-control select2 rounded-0" style="text-transform:uppercase"
-                                            style="width: 100%;" name="kwn" id="" required>
+                                            style="width: 100%;" name="sts_kwn" id="sts_kawin" required>
                                             <option value="" hidden>Pilih Kewarganegaraan</option>
                                             @foreach ($citizens as $id => $nama)
                                                 <option value="{!! $id !!}">{!! $nama !!}
@@ -315,9 +357,22 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
+                                        <label for="">No Induk Keluarga (NIK) Ayah</label>
+                                        <input type="number" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="nik_ayah" id="nik_ayah" required>
+                                    </div>
+                                    <div class="col">
                                         <label for="">Nama Ayah</label>
                                         <input type="text" class="form-control form-control-sm rounded-0"
                                             style="text-transform:uppercase" name="nm_ayah" id="" required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="">No Induk Keluarga (NIK) Ibu</label>
+                                        <input type="number" class="form-control form-control-sm rounded-0"
+                                            style="text-transform:uppercase" name="nik_ibu" id="nik_ibu" required>
                                     </div>
                                     <div class="col">
                                         <label for="">Nama ibu</label>
@@ -339,10 +394,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
-        </div>
-    </div>
+                </div>  --}}
+    </form>
 
 
 @endsection

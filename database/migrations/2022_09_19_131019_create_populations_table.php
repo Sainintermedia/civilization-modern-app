@@ -17,7 +17,7 @@ class CreatePopulationsTable extends Migration
             $table->id();
             $table->bigInteger('no_kk')->nullable()->default(16);
             $table->bigInteger('no_nik')->nullable()->default(16);
-            $table->string('nama_kk')->nullable();
+            $table->string('nama')->nullable();
             $table->string('kp')->nullable();
             $table->integer('rt')->nullable();
             $table->integer('rw')->nullable();
@@ -25,8 +25,6 @@ class CreatePopulationsTable extends Migration
             $table->string('desa')->nullable();
             $table->string('kecamatan')->nullable();
             $table->string('kabkot')->nullable();
-            // $table->string('kabupaten')->nullable();
-            // $table->string('kota')->nullable();
             $table->string('provinsi')->nullable();
             $table->timestamps();
 

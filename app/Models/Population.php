@@ -59,4 +59,11 @@ class Population extends Model
         return $this->hasOne(District::class, 'code', 'kecamatan');
     }
 
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($populationsub) {
+             $populationsub->populationsubs()->delete();
+        });
+    }
 }
