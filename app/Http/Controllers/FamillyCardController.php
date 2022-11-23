@@ -56,7 +56,6 @@ class FamillyCardController extends Controller
         $famillycards->provinsi = $request->provinsi;
         $famillycards->user_id = \Auth::user()->id;
         return $famillycards;
-
         
     }
 
