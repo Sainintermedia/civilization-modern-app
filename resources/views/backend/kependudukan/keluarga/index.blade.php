@@ -5,8 +5,25 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card card-warning card-outline rounded-0">
+            <div class="card card-warning card-outline rounded-0 table-responsive">
                 <div class="card-header">
+                    <h3 class="card-title">
+                        <a href="{!! route('siode.kependudukan.kepala-keluarga.create') !!}" type="button"
+                            class="card-title btn-sm bg-gradient-primary text-sm"><i class="fa-solid fa-square-plus"></i>
+                            Keluarga</a>
+                    </h3>
+                    <div class="card-tools">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{--  <div class="card-header">
                     <h3 class="card-title">
                         <a href="{!! route('siode.kependudukan.kepala-keluarga.create') !!}" type="button"
                             class="card-title btn-sm bg-gradient-primary text-sm"><i class="fa-solid fa-square-plus"></i>
@@ -26,7 +43,7 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div>  --}}
                 <div class="card-body">
                     <table id="example1"
                         class="table-bordered table-hover table-striped rounded-0 table-sm table py-0 text-sm">
@@ -44,7 +61,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($famillycards as $value => $famillycard)
+                            @forelse ($famillycardmembers as $value => $famillycard)
                                 {{--  <tr class="text-center">
                                     <td>{!! $loop->iteration !!}</td>
                                     <td>{!! $population->no_kk !!}</td>
@@ -88,9 +105,9 @@
                     </table>
                 </div>
                 <div class="card-footer clearfix">
-                    Jumlah Data : {{ $famillycards->total() }}
+                    Jumlah Data : {{ $famillycardmembers->total() }}
                     <ul class="pagination pagination-sm float-right m-0">
-                        {{ $famillycards->links() }}
+                        {{ $famillycardmembers->links() }}
                     </ul>
                 </div>
             </div>

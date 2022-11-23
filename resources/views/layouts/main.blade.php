@@ -3,16 +3,14 @@
 <html lang="en">
 
 <head>
-
     @include('layouts.style')
     @yield('styles')
 </head>
 
-<body class="sidebar-closed sidebar-mini-xs">
+<body class="sidebar-mini">
     <div class="wrapper">
 
         @include('layouts.navbar')
-
 
         @include('layouts.sidebar')
 
@@ -34,7 +32,6 @@
                 </div>
             </div>
 
-
             <div class="content">
                 <div class="container-fluid">
                     @yield('content')
@@ -42,7 +39,6 @@
             </div>
 
         </div>
-
 
         <aside class="control-sidebar control-sidebar-dark">
 
@@ -52,7 +48,6 @@
             </div>
         </aside>
 
-
         @include('layouts.footer')
 
         <form id="logoutform" action="{!! route('logout') !!}" method="POST" style="display: none;">
@@ -60,10 +55,9 @@
         </form>
     </div>
 
-
-
     @include('layouts.javascript')
-    @yield('javas')
+    @yield('scripts')
+
 </body>
 
 </html>

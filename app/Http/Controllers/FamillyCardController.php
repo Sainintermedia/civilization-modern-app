@@ -12,6 +12,7 @@ use App\Models\Religion;
 use App\Models\Education;
 use App\Models\FamillyCard;
 use Illuminate\Http\Request;
+use App\Models\FamillyCardMember;
 use App\Http\Controllers\Controller;
 use Laravolt\Indonesia\Models\Province;
 
@@ -19,9 +20,9 @@ class FamillyCardController extends Controller
 {
     public function index()
     {
-        $famillycards = FamillyCard::where('sts_hub_kel', '=', 1)->where('sts_mati', '=', 0)->paginate(10);
+        $famillycardmembers = FamillyCardMember::where('sts_hub_kel', '=', 1)->where('sts_mati', '=', 0)->paginate(10);
 
-        return view('backend.kependudukan.keluarga.index', compact('famillycards'));
+        return view('backend.kependudukan.keluarga.index', compact('famillycardmembers'));
     }
 
     public function create()
@@ -42,7 +43,21 @@ class FamillyCardController extends Controller
 
     public function store(Request $request)
     {
-        return $request->all();
+        // return $request->all();
+        $famillycards = new FamillyCard();
+        $famillycards->no_kk = $request->no_kk;
+        $famillycards->kp = $request->kp;
+        $famillycards->rt = $request->rt;
+        $famillycards->rw = $request->rw;
+        $famillycards->kodepos = $request->kodepos;
+        $famillycards->desa = $request->desa;
+        $famillycards->kecamatan = $request->kecamatan;
+        $famillycards->kabkot = $request->kabkot;
+        $famillycards->provinsi = $request->provinsi;
+        $famillycards->user_id = \Auth::user()->id;
+        return $famillycards;
+
+        
     }
 
     public function edit($id)
