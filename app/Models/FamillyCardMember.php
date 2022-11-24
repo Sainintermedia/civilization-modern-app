@@ -46,10 +46,10 @@ class FamillyCardMember extends Model implements Auditable
 
     public function famillycard()
     {
-        return $this->hasOne(FamillyCard::class, 'id', 'no_kk');
+        return $this->belongsTo(FamillyCard::class, 'no_kk', 'id');
     }
 
-     public function provinces()
+    public function provinces()
     {
         return $this->hasOne(Province::class, 'code', 'provinsi');
     }

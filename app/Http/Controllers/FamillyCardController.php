@@ -24,7 +24,9 @@ class FamillyCardController extends Controller
 {
     public function index()
     {
-        $famillycardmembers = FamillyCardMember::with('famillycard.village.district')->where('sts_hub_kel', '=', 1)->where('sts_mati', '=', 0)->paginate(10);
+        $famillycardmembers = FamillyCardMember::whereSts_hub_kel(1)
+            ->with('famillycard.village.district')
+            ->paginate(10);
         // return $famillycardmembers;
         return view('backend.kependudukan.keluarga.index', compact('famillycardmembers'));
     }
@@ -42,8 +44,7 @@ class FamillyCardController extends Controller
         $sexes = Sex::orderBy('id', 'ASC')->pluck('nama', 'id');
         $rtrw = RtRw::get();
 
-        return view('backend.kependudukan.keluarga.create', compact('provinces','works','marries','relations','bloods','educations','religions','citizens','sexes','rtrw'));
-
+        return view('backend.kependudukan.keluarga.create', compact('provinces', 'works', 'marries', 'relations', 'bloods', 'educations', 'religions', 'citizens', 'sexes', 'rtrw'));
     }
 
     public function store(FamillyCardRequestStore $request)
@@ -91,7 +92,6 @@ class FamillyCardController extends Controller
         return redirect()
             ->route('siode.kependudukan.kepala-keluarga.index')
             ->with('store', 'Data saved successfully');
-        
     }
 
     public function show($kepala_keluarga)
@@ -114,8 +114,7 @@ class FamillyCardController extends Controller
         $sexes = Sex::orderBy('id', 'ASC')->pluck('nama', 'id');
         $rtrw = RtRw::get();
 
-        return view('backend.kependudukan.keluarga.edit', compact('famillycardmember','provinces','works','marries','relations','bloods','educations','religions','citizens','sexes','rtrw'));
-
+        return view('backend.kependudukan.keluarga.edit', compact('famillycardmember', 'provinces', 'works', 'marries', 'relations', 'bloods', 'educations', 'religions', 'citizens', 'sexes', 'rtrw'));
     }
 
     public function update(FamillyCardRequestStore $request, $kepala_keluarga)
