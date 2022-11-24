@@ -20,7 +20,7 @@ class CreateFamillyCardsTable extends Migration
             $table->string('rt')->nullable();
             $table->string('rw')->nullable();
             $table->integer('kodepos')->nullable();
-            $table->integer('desa')->nullable();
+            $table->string('desa')->nullable();
             $table->integer('kecamatan')->nullable();
             $table->integer('kabkot')->nullable();
             $table->integer('provinsi')->nullable();

@@ -8,13 +8,7 @@
             <div class="card card-warning card-outline rounded-0 table-responsive">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <a href="{!! route('siode.kependudukan.kepala-keluarga.create') !!}" type="button"
-                            class="card-title btn-sm bg-gradient-primary rounded-0 text-sm"><i
-                                class="fa-solid fa-square-plus"></i>
-                            Keluarga</a>
-                        <a href="{!! route('siode.kependudukan.kepala-keluarga.view-delete') !!}" type="button"
-                            class="card-title btn-sm bg-gradient-danger rounded-0 text-sm"><i class="fa-solid fa-trash"></i>
-                            Trash</a>
+                        <p>Data yang dihapus</p>
                     </h3>
                     <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
@@ -27,27 +21,6 @@
                         </div>
                     </div>
                 </div>
-                {{--  <div class="card-header">
-                    <h3 class="card-title">
-                        <a href="{!! route('siode.kependudukan.kepala-keluarga.create') !!}" type="button"
-                            class="card-title btn-sm bg-gradient-primary text-sm"><i class="fa-solid fa-square-plus"></i>
-                            Keluarga</a>
-                    </h3>
-                    <div class="card-tools">
-                        <form method="GET" action="#" autocomplete="off">
-                            @csrf
-                            <div class="input-group input-group-sm text-sm" style="width: 250px;">
-                                <input type="text" name="search" class="form-control float-right"
-                                    placeholder="Cari kepala keluarga...." id="search" value="{!! old('search') !!}">
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-sm btn-default bg-gradient-info">
-                                        <i class="fa-brands fa-searchengin"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>  --}}
                 <div class="card-body">
                     <table id="example1"
                         class="table-bordered table-hover table-striped rounded-0 table-sm table py-0 text-sm">
@@ -78,14 +51,14 @@
                                         KEC. {{ $fm->famillycard->district->name }}</td>
                                     <td class="text-center">
                                         <div class="btn-group text-center">
-                                            {{--  <button type="button" class="btn bg-gradient-success btn-sm">Action</button>  --}}
+                                            {{--  <button type="button" class="btn bg-gradient-success btn-sm"></button>  --}}
                                             <button type="button"
                                                 class="btn bg-gradient-success dropdown-toggle dropdown-icon btn-sm"
                                                 data-toggle="dropdown">
                                                 <span class="bg-gradient-success sr-only">Toggle Dropdown</span>
                                             </button>
                                             <div class="dropdown-menu" role="menu">
-                                                <form method="POST" action="{!! route('siode.kependudukan.kepala-keluarga.destroy', $fm->id) !!}" class="text-center">
+                                                <form method="POST" action="{!! route('siode.kependudukan.kepala-keluarga.kill', $fm->id) !!}" class="text-center">
                                                     @csrf
                                                     @method('delete')
                                                     <a class="dropdown-item bg-gradient-info"
@@ -93,9 +66,9 @@
                                                             class="fa-solid fa-eye"></i>
                                                         View</a>
                                                     <a class="dropdown-item bg-gradient-warning"
-                                                        href="{{ route('siode.kependudukan.kepala-keluarga.edit', $fm->id) }}"><i
+                                                        href="{{ route('siode.kependudukan.kepala-keluarga.restore', $fm->id) }}"><i
                                                             class="fa-solid fa-pen"></i>
-                                                        Edit</a>
+                                                        Restore</a>
                                                     <a class="dropdown-item bg-gradient-danger show_confirm"
                                                         data-nama="{!! $fm->nama !!}" type="submit"><i
                                                             class="fa-solid fa-trash"></i>
@@ -161,7 +134,7 @@
             event.preventDefault();
             swal({
                     title: `Apakah anda yakin ?`,
-                    text: "Data " + nama_data + " yang dihapus tidak dapat dikembalikan!",
+                    text: "Data " + nama_data + " yang dihapus pemanent tidak dapat dikembalikan!",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,

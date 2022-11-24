@@ -3,13 +3,19 @@
 namespace App\Models;
 
 use App\Models\FamillyCard;
+use Laravolt\Indonesia\Models\City;
+use Laravolt\Indonesia\Models\Village;
 use Illuminate\Database\Eloquent\Model;
+use Laravolt\Indonesia\Models\District;
+use Laravolt\Indonesia\Models\Province;
 use OwenIt\Auditing\Contracts\Auditable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class FamillyCardMember extends Model implements Auditable
 {
     use HasFactory;
+    use SoftDeletes;
     use \OwenIt\Auditing\Auditable;
     protected $table = 'familly_card_members';
     protected $fillable = [
@@ -42,4 +48,25 @@ class FamillyCardMember extends Model implements Auditable
     {
         return $this->hasOne(FamillyCard::class, 'no_kk', 'no_kk');
     }
+
+     public function provinces()
+    {
+        return $this->hasOne(Province::class, 'code', 'provinsi');
+    }
+
+    public function cities()
+    {
+        return $this->hasOne(City::class, 'code', 'kabkot');
+    }
+
+    public function village()
+    {
+        return $this->hasOne(Village::class, 'code', 'desa');
+    }
+
+    public function district()
+    {
+        return $this->hasOne(District::class, 'code', 'kecamatan');
+    }
+
 }

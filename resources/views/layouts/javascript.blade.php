@@ -3,3 +3,5 @@
 <script src="{!! URL::asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>
 
 <script src="{!! URL::asset('assets/admin/dist/js/adminlte.js') !!}"></script>
+
+<script src="{{ URL::asset('assets/admin/plugins/sweetalert2/sweetalert.min.js') }}"></script>

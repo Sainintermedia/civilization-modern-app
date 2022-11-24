@@ -252,11 +252,7 @@
                             <label for="">Hubungan Dalam Keluarga</label>
                             <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                 style="width: 100%;" name="sts_hub_kel" id="" required>
-                                <option value="" hidden>Pilih Hubungan</option>
-                                @foreach ($relations as $id => $nama)
-                                    <option value="{!! $id !!}">{!! $nama !!}
-                                    </option>
-                                @endforeach
+                                <option value="1" selected>KEPALA KELUARGA</option>
                             </select>
                         </div>
                     </div>
