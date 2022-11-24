@@ -15,6 +15,8 @@ use Illuminate\Http\Request;
 use App\Models\FamillyCardMember;
 use App\Http\Controllers\Controller;
 use Laravolt\Indonesia\Models\Province;
+use App\Http\Requests\FamillyCardMemberRequestStore;
+use App\Http\Requests\FamillyCardMemberRequestUpdate;
 
 class FamillyCardMemberController extends Controller
 {
@@ -28,9 +30,9 @@ class FamillyCardMemberController extends Controller
     public function create()
     {
         $famillycardmembers = FamillyCardMember::whereSts_hub_kel(1)
-            ->with('famillycard.provinces.cities.village')
+            ->with('famillycard', 'provinces', 'cities', 'village', 'district')
             ->get();
-            return $famillycardmembers;
+        // return $famillycardmembers;
 
         // $provinces = Province::where('code', '36')->pluck('name', 'code');
         $works = Work::orderBy('nama', 'ASC')->pluck('nama', 'id');
@@ -45,5 +47,18 @@ class FamillyCardMemberController extends Controller
 
         return view('backend.kependudukan.keluarga-anggota.create', compact('famillycardmembers', 'works', 'marries', 'relations', 'bloods', 'educations', 'religions', 'citizens', 'sexes', 'rtrw'));
         // return $famillycardmembers;
+    }
+
+    public function store(FamillyCardMemberRequestStore $request)
+    {
+        return $request->all();
+    }
+
+    public function edit()
+    {
+    }
+
+    public function update(FamillyCardMemberRequestUpdate $request)
+    {
     }
 }

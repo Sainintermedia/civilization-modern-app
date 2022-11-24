@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\RtRw;
 use App\Models\FamillyCardMember;
 use Laravolt\Indonesia\Models\City;
 use Laravolt\Indonesia\Models\Village;
@@ -31,20 +32,20 @@ class FamillyCard extends Model implements Auditable
         return $this->hasOne(Province::class, 'code', 'provinsi');
     }
 
-    // public function cities()
-    // {
-    //     return $this->hasOne(City::class, 'code', 'kabkot');
-    // }
+    public function cities()
+    {
+        return $this->hasOne(City::class, 'code', 'kabkot');
+    }
 
-    // public function village()
-    // {
-    //     return $this->hasOne(Village::class, 'code', 'desa');
-    // }
+    public function village()
+    {
+        return $this->hasOne(Village::class, 'code', 'desa');
+    }
 
-    // public function district()
-    // {
-    //     return $this->hasOne(District::class, 'code', 'kecamatan');
-    // }
+    public function district()
+    {
+        return $this->hasOne(District::class, 'code', 'kecamatan');
+    }
 
     public function rtrw()
     {

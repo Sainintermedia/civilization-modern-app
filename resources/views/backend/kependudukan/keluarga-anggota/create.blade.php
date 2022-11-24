@@ -4,7 +4,7 @@
 @section('content')
 
     <div class="card card-dark card-outline rounded-0">
-        <form method="POST" action="{!! route('siode.kependudukan.kepala-keluarga.store') !!}" enctype="multipart/form-data" autocomplete="off">
+        <form method="POST" action="{!! route('siode.kependudukan.anggota-keluarga.store') !!}" enctype="multipart/form-data" autocomplete="off">
             @csrf
             <div class="card-header">
                 <div class="card-title">
@@ -27,17 +27,12 @@
                         </div>
                     </div>
 
-
-                    @foreach ($famillycardmembers as $fcm)
-                        <td>{!! $fcm->famillycard->provinces->cities !!}</td>
-                    @endforeach
-
                     <div class="col">
                         <div class="fom-group">
                             <label for="">Nama Kepala Keluarga</label>
                             <input id="nama" type="text" class="form-control form-control-sm rounded-0"
                                 style="text-transform:uppercase" required readonly>
-                            <input type="text" id="id_kk" name="no_kk">
+                            <input type="hidden" id="id_kk" name="no_kk">
                         </div>
                     </div>
                 </div>
@@ -250,7 +245,11 @@
                             <label for="">Hubungan Dalam Keluarga</label>
                             <select class="form-control select2 rounded-0" style="text-transform:uppercase"
                                 style="width: 100%;" name="sts_hub_kel" id="" required>
-                                <option value="1" selected>KEPALA KELUARGA</option>
+                                <option value="" hidden>Pilih Hubungan</option>
+                                @foreach ($relations as $id => $nama)
+                                    <option value="{!! $id !!}">{!! $nama !!}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -370,34 +369,14 @@
                                             id="selectFamillies" data-no_kk="{!! $fcm->famillycard->no_kk !!}"
                                             data-nama="{!! $fcm->nama !!}" data-id_kk="{!! $fcm->famillycard->id !!}"
                                             data-kp="{!! $fcm->famillycard->kp !!}" data-rt="{!! $fcm->famillycard->rt !!}"
-                                            data-kodepos="{!! $fcm->famillycard->kodepos !!}"
+                                            data-rw="{!! $fcm->famillycard->rw !!}" data-kodepos="{!! $fcm->famillycard->kodepos !!}"
                                             data-provinsi="{!! $fcm->famillycard->provinces->name !!}"
-                                            data-kabkot="{!! $fcm->famillycard->provinces !!}"
-                                            data-rw="{!! $fcm->famillycard->rw !!}"{{--  
-                                            data-kecamatan="{!! $fcm->famillycard->district->name !!}" data-desa="{!! $fcm->village->famillycard->name !!}"
-                                            data-kabkot="{!! $fcm->cities->famillycard->name !!}"
-                                            data-provinsi="{!! $fcm->provinces->famillycard->name !!}" data-dismiss="modal"   --}} </button>Select
+                                            data-kabkot="{!! $fcm->famillycard->cities->name !!}"
+                                            data-kecamatan="{!! $fcm->famillycard->district->name !!}" data-desa="{!! $fcm->famillycard->village->name !!}"
+                                            data-dismiss="modal" </button>Select
                                     </td>
                                 </tr>
                             @endforeach
-
-                            {{--  @foreach ($famillies as $familly)
-                            <tr class="">
-                                <td class="text-center">{!! $loop->iteration !!}</td>
-                                <td>{!! $familly->no_kk !!}</td>
-                                <td style="text-transform:uppercase">{!! $familly->nama !!}</td>
-                                <td scope="row" class="text-center" width="15"><button
-                                        class="btnreg btn bg-gradient-info btn-sm text-sm rounded-0"
-                                        id="selectFamillies" data-no_kk="{!! $familly->no_kk !!}"
-                                        data-id_kk="{!! $familly->id !!}" data-nama="{!! $familly->nama !!}"
-                                        data-kp="{!! $familly->kp !!}" data-rw="{!! $familly->rw !!}"
-                                        data-rt="{!! $familly->rt !!}" data-kodepos="{!! $familly->kodepos !!}"
-                                        data-kecamatan="{!! $familly->district->name !!}" data-desa="{!! $familly->village->name !!}"
-                                        data-kabkot="{!! $familly->cities->name !!}" data-provinsi="{!! $familly->provinces->name !!}"
-                                        data-dismiss="modal" </button>Select
-                                </td>
-                            </tr>
-                        @endforeach  --}}
                         </tbody>
                     </table>
                 </div>
