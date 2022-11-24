@@ -86,7 +86,7 @@
                                         style="text-transform:uppercase" name="rt" required>
                                         <option value="" hidden>Pilih RT</option>
                                         @foreach ($rtrw->whereNotNull('rt')->pluck('rt') as $id => $nama)
-                                            <option value="{!! $id !!}">{!! $nama !!}
+                                            <option value="{!! $nama !!}">{!! $nama !!}
                                             </option>
                                         @endforeach
                                     </select>
@@ -99,7 +99,7 @@
                                         style="text-transform:uppercase" name="rw" required>
                                         <option value="" hidden>Pilih RW</option>
                                         @foreach ($rtrw->whereNotNull('rw')->pluck('rw') as $id => $nama)
-                                            <option value="{!! $id !!}">{!! $nama !!}
+                                            <option value="{!! $nama !!}">{!! $nama !!}
                                             </option>
                                         @endforeach
                                     </select>

@@ -18,6 +18,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Laravolt\Indonesia\Models\Province;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\FamillyCardRequestStore;
 
 class FamillyCardController extends Controller
 {
@@ -45,7 +46,7 @@ class FamillyCardController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store(FamillyCardRequestStore $request)
     {
         $d = $request->all();
         $famillycard = new FamillyCard();
@@ -60,32 +61,31 @@ class FamillyCardController extends Controller
         $famillycard->provinsi = $d['provinsi'];
         $famillycard->user_id = \Auth::user()->id;
         $famillycard->save();
-        // return $famillycard;
 
-        $famillycardmember = new FamillyCardMember();
-        $famillycardmember->no_nik = $d['no_kk'];
-        $famillycardmember->no_kk = $d['no_nik'];
-        $famillycardmember->nama = $d['nama'];
-        $famillycardmember->jenkel = $d['jenkel'];
-        $famillycardmember->tgl_lahir = $d['tgl_lahir'];
-        $famillycardmember->tmpt_lahir = $d['tmpt_lahir'];
-        $famillycardmember->agama = $d['agama'];
-        $famillycardmember->pendidikan = $d['pendidikan'];
-        $famillycardmember->jns_pekerjaan = $d['jns_pekerjaan'];
-        $famillycardmember->gol_darah = $d['gol_darah'];
-        $famillycardmember->sts_perkawinan = $d['sts_perkawinan'];
-        $famillycardmember->tgl_perkawinan = $d['tgl_perkawinan'];
-        $famillycardmember->sts_hub_kel = $d['sts_hub_kel'];
-        $famillycardmember->sts_kwn = $d['sts_kwn'];
-        $famillycardmember->nm_ayah = $d['nm_ayah'];
-        $famillycardmember->nm_ibu = $d['nm_ibu'];
-        $famillycardmember->nik_ayah = $d['nik_ayah'];
-        $famillycardmember->nik_ibu = $d['nik_ibu'];
-        $famillycardmember->sts_mati = 0;
-        $famillycardmember->no_paspor = $d['no_paspor'];
-        $famillycardmember->no_kitap = $d['no_kitap'];
-        $famillycardmember->user_id = \Auth::user()->id;
-        $famillycard->famillycardmembers()->save($famillycardmember);
+        $famillycardmembers = new FamillyCardMember();
+        $famillycardmembers->no_nik = $d['no_nik'];
+        $famillycardmembers->nama = $d['nama'];
+        $famillycardmembers->jenkel = $d['jenkel'];
+        $famillycardmembers->tgl_lahir = $d['tgl_lahir'];
+        $famillycardmembers->tmpt_lahir = $d['tmpt_lahir'];
+        $famillycardmembers->agama = $d['agama'];
+        $famillycardmembers->pendidikan = $d['pendidikan'];
+        $famillycardmembers->jns_pekerjaan = $d['jns_pekerjaan'];
+        $famillycardmembers->gol_darah = $d['gol_darah'];
+        $famillycardmembers->sts_perkawinan = $d['sts_perkawinan'];
+        $famillycardmembers->tgl_perkawinan = $d['tgl_perkawinan'];
+        $famillycardmembers->sts_hub_kel = $d['sts_hub_kel'];
+        $famillycardmembers->sts_kwn = $d['sts_kwn'];
+        $famillycardmembers->nm_ayah = $d['nm_ayah'];
+        $famillycardmembers->nm_ibu = $d['nm_ibu'];
+        $famillycardmembers->nik_ayah = $d['nik_ayah'];
+        $famillycardmembers->nik_ibu = $d['nik_ibu'];
+        $famillycardmembers->sts_mati = 0;
+        $famillycardmembers->no_paspor = $d['no_paspor'];
+        $famillycardmembers->no_kitap = $d['no_kitap'];
+        $famillycardmembers->user_id = \Auth::user()->id;
+        $famillycardmembers->sts = 0;
+        $famillycard->famillycardmembers()->save($famillycardmembers);
 
         Alert::success('Success', 'Data berhasil disimpan !');
         return redirect()
@@ -118,9 +118,12 @@ class FamillyCardController extends Controller
 
     }
 
-    public function update(Request $request, $kepala_keluarga)
+    public function update(FamillyCardRequestStore $request, $kepala_keluarga)
     {
-        
+        // return $request->all();
+        $famillycard = FamillyCard::findOrFail($kepala_keluarga);
+        $famillycardmember = FamillyCardMember::findOrFail($kepala_keluarga);
+        return $famillycardmember;
     }
 
     public function destroy($kepala_keluarga)
