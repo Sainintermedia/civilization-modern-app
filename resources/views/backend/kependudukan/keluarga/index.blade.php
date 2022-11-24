@@ -54,28 +54,19 @@
                         <thead>
                             <tr class="text-center">
                                 <th style="width: 10px">No</th>
+                                <th>Aksi</th>
                                 <th>No KK</th>
                                 <th>No NIK</th>
                                 <th>Nama</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Tempat Lahir</th>
                                 <th>Alamat</th>
-                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($famillycardmembers as $value => $fm)
                                 <tr class="text-center">
                                     <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td>{{ $fm->no_kk }}</td>
-                                    <td>{{ $fm->no_nik }}</td>
-                                    <td style="text-transform:uppercase">{{ $fm->nama }}</td>
-                                    <td style="text-transform:uppercase" class="text-center">{{ $fm->tgl_lahir }}</td>
-                                    <td style="text-transform:uppercase" class="text-center">{{ $fm->tmpt_lahir }}</td>
-                                    <td style="text-transform:uppercase">{{ $fm->famillycard->kp }}, RT.
-                                        {{ $fm->famillycard->rt }}/{{ $fm->famillycard->rw }},DS.
-                                        {{ $fm->famillycard->village->name }},
-                                        KEC. {{ $fm->famillycard->district->name }}</td>
                                     <td class="text-center">
                                         <div class="btn-group text-center">
                                             {{--  <button type="button" class="btn bg-gradient-success btn-sm">Action</button>  --}}
@@ -104,6 +95,16 @@
                                             </div>
                                         </div>
                                     </td>
+                                    <td>{{ $fm->no_kk }}</td>
+                                    <td>{{ $fm->no_nik }}</td>
+                                    <td style="text-transform:uppercase">{{ $fm->nama }}</td>
+                                    <td style="text-transform:uppercase" class="text-center">{{ $fm->tgl_lahir }}</td>
+                                    <td style="text-transform:uppercase" class="text-center">{{ $fm->tmpt_lahir }}</td>
+                                    <td style="text-transform:uppercase">{{ $fm->famillycard->kp }}, RT.
+                                        {{ $fm->famillycard->rt }}/{{ $fm->famillycard->rw }}, DS.
+                                        {{ $fm->famillycard->village->name }},
+                                        KEC. {{ $fm->famillycard->village->district->name }}</td>
+
                                 </tr>
 
                                 {{--  <td style="width: 175px">

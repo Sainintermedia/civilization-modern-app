@@ -45,4 +45,9 @@ class FamillyCard extends Model implements Auditable
     {
         return $this->hasOne(District::class, 'code', 'kecamatan');
     }
+
+    public function rtrw()
+    {
+        return $this->hasOne(RtRw::class, 'id', 'id');
+    }
 }

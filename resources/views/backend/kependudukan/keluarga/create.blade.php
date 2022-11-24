@@ -84,12 +84,11 @@
                                     <label for="">Rt</label>
                                     <select name="rt" class="form-select form-control form-control-sm rounded-0"
                                         style="text-transform:uppercase" name="rt" required>
-                                        <option selected>Open</option>
-                                        <option value="001">001</option>
-                                        <option value="002">002</option>
-                                        <option value="003">003</option>
-                                        <option value="004">004</option>
-                                        <option value="005">005</option>
+                                        <option value="" hidden>Pilih RT</option>
+                                        @foreach ($rtrw->whereNotNull('rt')->pluck('rt') as $id => $nama)
+                                            <option value="{!! $id !!}">{!! $nama !!}
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -98,9 +97,11 @@
                                     <label for="">Rw</label>
                                     <select name="rw" class="form-select form-control form-control-sm rounded-0"
                                         style="text-transform:uppercase" name="rw" required>
-                                        <option selected>Open</option>
-                                        <option value="001">001</option>
-                                        <option value="002">002</option>
+                                        <option value="" hidden>Pilih RW</option>
+                                        @foreach ($rtrw->whereNotNull('rw')->pluck('rw') as $id => $nama)
+                                            <option value="{!! $id !!}">{!! $nama !!}
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

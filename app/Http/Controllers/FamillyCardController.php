@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sex;
+use App\Models\RtRw;
 use App\Models\Work;
 use App\Models\Blood;
 use App\Models\Marry;
@@ -22,8 +23,8 @@ class FamillyCardController extends Controller
 {
     public function index()
     {
-        $famillycardmembers = FamillyCardMember::with('famillycard')->where('sts_hub_kel', '=', 1)->where('sts_mati', '=', 0)->paginate(10);
-
+        $famillycardmembers = FamillyCardMember::with('famillycard.village.district')->where('sts_hub_kel', '=', 1)->where('sts_mati', '=', 0)->paginate(10);
+        // return $famillycardmembers;
         return view('backend.kependudukan.keluarga.index', compact('famillycardmembers'));
     }
 
@@ -38,8 +39,9 @@ class FamillyCardController extends Controller
         $religions = Religion::orderBy('id', 'ASC')->pluck('nama', 'id');
         $citizens = Citizen::orderBy('id', 'ASC')->pluck('nama', 'id');
         $sexes = Sex::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $rtrw = RtRw::get();
 
-        return view('backend.kependudukan.keluarga.create', compact('provinces','works','marries','relations','bloods','educations','religions','citizens','sexes'));
+        return view('backend.kependudukan.keluarga.create', compact('provinces','works','marries','relations','bloods','educations','religions','citizens','sexes','rtrw'));
 
     }
 
@@ -58,6 +60,7 @@ class FamillyCardController extends Controller
         $famillycard->provinsi = $d['provinsi'];
         $famillycard->user_id = \Auth::user()->id;
         $famillycard->save();
+        // return $famillycard;
 
         $famillycardmember = new FamillyCardMember();
         $famillycardmember->no_nik = $d['no_kk'];
@@ -82,8 +85,8 @@ class FamillyCardController extends Controller
         $famillycardmember->no_paspor = $d['no_paspor'];
         $famillycardmember->no_kitap = $d['no_kitap'];
         $famillycardmember->user_id = \Auth::user()->id;
-        
         $famillycard->famillycardmembers()->save($famillycardmember);
+
         Alert::success('Success', 'Data berhasil disimpan !');
         return redirect()
             ->route('siode.kependudukan.kepala-keluarga.index')
@@ -100,7 +103,19 @@ class FamillyCardController extends Controller
     public function edit($kepala_keluarga)
     {
         $famillycardmember = FamillyCardMember::with('famillycard')->findOrFail($kepala_keluarga);
-        return $famillycardmember;
+        $provinces = Province::where('code', '36')->pluck('name', 'code');
+        $works = Work::orderBy('nama', 'ASC')->pluck('nama', 'id');
+        $marries = Marry::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $relations = Relation::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $bloods = Blood::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $educations = Education::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $religions = Religion::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $citizens = Citizen::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $sexes = Sex::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $rtrw = RtRw::get();
+
+        return view('backend.kependudukan.keluarga.edit', compact('famillycardmember','provinces','works','marries','relations','bloods','educations','religions','citizens','sexes','rtrw'));
+
     }
 
     public function update(Request $request, $kepala_keluarga)
