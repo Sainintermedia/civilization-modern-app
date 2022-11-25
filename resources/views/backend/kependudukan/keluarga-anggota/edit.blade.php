@@ -4,7 +4,7 @@
 @section('content')
 
     <div class="card card-dark card-outline rounded-0">
-        <form method="POST" action="{!! route('siode.kependudukan.kepala-keluarga.update', $famillycardmember->id) !!}" enctype="multipart/form-data" autocomplete="off">
+        <form method="POST" action="{!! route('siode.kependudukan.anggota-keluarga.update', $famillycardmember->id) !!}" enctype="multipart/form-data" autocomplete="off">
             @csrf
             @method('PUT')
             {{--  <input type="text" name="memberid" value="{{ $famillycardmember->id }}">  --}}
@@ -43,8 +43,7 @@
                         <div class="fom-group">
                             <label for="">Nama Kepala Keluarga</label>
                             <input id="nama" type="text" class="form-control form-control-sm rounded-0"
-                                style="text-transform:uppercase" value="{{ $famillycardmember->famillycard->no_kk }}"
-                                required readonly>
+                                style="text-transform:uppercase" value="" required readonly>
                             <input type="hidden" id="id_kk" name="no_kk">
                         </div>
                     </div>
@@ -59,14 +58,14 @@
                         <div class="form-group">
                             <label for="">Provinsi</label>
                             <input type="text" class="form-control form-control-sm rounded-0"
-                                style="text-transform:uppercase"
+                                style="text-transform:uppercase" id="provinsi"
                                 value="{{ $famillycardmember->famillycard->provinces->name }}" required readonly>
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                             <label for="">Kabupaten / Kota</label>
-                            <input type="text" class="form-control form-control-sm rounded-0"
+                            <input type="text" class="form-control form-control-sm rounded-0" id="kabkot"
                                 style="text-transform:uppercase" value="{{ $famillycardmember->famillycard->cities->name }}"
                                 required readonly>
                         </div>
@@ -77,7 +76,7 @@
                         <div class="form-group">
                             <label for="">Kecamatan</label>
                             <input type="text" class="form-control form-control-sm rounded-0"
-                                style="text-transform:uppercase"
+                                style="text-transform:uppercase" id="kecamatan"
                                 value="{{ $famillycardmember->famillycard->districts->name }}" required readonly>
                         </div>
                     </div>
@@ -85,7 +84,7 @@
                         <div class="form-group">
                             <label for="">Desa</label>
                             <input type="text" class="form-control form-control-sm rounded-0"
-                                style="text-transform:uppercase"
+                                style="text-transform:uppercase" id="desa"
                                 value="{{ $famillycardmember->famillycard->villages->name }}" required readonly>
                         </div>
                     </div>
@@ -94,7 +93,7 @@
                     <div class="col-4 mb-0">
                         <div class="form-group">
                             <label for="">Dusun / Kampung</label>
-                            <input type="text" class="form-control form-control-sm rounded-0"
+                            <input type="text" class="form-control form-control-sm rounded-0" id="kp"
                                 style="text-transform:uppercase" value="{{ $famillycardmember->famillycard->kp }}" required
                                 readonly>
                         </div>
@@ -104,7 +103,7 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="">Rt</label>
-                                    <input type="text" class="form-control form-control-sm rounded-0"
+                                    <input type="text" class="form-control form-control-sm rounded-0" id="rt"
                                         style="text-transform:uppercase" value="{{ $famillycardmember->famillycard->rt }}"
                                         required readonly>
                                 </div>
@@ -112,7 +111,7 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="">Rw</label>
-                                    <input type="text" class="form-control form-control-sm rounded-0"
+                                    <input type="text" class="form-control form-control-sm rounded-0" id="rw"
                                         style="text-transform:uppercase" value="{{ $famillycardmember->famillycard->rw }}"
                                         required readonly>
                                 </div>
@@ -124,7 +123,7 @@
                         <div class="form-group">
                             <label for="">Kode Pos</label>
                             <input type="number" class="form-control form-control-sm rounded-0"
-                                style="text-transform:uppercase" name="kodepos" id="" required
+                                style="text-transform:uppercase" name="kodepos" id="kodepos" required
                                 value="{{ $famillycardmember->famillycard->kodepos }}" readonly>
                         </div>
                     </div>
@@ -384,12 +383,18 @@
 
     <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/select2/css/select2.min.css') !!}">
     <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') !!}">
+    <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') !!}">
+    <link rel="stylesheet" href="{!! URL::asset('assets/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') !!}">
 
 @endsection
 
 @section('scripts')
 
     <script src="{!! URL::asset('assets/admin/plugins/select2/js/select2.full.min.js') !!}"></script>
+    <script src="{!! URL::asset('assets/admin/plugins/datatables/jquery.dataTables.min.js') !!}"></script>
+    <script src="{!! URL::asset('assets/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') !!}"></script>
+    <script src="{!! URL::asset('assets/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js') !!}"></script>
+    <script src="{!! URL::asset('assets/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') !!}"></script>
     <script>
         $(function() {
             //Initialize Select2 Elements

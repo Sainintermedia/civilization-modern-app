@@ -11,7 +11,6 @@ use App\Models\Citizen;
 use App\Models\Relation;
 use App\Models\Religion;
 use App\Models\Education;
-use App\Models\FamillyCard;
 use Illuminate\Http\Request;
 use App\Models\FamillyCardMember;
 use App\Http\Controllers\Controller;
@@ -103,33 +102,28 @@ class FamillyCardMemberController extends Controller
 
     public function edit($anggota_keluarga)
     {
-        $r = FamillyCard::where('id', $anggota_keluarga)->with('famillycardmembers')->get();
-        return $r;
-
-        // $famillycardmembers = FamillyCardMember::whereSts_hub_kel(1)
-        //     ->with([
-        //         'famillycard' => function ($q) {
-        //             $q->with(['provinces', 'cities', 'districts', 'villages']);
-        //         },
-        //     ])
-        //     ->get();
-        
-        // $f = FamillyCardMember::with('famillycard')->findOrFail($anggota_keluarga);
-        // $provinces = Province::where('code', '36')->pluck('name', 'code');
-        // $works = Work::orderBy('nama', 'ASC')->pluck('nama', 'id');
-        // $marries = Marry::orderBy('id', 'ASC')->pluck('nama', 'id');
-        // $relations = Relation::orderBy('id', 'ASC')->pluck('nama', 'id');
-        // $bloods = Blood::orderBy('id', 'ASC')->pluck('nama', 'id');
-        // $educations = Education::orderBy('id', 'ASC')->pluck('nama', 'id');
-        // $religions = Religion::orderBy('id', 'ASC')->pluck('nama', 'id');
-        // $citizens = Citizen::orderBy('id', 'ASC')->pluck('nama', 'id');
-        // $sexes = Sex::orderBy('id', 'ASC')->pluck('nama', 'id');
-        // $rtrw = RtRw::get();
-        // return view('backend.kependudukan.keluarga-anggota.edit', compact('famillycardmember','famillycardmembers', 'provinces', 'works', 'marries', 'relations', 'bloods', 'educations', 'religions', 'citizens', 'sexes', 'rtrw'));
+        $famillycardmembers = FamillyCardMember::whereSts_hub_kel(1)
+            ->with([
+                'famillycard' => function ($q) {
+                    $q->with(['provinces', 'cities', 'districts', 'villages']);
+                },
+            ])
+            ->get();
+        $famillycardmember = FamillyCardMember::with('famillycard')->findOrFail($anggota_keluarga);
+        $works = Work::orderBy('nama', 'ASC')->pluck('nama', 'id');
+        $marries = Marry::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $relations = Relation::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $bloods = Blood::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $educations = Education::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $religions = Religion::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $citizens = Citizen::orderBy('id', 'ASC')->pluck('nama', 'id');
+        $sexes = Sex::orderBy('id', 'ASC')->pluck('nama', 'id');
+        return view('backend.kependudukan.keluarga-anggota.edit', compact('famillycardmember','famillycardmembers',  'works', 'marries', 'relations', 'bloods', 'educations', 'religions', 'citizens', 'sexes'));
         
     }
 
-    public function update(FamillyCardMemberRequestUpdate $request)
+    public function update(FamillyCardMemberRequestUpdate $request, $anggota_keluarga)
     {
+        return $request->all();
     }
 }
