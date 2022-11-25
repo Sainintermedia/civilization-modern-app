@@ -80,7 +80,7 @@
                                                     @csrf
                                                     @method('delete')
                                                     <a class="dropdown-item bg-gradient-info"
-                                                        href="{{ route('siode.kependudukan.kepala-keluarga.show', $fm->id) }}"><i
+                                                        href="{{ route('siode.kependudukan.kepala-keluarga.show', $fm->no_kk) }}"><i
                                                             class="fa-solid fa-eye"></i>
                                                         View</a>
                                                     <a class="dropdown-item bg-gradient-warning"

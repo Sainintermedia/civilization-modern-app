@@ -126,14 +126,14 @@
                                                                 {{ $loop->iteration }}
                                                             </td>
                                                             <td>{{ $familly->nama }}</td>
-                                                            <td>{{ $familly->no_nik }}</td>
-                                                            <td>{{ $familly->jeniskelamin->nama }}</td>
-                                                            <td>{{ $familly->tmpt_lahir }}</td>
-                                                            <td>{{ $familly->tgl_lahir }}</td>
-                                                            <td>{{ $familly->agamas->nama }}</td>
-                                                            <td>{{ $familly->edu->nama }}</td>
-                                                            <td>{{ $familly->pekerjaan->nama }}</td>
-                                                            <td>{{ $familly->darah->nama }}</td>
+                                                            <td class="text-center">{{ $familly->no_nik }}</td>
+                                                            <td class="text-center">{{ $familly->jeniskelamin->nama }}</td>
+                                                            <td class="text-center">{{ $familly->tmpt_lahir }}</td>
+                                                            <td class="text-center">{{ $familly->tgl_lahir }}</td>
+                                                            <td class="text-center">{{ $familly->agamas->nama }}</td>
+                                                            <td class="text-center">{{ $familly->edu->nama }}</td>
+                                                            <td class="text-center">{{ $familly->pekerjaan->nama }}</td>
+                                                            <td class="text-center">{{ $familly->darah->nama }}</td>
                                                         </tr>
                                                     @endforeach
                                                 </tbody>
@@ -179,12 +179,12 @@
                                                             <td class="text-center" style="width: 20px">
                                                                 {{ $loop->iteration }}
                                                             </td>
-                                                            <td>{{ $familly->perkawinan->nama }}</td>
-                                                            <td>{{ $familly->tgl_perkawinan }}</td>
-                                                            <td>{{ $familly->hubkel->nama }}</td>
-                                                            <td>{{ $familly->kwn->nama }}</td>
-                                                            <td>{{ $familly->no_paspor }}</td>
-                                                            <td>{{ $familly->no_kitap }}</td>
+                                                            <td class="text-center">{{ $familly->perkawinan->nama }}</td>
+                                                            <td class="text-center">{{ $familly->tgl_perkawinan }}</td>
+                                                            <td class="text-center">{{ $familly->hubkel->nama }}</td>
+                                                            <td class="text-center">{{ $familly->kwn->nama }}</td>
+                                                            <td class="text-center">{{ $familly->no_paspor }}</td>
+                                                            <td class="text-center">{{ $familly->no_kitap }}</td>
                                                             <td>{{ $familly->nm_ayah }}</td>
                                                             <td>{{ $familly->nm_ibu }}</td>
                                                         </tr>

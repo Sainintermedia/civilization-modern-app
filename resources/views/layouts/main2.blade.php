@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Legal landscape</title>
+    <title>Salinan Kartu Keluarga</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
 
