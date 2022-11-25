@@ -14,7 +14,9 @@ use App\Models\Education;
 use Illuminate\Http\Request;
 use App\Models\FamillyCardMember;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Laravolt\Indonesia\Models\Province;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\FamillyCardMemberRequestStore;
 use App\Http\Requests\FamillyCardMemberRequestUpdate;
 
@@ -22,7 +24,13 @@ class FamillyCardMemberController extends Controller
 {
     public function index()
     {
-        $famillycardmembers = FamillyCardMember::with('famillycard.village.district')->paginate(10);
+        $famillycardmembers = FamillyCardMember::latest()
+            ->with([
+                'famillycard' => function ($q) {
+                    $q->with(['districts', 'villages']);
+                },
+            ])
+            ->paginate(10);
 
         return view('backend.kependudukan.keluarga-anggota.index', compact('famillycardmembers'));
     }
@@ -30,7 +38,11 @@ class FamillyCardMemberController extends Controller
     public function create()
     {
         $famillycardmembers = FamillyCardMember::whereSts_hub_kel(1)
-            ->with('famillycard', 'provinces', 'cities', 'village', 'district')
+            ->with([
+                'famillycard' => function ($q) {
+                    $q->with(['provinces', 'cities', 'districts', 'villages']);
+                },
+            ])
             ->get();
         // return $famillycardmembers;
 
@@ -51,7 +63,37 @@ class FamillyCardMemberController extends Controller
 
     public function store(FamillyCardMemberRequestStore $request)
     {
-        return $request->all();
+        $d = $request->all();
+        $famillycardmembers = new FamillyCardMember();
+        $famillycardmembers->no_kk = $d['no_kk'];
+        $famillycardmembers->no_nik = $d['no_nik'];
+        $famillycardmembers->nama = $d['nama'];
+        $famillycardmembers->jenkel = $d['jenkel'];
+        $famillycardmembers->tgl_lahir = $d['tgl_lahir'];
+        $famillycardmembers->tmpt_lahir = $d['tmpt_lahir'];
+        $famillycardmembers->agama = $d['agama'];
+        $famillycardmembers->pendidikan = $d['pendidikan'];
+        $famillycardmembers->jns_pekerjaan = $d['jns_pekerjaan'];
+        $famillycardmembers->gol_darah = $d['gol_darah'];
+        $famillycardmembers->sts_perkawinan = $d['sts_perkawinan'];
+        $famillycardmembers->tgl_perkawinan = $d['tgl_perkawinan'];
+        $famillycardmembers->sts_hub_kel = $d['sts_hub_kel'];
+        $famillycardmembers->sts_kwn = $d['sts_kwn'];
+        $famillycardmembers->nm_ayah = $d['nm_ayah'];
+        $famillycardmembers->nm_ibu = $d['nm_ibu'];
+        $famillycardmembers->nik_ayah = $d['nik_ayah'];
+        $famillycardmembers->nik_ibu = $d['nik_ibu'];
+        $famillycardmembers->sts_mati = 0;
+        $famillycardmembers->no_paspor = $d['no_paspor'];
+        $famillycardmembers->no_kitap = $d['no_kitap'];
+        $famillycardmembers->user_id = \Auth::user()->id;
+        $famillycardmembers->sts = 0;
+        $famillycardmembers->save();
+
+        Alert::success('Success', 'Data berhasil disimpan !');
+        return redirect()
+            ->route('siode.kependudukan.anggota-keluarga.index')
+            ->with('store', 'Data saved successfully');
     }
 
     public function edit()

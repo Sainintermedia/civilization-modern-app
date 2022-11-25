@@ -45,10 +45,13 @@
                                     <td style="text-transform:uppercase">{{ $fm->nama }}</td>
                                     <td style="text-transform:uppercase" class="text-center">{{ $fm->tgl_lahir }}</td>
                                     <td style="text-transform:uppercase" class="text-center">{{ $fm->tmpt_lahir }}</td>
-                                    <td style="text-transform:uppercase">{{ $fm->famillycard->kp }}, RT.
-                                        {{ $fm->famillycard->rt }}/{{ $fm->famillycard->rw }},DS.
-                                        {{ $fm->famillycard->village->name }},
-                                        KEC. {{ $fm->famillycard->district->name }}</td>
+                                    <td style="text-transform:uppercase">
+                                        {{ $fm->famillycard->kp }}, RT.
+                                        {{ $fm->famillycard->rt }}/
+                                        {{ $fm->famillycard->rw }}, DS.
+                                        {{ $fm->famillycard->villages->name }},
+                                        KEC. {{ $fm->famillycard->districts->name }}
+                                    </td>
                                     <td class="text-center">
                                         <div class="btn-group text-center">
                                             {{--  <button type="button" class="btn bg-gradient-success btn-sm"></button>  --}}

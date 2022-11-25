@@ -7,6 +7,8 @@
         <form method="POST" action="{!! route('siode.kependudukan.kepala-keluarga.update', $famillycardmember->id) !!}" enctype="multipart/form-data" autocomplete="off">
             @csrf
             @method('PUT')
+            {{--  <input type="text" name="memberid" value="{{ $famillycardmember->id }}">  --}}
+            <input type="hidden" name="famillyid" value="{{ $famillycardmember->no_kk }}">
             <div class="card-header">
                 <div class="card-title">
                     <strong>EDIT DATA KEPALA KELUARGA</strong>
@@ -428,7 +430,7 @@
 
 @endsection
 
-<div class="wrapper">
+{{--  <div class="wrapper">
     <form method="POST" action="{!! route('siode.kependudukan.keluarga.update', $populations->id) !!}" enctype="multipart/form-data" autocomplete="off">
         @csrf
         @method('PUT')
@@ -761,6 +763,4 @@
             </div>
         </div>
     </form>
-</div>
-</div>
---}}
+</div>  --}}

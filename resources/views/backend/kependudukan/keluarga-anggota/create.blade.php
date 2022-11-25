@@ -78,7 +78,7 @@
                         <div class="form-group">
                             <label for="">Dusun / Kampung</label>
                             <input type="text" class="form-control form-control-sm rounded-0"
-                                style="text-transform:uppercase" name="kp" id="kp" required readonly>
+                                style="text-transform:uppercase" name="" id="kp" required readonly>
                         </div>
                     </div>
                     <div class="col-4">
@@ -104,7 +104,7 @@
                         <div class="form-group">
                             <label for="">Kode Pos</label>
                             <input type="number" class="form-control form-control-sm rounded-0"
-                                style="text-transform:uppercase" name="kodepos" id="kodepos" required readonly>
+                                style="text-transform:uppercase" name="" id="kodepos" required readonly>
                         </div>
                     </div>
                 </div>
@@ -372,7 +372,7 @@
                                             data-rw="{!! $fcm->famillycard->rw !!}" data-kodepos="{!! $fcm->famillycard->kodepos !!}"
                                             data-provinsi="{!! $fcm->famillycard->provinces->name !!}"
                                             data-kabkot="{!! $fcm->famillycard->cities->name !!}"
-                                            data-kecamatan="{!! $fcm->famillycard->district->name !!}" data-desa="{!! $fcm->famillycard->village->name !!}"
+                                            data-kecamatan="{!! $fcm->famillycard->districts->name !!}" data-desa="{!! $fcm->famillycard->villages->name !!}"
                                             data-dismiss="modal" </button>Select
                                     </td>
                                 </tr>

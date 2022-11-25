@@ -37,14 +37,14 @@ class FamillyCard extends Model implements Auditable
         return $this->hasOne(City::class, 'code', 'kabkot');
     }
 
-    public function village()
-    {
-        return $this->hasOne(Village::class, 'code', 'desa');
-    }
-
-    public function district()
+    public function districts()
     {
         return $this->hasOne(District::class, 'code', 'kecamatan');
+    }
+
+    public function villages()
+    {
+        return $this->hasOne(Village::class, 'code', 'desa');
     }
 
     public function rtrw()

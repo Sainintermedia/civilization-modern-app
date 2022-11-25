@@ -102,36 +102,16 @@
                                     <td style="text-transform:uppercase" class="text-center">{{ $fm->tmpt_lahir }}</td>
                                     <td style="text-transform:uppercase">{{ $fm->famillycard->kp }}, RT.
                                         {{ $fm->famillycard->rt }}/{{ $fm->famillycard->rw }}, DS.
-                                        {{ $fm->famillycard->village->name }},
-                                        KEC. {{ $fm->famillycard->village->district->name }}</td>
+                                        {{ $fm->famillycard->villages->name }},
+                                        KEC. {{ $fm->famillycard->districts->name }}
+                                    </td>
 
                                 </tr>
-
-                                {{--  <td style="width: 175px">
-                                        <form method="POST" action="{!! route('siode.kependudukan.keluarga.destroy', $population->id) !!}" class="text-center">
-                                            @csrf
-                                            @method('delete')
-                                            <a href="{!! route('siode.kependudukan.kk') !!}" class="btn bg-gradient-info btn-xs text-xs">
-                                                <i class="fa-solid fa-eye"></i> Show</a>
-                                            <a href="{!! route('siode.kependudukan.keluarga.edit', $population->id) !!}"
-                                                class="btn bg-gradient-warning btn-xs text-xs">
-                                                <i class="fa-solid fa-pen"></i> Edit</a>
-                                            <button type="submit" class="btn bg-gradient-danger btn-xs text-xs"
-                                                name="button"><i class="fa-solid fa-trash"></i> Delete</button>
-                                        </form>
-                                    </td>  --}}
                             @empty
                                 <h4>tidak ada data</h4>
                             @endforelse
                         </tbody>
                         <tfoot>
-                            {{--  <tr class="text-center">
-                                <th style="width: 10px">No</th>
-                                <th>No KK</th>
-                                <th>Nama</th>
-                                <th>Alamat</th>
-                                <th>Aksi</th>
-                            </tr>  --}}
                         </tfoot>
                     </table>
                 </div>

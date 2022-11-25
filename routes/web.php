@@ -82,7 +82,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
 
         Route::view('/kk', 'backend.kependudukan.keluarga.view')->name('kk');
 
-        Route::get('kartu-keluarga/kepala-keluarga/view-delete', [FamillyCardController::class, 'viewDelete'])->name('kepala-keluarga.view-delete');
+        Route::get('kartu-keluarga/keluarga-delete/view-delete', [FamillyCardController::class, 'viewDelete'])->name('kepala-keluarga.view-delete');
         Route::get('kartu-keluarga/kepala-keluarga/restore/{kepala_keluarga}', [FamillyCardController::class, 'restore'])->name('kepala-keluarga.restore');
         Route::delete('kartu-keluarga/kepala-keluarga/kill/{kepala_keluarga}', [FamillyCardController::class, 'kill'])->name('kepala-keluarga.kill');
         Route::resource('kartu-keluarga/kepala-keluarga', FamillyCardController::class);
