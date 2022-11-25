@@ -24,7 +24,7 @@
 
                 <li class="nav-header">MENU UTAMA</li>
                 <li class="nav-item">
-                    <a href="/admin/home " class="nav-link">
+                    <a href="{{ route('siode.dashboard.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-solid fa-house-chimney"></i>
                         <p>
                             Home

@@ -9,6 +9,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\FamillyController;
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\AbsenController;
 use App\Http\Controllers\Bukuadminsitrasidesa;
 use App\Http\Controllers\PopulationController;
@@ -54,10 +55,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 });
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], function () {
-    Route::view('/dashboard', 'backend.info_desa.status_desa.index')->name('dashboard.index');
     Route::view('/buku-administrasi-desa-umum', 'backend.buku_administrasi_desa.umum.index')->name('bukuadministrasidesaumum');
 
-   
+   Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
         Route::view('/identitas-desa', 'backend.info_desa.identitas_desa.index')->name('identitas');
