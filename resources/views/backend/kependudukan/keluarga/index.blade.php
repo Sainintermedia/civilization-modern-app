@@ -15,6 +15,7 @@
                         <a href="{!! route('siode.kependudukan.kepala-keluarga.view-delete') !!}" type="button"
                             class="card-title btn-sm bg-gradient-danger rounded-0 text-sm"><i class="fa-solid fa-trash"></i>
                             Trash</a>
+                        {{ $hasil }}
                     </h3>
                     <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
@@ -69,7 +70,6 @@
                                     <td class="text-center">{{ $loop->iteration }}</td>
                                     <td class="text-center">
                                         <div class="btn-group text-center">
-                                            {{--  <button type="button" class="btn bg-gradient-success btn-sm">Action</button>  --}}
                                             <button type="button"
                                                 class="btn bg-gradient-success dropdown-toggle dropdown-icon btn-sm"
                                                 data-toggle="dropdown">
@@ -109,37 +109,18 @@
                                     </td>
 
                                 </tr>
-
-                                {{--  <td style="width: 175px">
-                                        <form method="POST" action="{!! route('siode.kependudukan.keluarga.destroy', $population->id) !!}" class="text-center">
-                                            @csrf
-                                            @method('delete')
-                                            <a href="{!! route('siode.kependudukan.kk') !!}" class="btn bg-gradient-info btn-xs text-xs">
-                                                <i class="fa-solid fa-eye"></i> Show</a>
-                                            <a href="{!! route('siode.kependudukan.keluarga.edit', $population->id) !!}"
-                                                class="btn bg-gradient-warning btn-xs text-xs">
-                                                <i class="fa-solid fa-pen"></i> Edit</a>
-                                            <button type="submit" class="btn bg-gradient-danger btn-xs text-xs"
-                                                name="button"><i class="fa-solid fa-trash"></i> Delete</button>
-                                        </form>
-                                    </td>  --}}
                             @empty
                                 <h4>tidak ada data</h4>
                             @endforelse
                         </tbody>
                         <tfoot>
-                            {{--  <tr class="text-center">
-                                <th style="width: 10px">No</th>
-                                <th>No KK</th>
-                                <th>Nama</th>
-                                <th>Alamat</th>
-                                <th>Aksi</th>
-                            </tr>  --}}
                         </tfoot>
                     </table>
                 </div>
                 <div class="card-footer clearfix">
-                    Jumlah Data : {{ $famillycardmembers->total() }}
+                    Halaman : {{ $famillycardmembers->currentPage() }} <br />
+                    Jumlah Data : {{ $famillycardmembers->total() }} <br />
+                    Data Per Halaman : {{ $famillycardmembers->perPage() }}
                     <ul class="pagination pagination-sm float-right m-0">
                         {{ $famillycardmembers->links() }}
                     </ul>

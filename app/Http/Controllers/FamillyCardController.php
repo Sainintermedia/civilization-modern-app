@@ -145,7 +145,9 @@ class FamillyCardController extends Controller
 
     public function show($kepala_keluarga)
     {
-        $famillycardmember = FamillyCardMember::with('famillycard')->findOrFail($kepala_keluarga);
+        $famillycardmember = FamillyCard::with(['famillycardmembers' => function ($q){
+            $q->orderBy('sts_hub_kel', 'ASC');
+        }])->findOrFail($kepala_keluarga);
         return $famillycardmember;
     }
 
@@ -179,7 +181,6 @@ class FamillyCardController extends Controller
             'kecamatan' => $d['kecamatan'],
             'kabkot' => $d['kabkot'],
             'provinsi' => $d['provinsi'],
-            'user_id' => \Auth::user()->id,
         ]);
         $famillycardmember = FamillyCardMember::findOrFail($kepala_keluarga)->update([
             'no_kk' => $d['famillyid'],
@@ -202,7 +203,6 @@ class FamillyCardController extends Controller
             'nik_ibu' => $d['nik_ibu'],
             'no_paspor' => $d['no_paspor'],
             'no_kitap' => $d['no_kitap'],
-            'user_id' => \Auth::user()->id,
         ]);
         Alert::success('Success', 'Data berhasil diupdate !');
         return redirect()

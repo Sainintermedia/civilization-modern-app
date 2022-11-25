@@ -24,6 +24,7 @@ class FamillyCardMemberController extends Controller
 {
     public function index()
     {
+        // $starttime = microtime(true); //untuk test speed query
         $famillycardmembers = FamillyCardMember::latest()
             ->with([
                 'famillycard' => function ($q) {
@@ -31,6 +32,9 @@ class FamillyCardMemberController extends Controller
                 },
             ])
             ->paginate(10);
+        // $endtime = microtime(true);
+        // $timediff = $endtime - $starttime;
+        // $hasil = "Halaman diproses dalam " . sprintf('%0.2f', $timediff) . " detik";
 
         return view('backend.kependudukan.keluarga-anggota.index', compact('famillycardmembers'));
     }

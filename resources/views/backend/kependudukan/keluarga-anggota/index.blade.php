@@ -116,7 +116,9 @@
                     </table>
                 </div>
                 <div class="card-footer clearfix">
-                    Jumlah Data : {{ $famillycardmembers->total() }}
+                    Halaman : {{ $famillycardmembers->currentPage() }} <br />
+                    Jumlah Data : {{ $famillycardmembers->total() }} <br />
+                    Data Per Halaman : {{ $famillycardmembers->perPage() }}
                     <ul class="pagination pagination-sm float-right m-0">
                         {{ $famillycardmembers->links() }}
                     </ul>
