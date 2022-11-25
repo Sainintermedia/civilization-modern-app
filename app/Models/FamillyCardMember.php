@@ -2,6 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Sex;
+use App\Models\Work;
+use App\Models\Blood;
+use App\Models\Marry;
+use App\Models\Citizen;
+use App\Models\Relation;
+use App\Models\Religion;
+use App\Models\Education;
 use App\Models\FamillyCard;
 use Laravolt\Indonesia\Models\City;
 use Laravolt\Indonesia\Models\Village;
@@ -49,24 +57,44 @@ class FamillyCardMember extends Model implements Auditable
         return $this->belongsTo(FamillyCard::class, 'no_kk', 'id');
     }
 
-    public function provinces()
+    public function jeniskelamin()
     {
-        return $this->hasOne(Province::class, 'code', 'provinsi');
+        return $this->hasOne(Sex::class, 'id', 'jenkel');
     }
 
-    public function cities()
+    public function agamas()
     {
-        return $this->hasOne(City::class, 'code', 'kabkot');
+        return $this->hasOne(Religion::class, 'id', 'agama');
     }
 
-    public function village()
+    public function edu()
     {
-        return $this->hasOne(Village::class, 'code', 'desa');
+        return $this->hasOne(Education::class, 'id', 'pendidikan');
     }
 
-    public function district()
+    public function pekerjaan()
     {
-        return $this->hasOne(District::class, 'code', 'kecamatan');
+        return $this->hasOne(Work::class, 'id', 'jns_pekerjaan');
+    }
+
+    public function darah()
+    {
+        return $this->hasOne(Blood::class, 'id', 'gol_darah');
+    }
+
+    public function hubkel()
+    {
+        return $this->hasOne(Relation::class, 'id', 'sts_hub_kel');
+    }
+
+    public function perkawinan()
+    {
+        return $this->hasOne(Marry::class, 'id', 'sts_perkawinan');
+    }
+
+    public function kwn()
+    {
+        return $this->hasOne(Citizen::class, 'id', 'sts_kwn');
     }
 
 }

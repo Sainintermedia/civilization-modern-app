@@ -124,6 +124,31 @@ class FamillyCardMemberController extends Controller
 
     public function update(FamillyCardMemberRequestUpdate $request, $anggota_keluarga)
     {
-        return $request->all();
+        $d = $request->all();
+        $famillycardmember = FamillyCardMember::findOrFail($anggota_keluarga)->update([
+            'no_nik' => $d['no_nik'],
+            'nama' => $d['nama'],
+            'jenkel' => $d['jenkel'],
+            'tgl_lahir' => $d['tgl_lahir'],
+            'tgl_lahir' => $d['tgl_lahir'],
+            'agama' => $d['agama'],
+            'pendidikan' => $d['pendidikan'],
+            'jns_pekerjaan' => $d['jns_pekerjaan'],
+            'gol_darah' => $d['gol_darah'],
+            'sts_perkawinan' => $d['sts_perkawinan'],
+            'tgl_perkawinan' => $d['tgl_perkawinan'],
+            'sts_hub_kel' => $d['sts_hub_kel'],
+            'sts_kwn' => $d['sts_kwn'],
+            'nm_ayah' => $d['nm_ayah'],
+            'nm_ibu' => $d['nm_ibu'],
+            'nik_ayah' => $d['nik_ayah'],
+            'nik_ibu' => $d['nik_ibu'],
+            'no_paspor' => $d['no_paspor'],
+            'no_kitap' => $d['no_kitap'],
+        ]);
+        Alert::success('Success', 'Data berhasil diupdate !');
+        return redirect()
+            ->route('siode.kependudukan.anggota-keluarga.index')
+            ->with('store', 'Data saved successfully');
     }
 }

@@ -14,6 +14,7 @@ use App\Models\Religion;
 use App\Models\Education;
 use App\Models\FamillyCard;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Models\FamillyCardMember;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -145,10 +146,12 @@ class FamillyCardController extends Controller
 
     public function show($kepala_keluarga)
     {
-        $famillycardmember = FamillyCard::with(['famillycardmembers' => function ($q){
+        // return $kepala_keluarga;
+        $famillycard = FamillyCard::with(['famillycardmembers' => function ($q){
             $q->orderBy('sts_hub_kel', 'ASC');
         }])->findOrFail($kepala_keluarga);
-        return $famillycardmember;
+        $tgl = Carbon::now();
+        return view('backend.kependudukan.keluarga.view', compact('famillycard', 'tgl'));
     }
 
     public function edit($kepala_keluarga)

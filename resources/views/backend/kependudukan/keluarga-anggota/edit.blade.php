@@ -367,7 +367,7 @@
             <div class="card-footer">
                 <div class="col-6">
                     <a style="margin-top:0px;" class="btn bg-gradient-secondary btn-sm rounded-0"
-                        style="text-transform:uppercase" href="#">
+                        style="text-transform:uppercase" href="{{ route('siode.kependudukan.anggota-keluarga.index') }}">
                         {{ trans('Cancel') }}
                     </a>
                     <input type="submit" value="Submit" class="btn bg-gradient-primary rounded-0 btn-sm">
