@@ -168,10 +168,46 @@ class FamillyCardController extends Controller
 
     public function update(FamillyCardRequestStore $request, $kepala_keluarga)
     {
-        // return $request->all();
-        $famillycard = FamillyCard::findOrFail($request->famillyid);
-        $famillycardmember = FamillyCardMember::findOrFail($kepala_keluarga);
-        return $famillycard;
+        $d = $request->all();
+        $famillycard = FamillyCard::findOrFail($request->famillyid)->update([
+            'no_kk' => $d['no_kk'],
+            'kp' => $d['kp'],
+            'rt' => $d['rt'],
+            'rw' => $d['rw'],
+            'kodepos' => $d['kodepos'],
+            'desa' => $d['desa'],
+            'kecamatan' => $d['kecamatan'],
+            'kabkot' => $d['kabkot'],
+            'provinsi' => $d['provinsi'],
+            'user_id' => \Auth::user()->id,
+        ]);
+        $famillycardmember = FamillyCardMember::findOrFail($kepala_keluarga)->update([
+            'no_kk' => $d['famillyid'],
+            'no_nik' => $d['no_nik'],
+            'nama' => $d['nama'],
+            'jenkel' => $d['jenkel'],
+            'tgl_lahir' => $d['tgl_lahir'],
+            'tmpt_lahir' => $d['tmpt_lahir'],
+            'agama' => $d['agama'],
+            'pendidikan' => $d['pendidikan'],
+            'jns_pekerjaan' => $d['jns_pekerjaan'],
+            'gol_darah' => $d['gol_darah'],
+            'sts_perkawinan' => $d['sts_perkawinan'],
+            'tgl_perkawinan' => $d['tgl_perkawinan'],
+            'sts_hub_kel' => $d['sts_hub_kel'],
+            'sts_kwn' => $d['sts_kwn'],
+            'nm_ayah' => $d['nm_ayah'],
+            'nm_ibu' => $d['nm_ibu'],
+            'nik_ayah' => $d['nik_ayah'],
+            'nik_ibu' => $d['nik_ibu'],
+            'no_paspor' => $d['no_paspor'],
+            'no_kitap' => $d['no_kitap'],
+            'user_id' => \Auth::user()->id,
+        ]);
+        Alert::success('Success', 'Data berhasil diupdate !');
+        return redirect()
+            ->route('siode.kependudukan.kepala-keluarga.index')
+            ->with('store', 'Data saved successfully');
     }
 
     public function destroy($kepala_keluarga)

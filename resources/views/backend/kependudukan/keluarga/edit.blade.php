@@ -8,7 +8,7 @@
             @csrf
             @method('PUT')
             {{--  <input type="text" name="memberid" value="{{ $famillycardmember->id }}">  --}}
-            <input type="hidden" name="famillyid" value="{{ $famillycardmember->no_kk }}">
+            <input type="text" name="famillyid" value="{{ $famillycardmember->no_kk }}">
             <div class="card-header">
                 <div class="card-title">
                     <strong>EDIT DATA KEPALA KELUARGA</strong>
