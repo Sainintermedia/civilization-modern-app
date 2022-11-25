@@ -84,7 +84,7 @@
                                                             class="fa-solid fa-eye"></i>
                                                         View</a>
                                                     <a class="dropdown-item bg-gradient-warning"
-                                                        href="{{ route('siode.kependudukan.kepala-keluarga.edit', $fm->id) }}"><i
+                                                        href="{{ route('siode.kependudukan.anggota-keluarga.edit', $fm->id) }}"><i
                                                             class="fa-solid fa-pen"></i>
                                                         Edit</a>
                                                     <a class="dropdown-item bg-gradient-danger show_confirm"

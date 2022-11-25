@@ -15,7 +15,6 @@
                         <a href="{!! route('siode.kependudukan.kepala-keluarga.view-delete') !!}" type="button"
                             class="card-title btn-sm bg-gradient-danger rounded-0 text-sm"><i class="fa-solid fa-trash"></i>
                             Trash</a>
-                        {{ $hasil }}
                     </h3>
                     <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
