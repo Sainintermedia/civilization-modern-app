@@ -2,7 +2,6 @@
 @section('title', 'Dashboard')
 @section('breadcrumb', 'Dashboard')
 @section('content')
-
     <div class="wrapper">
         <div class="row">
             <div class="col-12">
@@ -73,9 +72,13 @@
             </div>
         </div>
     </div>
+
 @endsection
+
 @section('styles')
+
 @endsection
 
 @section('javas')
+
 @endsection

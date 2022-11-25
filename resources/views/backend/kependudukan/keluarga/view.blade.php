@@ -1,4 +1,4 @@
-@extends('layouts.main2')
+@extends('layouts.legalLandscape')
 @section('title', 'Dashboard')
 @section('breadcrumb', 'Dashboard')
 @section('content')

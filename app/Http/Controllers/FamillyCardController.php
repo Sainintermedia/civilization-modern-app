@@ -148,9 +148,9 @@ class FamillyCardController extends Controller
     {
         // return $kepala_keluarga;
         $famillycard = FamillyCard::with(['famillycardmembers' => function ($q){
-            $q->orderBy('sts_hub_kel', 'ASC');
+            $q->orderBy('sts_hub_kel', 'ASC')->with('jeniskelamin','agamas','edu','pekerjaan','darah','hubkel','perkawinan','kwn');
         }])->findOrFail($kepala_keluarga);
-        $tgl = Carbon::now();
+        $tgl = Carbon::now()->format('d-M-Y');
         return view('backend.kependudukan.keluarga.view', compact('famillycard', 'tgl'));
     }
 
