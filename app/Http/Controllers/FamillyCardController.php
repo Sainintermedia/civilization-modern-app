@@ -38,8 +38,8 @@ class FamillyCardController extends Controller
             $jumlahdata = 1000;
             for ($i=1; $i <= $jumlahdata; $i++) {
                 $data = [
-                    'no_kk' => $faker->numberBetween($min = 1, $max = 10),
-                    'no_nik' => $faker->unique()->numberBetween($min = 3603021404970001, $max = 3603021404980001),
+                    'no_kk' => $faker->numberBetween($min = 1, $max = 200),
+                    'no_nik' => $faker->unique()->numberBetween($min = 3603021404970001, $max = 360302149990001),
                     'nama' => $faker->name(),
                     'jenkel' => $faker->numberBetween($min = 1, $max = 2),
                     'tgl_lahir' => $faker->date('Y_m_d'),
@@ -54,8 +54,8 @@ class FamillyCardController extends Controller
                     'sts_kwn' => $faker->numberBetween($min = 1, $max = 3),
                     'nm_ayah' => $faker->firstNameMale(),
                     'nm_ibu' => $faker->firstNameFemale(),
-                    'nik_ayah' => $faker->unique()->numberBetween($min = 3603021505220003, $max = 3603021505221003),
-                    'nik_ibu' => $faker->unique()->numberBetween($min = 3603021505220003, $max = 3603021505221003),
+                    'nik_ayah' => $faker->unique()->numberBetween($min = 3603021505220003, $max = 3603021599921003),
+                    'nik_ibu' => $faker->unique()->numberBetween($min = 3603021505220003, $max = 3603021999221003),
                     // 'sts_mati' => $faker->numberBetween($min = 0, $max = 1),
                     'no_paspor' => $faker->unique()->numberBetween($min = 1000000, $max = 5000000),
                     'no_kitap' => $faker->unique()->numberBetween($min = 1000000, $max = 5000000),
@@ -63,7 +63,7 @@ class FamillyCardController extends Controller
                     'created_at' => $faker->dateTime(),
                 ];
                 $alamat = [
-                    'no_kk' => $faker->unique()->numberBetween($min = 3603021505220003, $max = 3603021505221003),
+                    'no_kk' => $faker->unique()->numberBetween($min = 3603021505220003, $max = 3603021509991003),
                     'kp' => $faker->country(),
                     'rt' => $faker->numberBetween($min = 1, $max = 6),
                     'rw' => $faker->numberBetween($min = 1, $max = 6),
