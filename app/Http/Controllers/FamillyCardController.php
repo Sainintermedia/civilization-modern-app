@@ -35,7 +35,7 @@ class FamillyCardController extends Controller
             ->paginate(10);
 
         $faker = Factory::create();
-            $jumlahdata = 1000;
+            $jumlahdata = 100;
             for ($i=1; $i <= $jumlahdata; $i++) {
                 $data = [
                     'no_kk' => $faker->numberBetween($min = 1, $max = 200),
