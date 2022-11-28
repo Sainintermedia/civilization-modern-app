@@ -26,12 +26,7 @@
                             <div class="col-lg-3 col-6">
                                 <div class="small-box bg-purple">
                                     <div class="inner">
-                                        <input type="hidden" value="{{ $sumpenduduk = 0 }}">
-                                        @foreach ($famillycards as $famillycard)
-                                            <input type="hidden"
-                                                value="{{ $sumpenduduk += $famillycard->famillycardmembers_count }}">
-                                        @endforeach
-                                        <h3>{{ $sumpenduduk }}</h3>
+                                        <h3>{{ $famillycardmembers }}</h3>
 
                                         <p>Kependudukan</p>
                                     </div>
@@ -47,7 +42,11 @@
                                 <div class="small-box bg-primary">
                                     <div class="inner">
 
-                                        <h3>{{ $famillycards->count() }}</h3>
+                                        <h3>{{ $famillycards }}</h3>
+                                        <h3>{{ $rt1 }}</h3>
+                                        <h3>{{ $rt2 }}</h3>
+                                        <h3>{{ $rt3 }}</h3>
+                                        <h3>{{ $rt4 }}</h3>
 
                                         <p>Keluarga</p>
                                     </div>
@@ -117,58 +116,5 @@
 @section('scripts')
 
     <script src="{{ URL::asset('assets/admin/plugins/chart.js/Chart.min.js') }}"></script>
-    {{--  <script src="../../plugins/chart.js/Chart.min.js"></script>  --}}
-    <script>
-        $(function() {
-            //-------------
-            //- DONUT CHART -
-            //-------------
-            // Get context with jQuery - using jQuery's .get() method.
-            var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
-            var donutData = {
-                labels: [
-
-                    @foreach ($jenispekerjaan as $record)
-
-
-                        '{{ $record->nama }}',
-                    @endforeach
-                ],
-                datasets: [{
-                    data: [700, 500, 400, 600, 300, 100],
-                    backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
-                }]
-            }
-            var donutOptions = {
-                maintainAspectRatio: false,
-                responsive: true,
-            }
-            //Create pie or douhnut chart
-            // You can switch between pie and douhnut using the method below.
-            new Chart(donutChartCanvas, {
-                type: 'doughnut',
-                data: donutData,
-                options: donutOptions
-            })
-
-            //-------------
-            //- PIE CHART -
-            //-------------
-            // Get context with jQuery - using jQuery's .get() method.
-            var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-            var pieData = donutData;
-            var pieOptions = {
-                maintainAspectRatio: false,
-                responsive: true,
-            }
-            //Create pie or douhnut chart
-            // You can switch between pie and douhnut using the method below.
-            new Chart(pieChartCanvas, {
-                type: 'pie',
-                data: pieData,
-                options: pieOptions
-            })
-        })
-    </script>
 
 @endsection
