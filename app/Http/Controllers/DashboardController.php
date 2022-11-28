@@ -21,6 +21,7 @@ class DashboardController extends Controller
         $rt3 = FamillyCard::whereRt(3)->count();
         $rt4 = FamillyCard::whereRt(4)->count();
         $rt5 = FamillyCard::whereRt(5)->count();
-        return view('dashboard.index', compact('famillycards', 'famillycardmembers','jenispekerjaan', 'rt1', 'rt2','rt3','rt4','rt5'));
+        $rt6 = FamillyCard::whereRt(6)->count();
+        return view('dashboard.index', compact('famillycards', 'famillycardmembers','jenispekerjaan', 'rt1', 'rt2','rt3','rt4','rt5','rt6'));
     }
 }
