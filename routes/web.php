@@ -17,6 +17,7 @@ use App\Http\Controllers\PopulationController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\FamillyCardController;
+use App\Http\Controllers\PengaturanSuratController;
 use App\Http\Controllers\PemerintahandesaController;
 use App\Http\Controllers\Admin\PermissionsController;
 use App\Http\Controllers\BukukeputusandesaController;
@@ -75,6 +76,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::delete('kartu-keluarga/kepala-keluarga/kill/{kepala_keluarga}', [FamillyCardController::class, 'kill'])->name('kepala-keluarga.kill');
         Route::resource('kartu-keluarga/kepala-keluarga', FamillyCardController::class);
         Route::resource('kartu-keluarga/anggota-keluarga', FamillyCardMemberController::class);
+    });
+
+    Route::group(['middleware' => ['auth'], 'prefix' => 'layanan-surat', 'as' => 'layanan-surat.'], function () {
+        Route::resource('pengaturan-surat', PengaturanSuratController::class);
     });
     // Route::group(['middleware' => ['auth'], 'prefix' => 'absenstaf', 'as' => 'absenstaf.'], function () {
     //     // Route::get('penduduk/cari', [PopulationController::class, 'search'])->name('penduduk.cari');
