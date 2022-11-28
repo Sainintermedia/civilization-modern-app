@@ -15,7 +15,7 @@
 </head>
 
 
-<body class="legal landscape">
+<body class="a4">
 
     @yield('content')
 
