@@ -19,4 +19,11 @@ class PengaturanSuratController extends Controller
     {
         return view('backend.layanan_surat.pengaturan_surat.create');
     }
+
+    public function store(Request $request)
+    {
+        $pengaturan = new PengaturanSurat();
+        $pengaturan->kop_srt = $request->kop_srt;
+        $pengaturan->save();
+    }
 }

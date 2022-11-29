@@ -132,7 +132,7 @@
 
 @endsection
 @section('styles')
-    <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css?v=3.2.0">
+
 @endsection
 
 @section('scripts')

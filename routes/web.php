@@ -41,7 +41,7 @@ Auth::routes();
 Route::redirect('/', 'admin/home');
 Auth::routes(['register' => false]);
 
-Route::get('change_password', [ChangePasswordController::class, 'showChangePasswordForm'])->name('auth.change_password');
+Route::get('change_password', [ChangePasswordController::class, 'showChangePasswordForm'])->name('auth.show_change_password');
 Route::patch('change_password', [ChangePasswordController::class, 'changePassword'])->name('auth.change_password');
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
