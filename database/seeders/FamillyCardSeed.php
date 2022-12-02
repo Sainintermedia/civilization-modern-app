@@ -17,7 +17,7 @@ class FamillyCardSeed extends Seeder
     public function run()
     {
         $faker = Factory::create();
-            $jumlahdata = 300;
+            $jumlahdata = 10000;
             for ($i=1; $i <= $jumlahdata; $i++) {
                 $data = [
                     'no_kk' => $faker->numberBetween($min = 1, $max = 80),
@@ -27,7 +27,7 @@ class FamillyCardSeed extends Seeder
                     'tgl_lahir' => $faker->date('Y_m_d'),
                     'tmpt_lahir' => $faker->city(),
                     'agama' => $faker->numberBetween($min = 1, $max = 7),
-                    'pendidikan' => $faker->numberBetween($min = 1, $max = 18),
+                    'pendidikan' => $faker->numberBetween($min = 1, $max = 16),
                     'jns_pekerjaan' => $faker->numberBetween($min = 1, $max = 80),
                     'sts_perkawinan' => $faker->numberBetween($min = 1, $max = 4),
                     'tgl_perkawinan' => $faker->date('Y_m_d'),

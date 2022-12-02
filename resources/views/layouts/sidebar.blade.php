@@ -203,13 +203,12 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item {!! request()->is(['siode/buku-administrasi-desa-umum',
-                                                       'siode/buku-administrasi-desa-penduduk']) ||
-                 request()->is(['siode/buku-administrasi-desa-umum','siode/buku-administrasi-desa-penduduk'])
+                <li class="nav-item {!! request()->is(['siode/buku-administrasi-desa-umum', 'siode/buku-administrasi-desa-penduduk']) ||
+                request()->is(['siode/buku-administrasi-desa-umum', 'siode/buku-administrasi-desa-penduduk'])
                     ? 'menu-open'
                     : '' !!}">
-                    <a href="#" class="nav-link {!! request()->is(['siode/buku-administrasi-desa-umum','siode/buku-administrasi-desa-penduduk']) 
-                    || request()->is(['siode/buku-administrasi-desa-umum','siode/buku-administrasi-desa-penduduk'])
+                    <a href="#" class="nav-link {!! request()->is(['siode/buku-administrasi-desa-umum', 'siode/buku-administrasi-desa-penduduk']) ||
+                    request()->is(['siode/buku-administrasi-desa-umum', 'siode/buku-administrasi-desa-penduduk'])
                         ? 'active'
                         : '' !!}">
                         <i class="nav-icon fas fa-book text-success"></i>
@@ -220,9 +219,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{!! route('siode.bukuadministrasidesaumum') !!}" 
-                            class="nav-link {!! request()->is('siode/buku-administrasi-desa-umum') ||
-                             request()->is('siode/buku-administrasi-desa-umum/*')
+                            <a href="{!! route('siode.bukuadministrasidesaumum') !!}" class="nav-link {!! request()->is('siode/buku-administrasi-desa-umum') || request()->is('siode/buku-administrasi-desa-umum/*')
                                 ? 'active'
                                 : '' !!}">
                                 <i class="far fa-circle nav-icon"></i>
@@ -230,11 +227,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{!! route('siode.bukuadminsitrasidesapenduduk') !!}"  
-                             class="nav-link {!! request()->is('siode/buku-administrasi-desa-penduduk') ||
-                                request()->is('siode/buku-administrasi-desa-penduduk/*')
-                                   ? 'active'
-                                   : '' !!}">
+                            <a href="#" class="nav-link {!! request()->is('siode/buku-administrasi-desa-penduduk') ||
+                            request()->is('siode/buku-administrasi-desa-penduduk/*')
+                                ? 'active'
+                                : '' !!}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Administrasi Penduduk</p>
                             </a>
