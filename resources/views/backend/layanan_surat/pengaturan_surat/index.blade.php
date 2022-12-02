@@ -61,65 +61,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{--  @forelse ($famillycardmembers as $value => $fm)
-                                <tr class="text-center">
-                                    <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td class="text-center">
-                                        <div class="btn-group text-center">
-                                            <button type="button"
-                                                class="btn bg-gradient-success dropdown-toggle dropdown-icon btn-sm"
-                                                data-toggle="dropdown">
-                                                <span class="bg-gradient-success sr-only">Toggle Dropdown</span>
-                                            </button>
-                                            <div class="dropdown-menu" role="menu">
-                                                <form method="POST" action="{!! route('siode.kependudukan.kepala-keluarga.destroy', $fm->id) !!}" class="text-center">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <a class="dropdown-item bg-gradient-info"
-                                                        href="{{ route('siode.kependudukan.kepala-keluarga.show', $fm->no_kk) }}"><i
-                                                            class="fa-solid fa-eye"></i>
-                                                        View</a>
-                                                    <a class="dropdown-item bg-gradient-warning"
-                                                        href="{{ route('siode.kependudukan.kepala-keluarga.edit', $fm->id) }}"><i
-                                                            class="fa-solid fa-pen"></i>
-                                                        Edit</a>
-                                                    <a class="dropdown-item bg-gradient-danger show_confirm"
-                                                        data-nama="{!! $fm->nama !!}" type="submit"><i
-                                                            class="fa-solid fa-trash"></i>
-                                                        Delete</a>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>{{ $fm->famillycard->no_kk }}</td>
-                                    <td>{{ $fm->no_nik }}</td>
-                                    <td style="text-transform:uppercase">{{ $fm->nama }}</td>
-                                    <td style="text-transform:uppercase" class="text-center">{{ $fm->tgl_lahir }}</td>
-                                    <td style="text-transform:uppercase" class="text-center">{{ $fm->tmpt_lahir }}</td>
-                                    <td style="text-transform:uppercase">
-                                        {{ $fm->famillycard->kp }}, RT.
-                                        {{ $fm->famillycard->rt }}/
-                                        {{ $fm->famillycard->rw }}, DS.
-                                        {{ $fm->famillycard->villages->name }},
-                                        KEC. {{ $fm->famillycard->districts->name }}
-                                    </td>
-
-                                </tr>
-                            @empty
-                                <h4>tidak ada data</h4>
-                            @endforelse  --}}
+                            @foreach ($pengaturansurat as $item)
+                                {{ $item->kop_srt }}
+                            @endforeach
                         </tbody>
                         <tfoot>
                         </tfoot>
                     </table>
                 </div>
                 <div class="card-footer clearfix">
-                    Halaman : {{ $pengaturansurat->currentPage() }} <br />
+                    {{--  Halaman : {{ $pengaturansurat->currentPage() }} <br />
                     Jumlah Data : {{ $pengaturansurat->total() }} <br />
                     Data Per Halaman : {{ $pengaturansurat->perPage() }}
                     <ul class="pagination pagination-sm float-right m-0">
                         {{ $pengaturansurat->links() }}
-                    </ul>
+                    </ul>  --}}
                 </div>
             </div>
         </div>
