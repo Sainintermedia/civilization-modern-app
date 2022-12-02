@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card card-warning card-outline rounded-0">
+            <div class="card card-warning card-outline rounded-0 table-responsive">
                 <div class="card-header card-header-sm">
                     <h3 class="card-title">
                         <a href="{!! route('siode.kependudukan.penduduk.create') !!}" type="button"
@@ -28,7 +28,7 @@
                     </div>
                 </div>
 
-                <div class="card-body table-responsive">
+                <div class="card-body">
                     <table id="example1"
                         class="table-bordered table-hover table-striped rounded-0 table-sm table py-0 text-sm">
                         <thead>

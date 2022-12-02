@@ -8,7 +8,7 @@
 
     <div class="sidebar">
 
-        <div class="user-panel mt-1 pb-1 mb-1 d-flex">
+        <div class="user-panel d-flex mt-1 mb-1 pb-1">
             <div class="image">
                 <img src="{!! URL::asset('assets/admin/dist/img/logo.png') !!}" class="img-circle elevation-2" alt="User Image">
             </div>
@@ -19,12 +19,12 @@
 
 
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-compact nav-flat nav-collapse-hide-child layout-fixed text-sm nav-sidebar"
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-compact nav-flat nav-collapse-hide-child layout-fixed nav-sidebar text-sm"
                 data-widget="treeview" role="menu" data-accordion="false">
 
                 <li class="nav-header">MENU UTAMA</li>
                 <li class="nav-item">
-                    <a href="/dashboard " class="nav-link">
+                    <a href="{{ route('siode.dashboard.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-solid fa-house-chimney"></i>
                         <p>
                             Home
@@ -74,7 +74,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{!! route('siode.infodesa.identitas') !!}" class="nav-link {!! request()->is('siode/info-desa/identitas-desa') || request()->is('siode/identitas-desa/*') ? 'active' : '' !!}">
+                            <a href="{!! route('siode.infodesa.identitas-desa.index') !!}" class="nav-link {!! request()->is('siode/info-desa/identitas-desa') || request()->is('siode/identitas-desa/*') ? 'active' : '' !!}">
                                 <i class="far fa-circle nav-icon text-red"></i>
                                 <p>Identitas Desa</p>
                             </a>
@@ -90,10 +90,15 @@
                         </li>
                         <li class="nav-item">
                             <a href="{!! route('siode.infodesa.pemerintahan-desa.index') !!}" class="nav-link {!! request()->is([
-                                'siode/info-desa/pemerintahan-desa', 
-                                'siode/info-desa/buku-keputusan-desa','buku_inventaris_kekayaan_desa']) 
-                                || request()->is([
-                                'siode/info-desa/pemerintahan-desa/*', 'siode/info-desa/buku-keputusan-desa/*','buku_inventaris_kekayaan_desa/*'])
+                                'siode/info-desa/pemerintahan-desa',
+                                'siode/info-desa/buku-keputusan-desa',
+                                'buku_inventaris_kekayaan_desa',
+                            ]) ||
+                            request()->is([
+                                'siode/info-desa/pemerintahan-desa/*',
+                                'siode/info-desa/buku-keputusan-desa/*',
+                                'buku_inventaris_kekayaan_desa/*',
+                            ])
                                 ? 'active'
                                 : '' !!}">
                                 <i class="far fa-circle nav-icon text-yellow"></i>
@@ -127,12 +132,24 @@
                         </li> --}}
                     </ul>
                 </li>
-                <li class="nav-item {!! request()->is(['siode/kependudukan/penduduk', 'siode/kependudukan/keluarga']) ||
-                request()->is(['siode/kependudukan/penduduk/*', 'siode/kependudukan/keluarga/*'])
+                <li class="nav-item {!! request()->is([
+                    'siode/kependudukan/kartu-keluarga/kepala-keluarga',
+                    'siode/kependudukan/kartu-keluarga/anggota-keluarga ',
+                ]) ||
+                request()->is([
+                    'siode/kependudukan/kartu-keluarga/kepala-keluarga /*',
+                    'siode/kependudukan/kartu-keluarga/anggota-keluarga /*',
+                ])
                     ? 'menu-open'
                     : '' !!}">
-                    <a href="#" class="nav-link {!! request()->is(['siode/kependudukan/penduduk', 'siode/kependudukan/keluarga']) ||
-                    request()->is(['siode/kependudukan/penduduk/*', 'siode/kependudukan/keluarga/*'])
+                    <a href="#" class="nav-link {!! request()->is([
+                        'siode/kependudukan/kartu-keluarga/kepala-keluarga ',
+                        'siode/kependudukan/kartu-keluarga/anggota-keluarga ',
+                    ]) ||
+                    request()->is([
+                        'siode/kependudukan/kartu-keluarga/kepala-keluarga /*',
+                        'siode/kependudukan/kartu-keluarga/anggota-keluarga /*',
+                    ])
                         ? 'active'
                         : '' !!}">
                         <i class="nav-icon fas fa-solid fa-people-group text-info"></i>
@@ -143,7 +160,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{!! route('siode.kependudukan.penduduk.index') !!}" class="nav-link {!! request()->is(['siode/kependudukan/penduduk']) || request()->is(['siode/kependudukan/penduduk/*'])
+                            <a href="{!! route('siode.kependudukan.anggota-keluarga.index') !!}" class="nav-link {!! request()->is(['siode/kependudukan/kartu-keluarga/anggota-keluarga']) ||
+                            request()->is(['siode/kependudukan/kartu-keluarga/anggota-keluarga /*'])
                                 ? 'active'
                                 : '' !!}">
                                 <i class="far fa-circle nav-icon text-blue"></i>
@@ -151,7 +169,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{!! route('siode.kependudukan.keluarga.index') !!}" class="nav-link {!! request()->is(['siode/kependudukan/keluarga']) || request()->is(['siode/kependudukan/keluarga/*'])
+                            <a href="{!! route('siode.kependudukan.kepala-keluarga.index') !!}" class="nav-link {!! request()->is(['siode/kependudukan/kartu-keluarga/kepala-keluarga']) ||
+                            request()->is(['siode/kependudukan/kartu-keluarga/kepala-keluarga/*'])
                                 ? 'active'
                                 : '' !!}">
                                 <i class="far fa-circle nav-icon text-green"></i>
@@ -235,7 +254,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../../index.html" class="nav-link">
+                            <a href="{{ route('siode.layanan-surat.pengaturan-surat.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Pengaturan Surat</p>
                             </a>
