@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>surat tidak mampu</title>
-    <style>
-        p.ex1 {
-                margin-right: 10px;
-                }
-    </style>
-</head>
+@extends('layouts.aportrait')
+@section('content')
         <table border="0" align="center"> 
             <tr>
         <td><img src="{{ URL::asset('assets/admin/dist/img/logo.png') }}"  width="100" height="130"></td>
@@ -140,6 +129,4 @@
             <td colspan="3" width="500" align="right">Ahmad Jajuli,SE</font></td>
         </tr>
         </table>
-<body>
-</body>
-</html>
+@endsection
