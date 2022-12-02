@@ -2,84 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Surat;
+use App\Models\SuratSub;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class SuratController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
-        return view('backend..dokumen_surat.surat_keterangan_usaha');
+        $surats = Surat::with('suratsub')->get();
+        // $pluk = Surat::with('suratsub')->pluck('no_srt');
+        // return $pluk;
+        $sub = SuratSub::with('surats')->whereNo_srt(001)->get();
+        return $sub;
+        return view('backend.layanan_surat.pengaturan_surat.index', compact('surats'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function edit($surat)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $nik = '16516518156';
+        // $srt = Surat::with('suratsub:id,no_srt,jns_srt')->findOrFail($surat);
+        // $srt = Surat::with(['suratsub' => function ($q){
+        //     $q->select('id','jns_srt','no_srt', 'nik')->whereNik('5131513651');
+        // }])->findOrFail($surat);
+        $srt = Surat::with(['suratsub' => function ($q) use ($nik){
+            $q->select('id','jns_srt','no_srt', 'nik')->whereNik($nik);
+        }])->findOrFail($surat);
+        return $srt;
     }
 }

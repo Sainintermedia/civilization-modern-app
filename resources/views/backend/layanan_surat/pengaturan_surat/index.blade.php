@@ -61,8 +61,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pengaturansurat as $item)
+                            {{--  @foreach ($pengaturansurat as $item)
                                 {{ $item->kop_srt }}
+                            @endforeach  --}}
+                            @foreach ($surats as $srt)
+                                <tr>
+                                    <td>{{ $srt->no_srt }}</td>
+                                    <td>{{ $srt->jns_srt }}</td>
+                                    <td><a href="{{ route('surat.edit', $srt->no_srt) }}" class="btn btn-primary"
+                                            type="button">Edit</a></td>
+                                </tr>
+                                <tr>
+                                    @foreach ($srt->suratsub as $sub)
+                                        <td>{{ $sub->no_srt }}</td>
+                                    @endforeach
+                                </tr>
                             @endforeach
                         </tbody>
                         <tfoot>

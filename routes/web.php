@@ -107,3 +107,9 @@ Route::get('/surat-keterangan-tidak-mampu', function () {
 Route::get('/front', function () {
     return view('frontend.main');
 });
+
+Route::get('/srt', function () {
+    return view('backend.layanan_surat.pengaturan_surat.jenis_surat.surat_keluar.sku');
+});
+
+Route::resource('surat', SuratController::class);
