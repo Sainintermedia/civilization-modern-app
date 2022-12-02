@@ -10,7 +10,7 @@ class PengaturanSuratController extends Controller
 {
     public function index()
     {
-        $pengaturansurat = PengaturanSurat::paginate(10);
+        $pengaturansurat = PengaturanSurat::get();
         
         return view('backend.layanan_surat.pengaturan_surat.index', compact('pengaturansurat'));
     }
@@ -22,6 +22,7 @@ class PengaturanSuratController extends Controller
 
     public function store(Request $request)
     {
+        // return $request->all();
         $pengaturan = new PengaturanSurat();
         $pengaturan->kop_srt = $request->kop_srt;
         $pengaturan->save();
