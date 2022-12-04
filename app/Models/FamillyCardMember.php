@@ -67,7 +67,7 @@ class FamillyCardMember extends Model implements Auditable
         return $this->hasOne(Religion::class, 'id', 'agama');
     }
 
-    public function edu()
+    public function educat()
     {
         return $this->hasOne(Education::class, 'id', 'pendidikan');
     }
@@ -96,5 +96,6 @@ class FamillyCardMember extends Model implements Auditable
     {
         return $this->hasOne(Citizen::class, 'id', 'sts_kwn');
     }
+
 
 }

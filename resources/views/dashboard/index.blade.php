@@ -102,21 +102,14 @@
                             </button>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="chartjs-size-monitor">
-                            <div class="chartjs-size-monitor-expand">
-                                <div class=""></div>
-                            </div>
-                            <div class="chartjs-size-monitor-shrink">
-                                <div class=""></div>
-                            </div>
-                        </div>
-                        <canvas id="donutChart"
-                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 603px;"
-                            width="603" height="250" class="chartjs-render-monitor"></canvas>
-                    </div>
 
+                    <div id="edu"></div>
+                    <?= Lava::render('DonutChart', 'pendi', 'edu') ?>
+
+                    <div id="pendi"></div>
+                    <?= Lava::render('BarChart', 'pen', 'pendi') ?>
                 </div>
+
             </div>
         </div>
     </div>
