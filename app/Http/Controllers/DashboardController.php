@@ -20,10 +20,6 @@ class DashboardController extends Controller
         $rt1 = FamillyCard::get()->groupBy('rt');
         $rw = FamillyCard::get()->groupBy('rw');
 
-        // $education = Education::select('id', 'nama')
-        //     ->get()
-        //     ->keyBy('id', 'name')
-        //     ->toArray();
         $pendidikan = FamillyCardMember::with('educat')
             ->selectRaw('pendidikan as pendidikan, COUNT(*) as count')
             ->groupBy(DB::raw('pendidikan'))
