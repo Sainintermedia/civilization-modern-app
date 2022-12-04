@@ -27,7 +27,7 @@ class FamillyCardSeed extends Seeder
                     'tgl_lahir' => $faker->date('Y_m_d'),
                     'tmpt_lahir' => $faker->city(),
                     'agama' => $faker->numberBetween($min = 1, $max = 7),
-                    'pendidikan' => $faker->numberBetween($min = 1, $max = 16),
+                    'pendidikan' => $faker->numberBetween($min = 5, $max = 10),
                     'jns_pekerjaan' => $faker->numberBetween($min = 1, $max = 80),
                     'sts_perkawinan' => $faker->numberBetween($min = 1, $max = 4),
                     'tgl_perkawinan' => $faker->date('Y_m_d'),

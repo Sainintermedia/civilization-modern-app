@@ -39,7 +39,6 @@ class DashboardController extends Controller
         }
 
         $total = FamillyCardMember::select('pendidikan')->count();
-        // return $total;
         $pen = \Lava::DataTable();
         $pen->addStringColumn('Pendidikan')
             ->addNumberColumn("Total = $total")
