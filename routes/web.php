@@ -56,8 +56,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], function () {
     Route::view('/buku-administrasi-desa-umum', 'backend.buku_administrasi_desa.umum.index')->name('bukuadministrasidesaumum');
-    Route::view('/buku-administrasi-desa-penduduk', 'backend.buku_administrasi_desa.umum.penduduk')->name('bukuadministrasidesapenduduk');
-
+    Route::view('/buku-administrasi-desa-penduduk', 'backend.buku_administrasi_desa.penduduk.index')->name('bukuadministrasidesapenduduk');
+   
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {

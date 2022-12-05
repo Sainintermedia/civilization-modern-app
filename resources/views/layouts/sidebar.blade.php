@@ -208,8 +208,9 @@
                  request()->is(['siode/buku-administrasi-desa-umum','siode/buku-administrasi-desa-penduduk'])
                     ? 'menu-open'
                     : '' !!}">
-                    <a href="#" class="nav-link {!! request()->is(['siode/buku-administrasi-desa-umum','siode/buku-administrasi-desa-penduduk']) 
-                    || request()->is(['siode/buku-administrasi-desa-umum','siode/buku-administrasi-desa-penduduk'])
+                    <a href="#" class="nav-link {!! request()->is(['siode/buku-administrasi-desa-umum'
+                    ,'siode/buku-administrasi-desa-penduduk']) 
+                    || request()->is(['siode/buku-administrasi-desa-umum'||'siode/buku-administrasi-desa-penduduk'])
                         ? 'active'
                         : '' !!}">
                         <i class="nav-icon fas fa-book text-success"></i>
@@ -230,7 +231,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{!! route('siode.bukuadminsitrasidesapenduduk') !!}"  
+                            <a href="{!! route('siode.bukuadministrasidesapenduduk') !!}"  
                              class="nav-link {!! request()->is('siode/buku-administrasi-desa-penduduk') ||
                                 request()->is('siode/buku-administrasi-desa-penduduk/*')
                                    ? 'active'

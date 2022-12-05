@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title', 'Buku Administrasi Desa')
 @section('breadcrumb', 'IBuku Administrasi Desa')
-@section('bukuadminsitrasidesapenduduk', 'active')
+@section('bukuadministrasidesapenduduk', 'active')
 @section('info', 'show')
 @section('content')
 
