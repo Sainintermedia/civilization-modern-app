@@ -17,17 +17,17 @@ class FamillyCardSeed extends Seeder
     public function run()
     {
         $faker = Factory::create();
-            $jumlahdata = 300;
-            for ($i=1; $i <= $jumlahdata; $i++) {
+            $jumlahpenduduk = 600;
+            for ($i=1; $i <= $jumlahpenduduk; $i++) {
                 $data = [
-                    'no_kk' => $faker->numberBetween($min = 1, $max = 80),
+                    'no_kk' => $faker->numberBetween($min = 1, $max = 30),
                     'no_nik' => $faker->unique()->numberBetween($min = 3603021404970001, $max = 360302149990001),
                     'nama' => $faker->name(),
                     'jenkel' => $faker->numberBetween($min = 1, $max = 2),
                     'tgl_lahir' => $faker->date('Y_m_d'),
                     'tmpt_lahir' => $faker->city(),
                     'agama' => $faker->numberBetween($min = 1, $max = 7),
-                    'pendidikan' => $faker->numberBetween($min = 1, $max = 18),
+                    'pendidikan' => $faker->numberBetween($min = 5, $max = 10),
                     'jns_pekerjaan' => $faker->numberBetween($min = 1, $max = 80),
                     'sts_perkawinan' => $faker->numberBetween($min = 1, $max = 4),
                     'tgl_perkawinan' => $faker->date('Y_m_d'),
@@ -43,6 +43,10 @@ class FamillyCardSeed extends Seeder
                     'user_id' => $faker->numberBetween($min = 1, $max = 10),
                     'created_at' => $faker->dateTime(),
                 ];
+                FamillyCardMember::create($data);
+            }
+            $jumlahkk = 60;
+            for ($i=1; $i <= $jumlahkk; $i++) {
                 $alamat = [
                     'no_kk' => $faker->unique()->numberBetween($min = 3603021505220003, $max = 3603021509991003),
                     'kp' => $faker->country(),
@@ -54,8 +58,6 @@ class FamillyCardSeed extends Seeder
                     'kabkot' => $faker->numberBetween($min = 3603, $max = 3603),
                     'provinsi' => $faker->numberBetween($min = 36, $max = 36),
                 ];
-
-                FamillyCardMember::create($data);
                 FamillyCard::create($alamat);
             }
     }

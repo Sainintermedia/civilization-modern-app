@@ -37,34 +37,46 @@
                                         class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
+                            @foreach ($rt1 as $key => $rt)
+                                <div class="col-lg-3 col-6">
+                                    <div class="small-box bg-primary">
+                                        <div class="inner">
 
-                            <div class="col-lg-3 col-6">
-                                <div class="small-box bg-primary">
-                                    <div class="inner">
 
-                                        <h3>{{ $famillycards }}</h3>
-                                        <h3>{{ $rt1 }}</h3>
-                                        <h3>{{ $rt2 }}</h3>
-                                        <h3>{{ $rt3 }}</h3>
-                                        <h3>{{ $rt4 }}</h3>
-                                        <h3>{{ $rt5 }}</h3>
-                                        <h3>{{ $rt6 }}</h3>
-
-                                        <p>Keluarga</p>
+                                            <h3>{{ $key }} {{ $rt->count() }}</h3>
+                                            <p>Keluarga</p>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="ion ion-ios-people"></i>
+                                        </div>
+                                        <a href="{{ route('siode.kependudukan.kepala-keluarga.index') }}"
+                                            class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                     </div>
-                                    <div class="icon">
-                                        <i class="ion ion-ios-people"></i>
-                                    </div>
-                                    <a href="{{ route('siode.kependudukan.kepala-keluarga.index') }}"
-                                        class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
-                            </div>
+                            @endforeach
+                            @foreach ($rw as $rr => $r)
+                                <div class="col-lg-3 col-6">
+                                    <div class="small-box bg-primary">
+                                        <div class="inner">
+
+
+                                            <h3>{{ $rr }} {{ $r->count() }}</h3>
+                                            <p>Keluarga</p>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="ion ion-ios-people"></i>
+                                        </div>
+                                        <a href="{{ route('siode.kependudukan.kepala-keluarga.index') }}"
+                                            class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                    </div>
+                                </div>
+                            @endforeach
 
                             <div class="col-lg-3 col-6">
                                 <div class="small-box bg-info">
                                     <div class="inner">
-                                        <h3>44</h3>
-                                        <p>Surat Tercetak</p>
+                                        <h3>{{ $famillycards }}</h3>
+                                        <p>Penduduk</p>
                                     </div>
                                     <div class="icon">
                                         <i class="ion-ios-paper"></i>
@@ -90,21 +102,14 @@
                             </button>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="chartjs-size-monitor">
-                            <div class="chartjs-size-monitor-expand">
-                                <div class=""></div>
-                            </div>
-                            <div class="chartjs-size-monitor-shrink">
-                                <div class=""></div>
-                            </div>
-                        </div>
-                        <canvas id="donutChart"
-                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 603px;"
-                            width="603" height="250" class="chartjs-render-monitor"></canvas>
-                    </div>
 
+                    <div id="edu"></div>
+                    <?= Lava::render('DonutChart', 'pendi', 'edu') ?>
+
+                    <div id="pendi"></div>
+                    <?= Lava::render('BarChart', 'pen', 'pendi') ?>
                 </div>
+
             </div>
         </div>
     </div>

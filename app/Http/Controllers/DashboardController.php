@@ -3,25 +3,48 @@
 namespace App\Http\Controllers;
 
 use App\Models\Work;
+use App\Models\Education;
 use App\Models\FamillyCard;
-use Illuminate\Http\Request;
+use Khill\Lavacharts\Lavacharts;
 use App\Models\FamillyCardMember;
 use App\Http\Controllers\Controller;
+use DB;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-
         $famillycards = FamillyCard::count();
         $famillycardmembers = FamillyCardMember::count();
         $jenispekerjaan = Work::orderBy('nama')->get();
-        $rt1 = FamillyCard::whereRt(1)->count();
-        $rt2 = FamillyCard::whereRt(2)->count();
-        $rt3 = FamillyCard::whereRt(3)->count();
-        $rt4 = FamillyCard::whereRt(4)->count();
-        $rt5 = FamillyCard::whereRt(5)->count();
-        $rt6 = FamillyCard::whereRt(6)->count();
-        return view('dashboard.index', compact('famillycards', 'famillycardmembers','jenispekerjaan', 'rt1', 'rt2','rt3','rt4','rt5','rt6'));
+        $rt1 = FamillyCard::get()->groupBy('rt');
+        $rw = FamillyCard::get()->groupBy('rw');
+
+        $pendidikan = FamillyCardMember::with('educat')
+            ->selectRaw('pendidikan as pendidikan, COUNT(*) as count')
+            ->groupBy(DB::raw('pendidikan'))
+            ->orderBy('pendidikan', 'asc')
+            ->get()
+            ->toArray();
+
+        $chart_array = [];
+        foreach ($pendidikan as $key => $pend) {
+            $p_dik = [];
+            array_push($p_dik, $pend['educat'], $pend['count']);
+            array_push($chart_array, $p_dik);
+        }
+
+        $total = FamillyCardMember::select('pendidikan')->count();
+        $pen = \Lava::DataTable();
+        $pen->addStringColumn('Pendidikan')
+            ->addNumberColumn("$total")
+            ->addRows($chart_array);
+
+        $pedi = \Lava::DonutChart('pendi', $pen, [
+            'title' => 'Pendidikan',
+        ]);
+        $edu = \Lava::BarChart('pen', $pen);
+
+        return view('dashboard.index', compact('famillycards', 'famillycardmembers', 'jenispekerjaan', 'rt1', 'rw'));
     }
 }
