@@ -21,7 +21,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body class="login-page" style="min-height: 496.8px;">
+    <div class="login-box">
+    <div class="login-logo">
+    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    </div>
+    <div class="card">
+        <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+        </div>
+    </div>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

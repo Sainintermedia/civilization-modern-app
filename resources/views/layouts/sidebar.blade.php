@@ -207,14 +207,8 @@
                 request()->is(['siode/buku-administrasi-desa-umum', 'siode/buku-administrasi-desa-penduduk'])
                     ? 'menu-open'
                     : '' !!}">
-<<<<<<< HEAD
-                    <a href="#" class="nav-link {!! request()->is(['siode/buku-administrasi-desa-umum'
-                    ,'siode/buku-administrasi-desa-penduduk']) 
-                    || request()->is(['siode/buku-administrasi-desa-umum'||'siode/buku-administrasi-desa-penduduk'])
-=======
                     <a href="#" class="nav-link {!! request()->is(['siode/buku-administrasi-desa-umum', 'siode/buku-administrasi-desa-penduduk']) ||
                     request()->is(['siode/buku-administrasi-desa-umum', 'siode/buku-administrasi-desa-penduduk'])
->>>>>>> 99881d69602421fdd8121ba4ed4e3b43c3c2e8a5
                         ? 'active'
                         : '' !!}">
                         <i class="nav-icon fas fa-book text-success"></i>
@@ -233,18 +227,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
-<<<<<<< HEAD
                             <a href="{!! route('siode.bukuadministrasidesapenduduk') !!}"  
                              class="nav-link {!! request()->is('siode/buku-administrasi-desa-penduduk') ||
                                 request()->is('siode/buku-administrasi-desa-penduduk/*')
                                    ? 'active'
                                    : '' !!}">
-=======
-                            <a href="#" class="nav-link {!! request()->is('siode/buku-administrasi-desa-penduduk') ||
-                            request()->is('siode/buku-administrasi-desa-penduduk/*')
-                                ? 'active'
-                                : '' !!}">
->>>>>>> 99881d69602421fdd8121ba4ed4e3b43c3c2e8a5
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Administrasi Penduduk</p>
                             </a>
